@@ -3,12 +3,15 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 
-mongoose.connection.on('connected', () => console.log('connected'));
-mongoose.connection.on('open', () => console.log('open'));
-mongoose.connection.on('disconnected', () => console.log('disconnected'));
-mongoose.connection.on('reconnected', () => console.log('reconnected'));
-mongoose.connection.on('disconnecting', () => console.log('disconnecting'));
-mongoose.connection.on('close', () => console.log('close'));
+// Creating a mongoose.connection shortcut
+const db = mongoose.connection;
+
+db.on('connected', () => console.log('connected'));
+db.on('open', () => console.log('open'));
+db.on('disconnected', () => console.log('disconnected'));
+db.on('reconnected', () => console.log('reconnected'));
+db.on('disconnecting', () => console.log('disconnecting'));
+db.on('close', () => console.log('close'));
 
 mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
 .then(() => console.log("Mongo connection is open!"))
