@@ -3,7 +3,10 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 
-// Creating a mongoose.connection shortcut
+// Require Campground model from models/campground.js
+const Campground = require('./models/campground');
+
+// Create a mongoose.connection shortcut
 const db = mongoose.connection;
 
 db.on('connected', () => console.log('connected'));
