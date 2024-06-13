@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const db = mongoose.connection;
 
+const Campground = require('../models/campground');
+
 db.on('connected', () => console.log('connected'));
 db.on('open', () => console.log('open'));
 db.on('disconnected', () => console.log('disconnected'));
@@ -15,3 +17,4 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
     console.log("Mongo connection error!");
     console.log(err)
 })
+
