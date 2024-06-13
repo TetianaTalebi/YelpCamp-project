@@ -18,3 +18,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
     console.log(err)
 })
 
+const seedDB = async () => {
+    await Campground.deleteMany({});
+}
+
+seedDB();
+
