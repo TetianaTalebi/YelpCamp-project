@@ -20,8 +20,12 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
 
 const createNewDoc = async () => {
     const c = new Campground({title: 'Black Sea', price: 2.50});
-    console.log(c);
-    await c.save()
+    const b = new Campground({title: 'Big River', price: 4.30});
+    const a = new Campground({title: 'Great Mountain', price: 1.50});
+    console.log(c, b, a);
+    await c.save();
+    await b.save();
+    await a.save()
 }
 
 createNewDoc();
