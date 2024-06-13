@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const db = mongoose.connection;
 
 const Campground = require('../models/campground');
+const cities = require('./cities');
 
 db.on('connected', () => console.log('connected'));
 db.on('open', () => console.log('open'));
@@ -18,22 +19,23 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
     console.log(err)
 })
 
-const createNewDoc = async () => {
-    const c = new Campground({title: 'Black Sea', price: 2.50});
-    const b = new Campground({title: 'Big River', price: 4.30});
-    const a = new Campground({title: 'Great Mountain', price: 1.50});
-    console.log(c, b, a);
-    await c.save();
-    await b.save();
-    await a.save()
-}
-
-createNewDoc();
-
-// const seedDB = async () => {
-//     await Campground.deleteMany({});
-    
+// const createNewDoc = async () => {
+//     const c = new Campground({title: 'Black Sea', price: 2.50});
+//     const b = new Campground({title: 'Big River', price: 4.30});
+//     const a = new Campground({title: 'Great Mountain', price: 1.50});
+//     console.log(c, b, a);
+//     await c.save();
+//     await b.save();
+//     await a.save()
 // }
 
-// seedDB();
+// createNewDoc();
+
+const seedDB = async () => {
+
+    await Campground.deleteMany({});
+    
+}
+
+seedDB();
 
