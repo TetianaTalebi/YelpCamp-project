@@ -43,7 +43,9 @@ const seedDB = async () => {
 
         let randomCities = Math.floor(Math.random()*(cities.length));
         const camp = new Campground({
+            title: `${sample(descriptors)} ${sample(places)}`,
             location: `${cities[randomCities].city}, ${cities[randomCities].state}`
+
         });
         await camp.save();
     }
