@@ -5,6 +5,7 @@ const db = mongoose.connection;
 const Campground = require('../models/campground');
 
 const cities = require('./cities');
+const {descriptors, places} = require('./seedHelpers');
 
 db.on('connected', () => console.log('connected'));
 db.on('open', () => console.log('open'));
