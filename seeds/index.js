@@ -23,9 +23,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
 
 // Define a function 'sample' that accepts an array as an argument 
 // and return the random element from this array
-const sample = (array) => {
-    array[Math.floor(Math.random()*array.length)]
-}
+const sample = array => array[Math.floor(Math.random()*array.length)];
+
 
 
 const seedDB = async () => {
