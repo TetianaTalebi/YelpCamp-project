@@ -25,6 +25,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
 
 
 
+
+
+
+
 // const createNewDoc = async () => {
 //     const c = new Campground({title: 'Black Sea', price: 2.50});
 //     const b = new Campground({title: 'Big River', price: 4.30});
@@ -38,6 +42,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
 // createNewDoc();
 
 const seedDB = async () => {
+
+    // Empty database
 
     // Empty database
 
