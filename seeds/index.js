@@ -21,13 +21,16 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
     console.log(err)
 })
 
+// Define a function 'sample' that accepts an array as an argument 
+// and return the random element from this array
+const sample = (array) => {
+    array[Math.floor(Math.random()*array.length)]
+}
 
 
 const seedDB = async () => {
 
-    // Empty database
-
-    // Empty database
+    // Empty the database
 
     await Campground.deleteMany({});
 
@@ -37,10 +40,12 @@ const seedDB = async () => {
     for (let i=0; i<50; i++){
 
         // cities is an array that contains objects
-        // we are generating a random number from 0 to cities.length
+        // we are generating a random number from 0 to cities.length-1
 
         let randomCities = Math.floor(Math.random()*(cities.length));
-        const camp = new Campground({location: `${cities[randomCities].city}, ${cities[randomCities].state}`});
+        const camp = new Campground({
+            location: `${cities[randomCities].city}, ${cities[randomCities].state}`
+        });
         await camp.save();
     }
     
