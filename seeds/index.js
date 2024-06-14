@@ -19,6 +19,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
     console.log(err)
 })
 
+
+
+
+
 // const createNewDoc = async () => {
 //     const c = new Campground({title: 'Black Sea', price: 2.50});
 //     const b = new Campground({title: 'Big River', price: 4.30});
@@ -33,7 +37,22 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
 
 const seedDB = async () => {
 
+    // Empty database
+
     await Campground.deleteMany({});
+
+    // Add 50 campgrounds to the db that have random location
+    // Choose location randomly from cities array
+
+    for (let i=0; i<50; i++){
+
+        // cities is an array that contains objects
+        // we are generating a random number from 0 to cities.length-1
+
+        let randomCities = Math.floor(Math.random()*(cities.length-1));
+        const camp = new Campground({location: `${cities[randomCities].city}, ${cities[randomCities].state}`});
+        await camp.save();
+    }
     
 }
 
