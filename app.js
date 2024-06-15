@@ -44,8 +44,10 @@ app.get('/campgrounds', async (req, res) => {
 })
 
 app.get('/campgrounds/:id', async (req, res) => {
-    const campground = Campground.findById(req.params.id);
-    res.render('campgrounds/show', {campground})
+    const {id} = req.params;
+    const campground = await Campground.findById(id);
+    // console.log(id)
+    res.render('campgrounds/show', { campground })
 })
 
 // app.get('/makecampground', async (req, res) => {
