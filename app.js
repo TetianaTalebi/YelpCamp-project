@@ -34,6 +34,15 @@ app.get('/', (req, res) => {
     // res.send('Hello from YelpCamp!')
 })
 
+app.get('/campgrounds', async (req, res) => {
+
+    // Find all campgrounds in db and save it to const campgrounds
+    const campgrounds = await Campground.find({});
+
+    // Pass the found data to our template
+    res.render('campgrounds/index', {campgrounds});
+})
+
 // app.get('/makecampground', async (req, res) => {
 //     const camp = new Campground({title: 'My Backyard', description: 'Cheap Camping'});
 //     await camp.save();
