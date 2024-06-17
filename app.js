@@ -47,6 +47,11 @@ app.get('/campgrounds/new', (req, res) => {
     res.render('campgrounds/new');
 })
 
+app.post('/campgrounds', async (req, res) => {
+    // res.send(req.body)
+    console.log(req.body.campground)
+})
+
 app.get('/campgrounds/:id', async (req, res) => {
     const {id} = req.params;
     const campground = await Campground.findById(id);
