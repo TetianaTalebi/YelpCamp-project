@@ -29,6 +29,8 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.urlencoded({extended: true}));
+
 app.get('/', (req, res) => {
     res.render('home')
     // res.send('Hello from YelpCamp!')
