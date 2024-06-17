@@ -29,6 +29,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// A middleware for parsing req.body
 app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
@@ -50,8 +51,12 @@ app.get('/campgrounds/new', (req, res) => {
 })
 
 app.post('/campgrounds', async (req, res) => {
+    const campground = new Campground(req.body.campground);
+    await campground.save();
+    res.redirect(`/campgrounds/${campground._id}`)
+
     // res.send(req.body)
-    console.log(req.body.campground)
+    // console.log(req.body.campground)
 })
 
 app.get('/campgrounds/:id', async (req, res) => {
