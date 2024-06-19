@@ -78,6 +78,10 @@ app.get('/campgrounds/:id/edit', async (req, res) => {
     res.render('campgrounds/edit', {campground})
 })
 
+app.put('/campgrounds/:id', async (req, res) => {
+    res.send('It works!!!')
+})
+
 // app.get('/makecampground', async (req, res) => {
 //     const camp = new Campground({title: 'My Backyard', description: 'Cheap Camping'});
 //     await camp.save();
