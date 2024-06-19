@@ -33,6 +33,12 @@ app.set('views', path.join(__dirname, 'views'));
 // A middleware for parsing req.body
 app.use(express.urlencoded({extended: true}));
 
+// Load 'method-override' middleware
+// that lets us use HTTP verbs such as PUT or DELETE 
+// in places where the client doesn't support it.
+app.use(methodOverride('_method')); // '_method' will be used as a query string
+
+
 app.get('/', (req, res) => {
     res.render('home')
     // res.send('Hello from YelpCamp!')
