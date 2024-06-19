@@ -2,6 +2,7 @@ const express = require('express');
 
 const path = require('path');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 // Require Campground model from models/campground.js
 const Campground = require('./models/campground');
