@@ -27,6 +27,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
 
 const app = express();
 
+// We are telling Express to use ejs-mate to parse ejs
+// instead of default ejs engine
+app.engine('ejs', ejsMate);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
