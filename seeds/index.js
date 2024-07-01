@@ -44,6 +44,9 @@ const seedDB = async () => {
         let randomCities = Math.floor(Math.random()*(cities.length));
         const camp = new Campground({
             title: `${sample(descriptors)} ${sample(places)}`,
+            image: '',
+            price,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis saepe nulla rerum, sit perferendis cumque eos labore minima esse blanditiis assumenda maiores animi non commodi voluptatem eveniet eum quas molestiae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae velit odit libero facere soluta, magnam molestias rerum aspernatur perferendis possimus dolores voluptate repudiandae tempora provident incidunt cumque repellendus in adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam vel non ipsa ea cumque blanditiis fuga magnam consequatur iste. Assumenda perspiciatis dignissimos accusantium incidunt illo fugit sint soluta, possimus ullam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est nam blanditiis architecto necessitatibus, asperiores ad sunt repellendus totam commodi ullam! Labore tenetur cumque incidunt deserunt ex alias accusamus nostrum quis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias ea ex ut sequi modi quidem possimus voluptates nemo eaque cum quasi recusandae, similique iste quae nihil necessitatibus error! Deserunt! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim odio similique, modi aspernatur molestiae in inventore fugiat amet. Qui repellat quidem similique dicta voluptatibus expedita dolores maiores totam vero illo!',
             location: `${cities[randomCities].city}, ${cities[randomCities].state}`
 
         });
