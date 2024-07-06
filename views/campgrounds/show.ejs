@@ -14,6 +14,9 @@
                 </ul>
                 <div class="card-body">
                   <a href="/campgrounds/<%= campground._id %>/edit" class="card-link btn btn-info">Edit</a>
+                  <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
                   <a href="#" class="card-link">Another link</a>
                 </div>
             </div>
@@ -30,9 +33,7 @@
     <p>Price: <%= campground.price %> $/day</p>
 
     
-    <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
-        <button>Delete a campground</button>
-    </form>
+    
     
     <p>
         <a href="/campgrounds">All Campgrounds</a>
