@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
+const catchAsync = require('./utils/catchasync');
 const methodOverride = require('method-override');
 
 // Require Campground model from models/campground.js
@@ -61,10 +62,11 @@ app.get('/campgrounds/new', (req, res) => {
     res.render('campgrounds/new');
 })
 
-app.post('/campgrounds', async (req, res) => {
+app.post('/campgrounds', async (req, res, next) => {
     const campground = new Campground(req.body.campground);
     await campground.save();
     res.redirect(`/campgrounds/${campground._id}`)
+    
 
     // res.send(req.body)
     // console.log(req.body.campground)
@@ -103,7 +105,8 @@ app.delete('/campgrounds/:id', async (req, res) => {
 // })
 
 app.use((err, req, res, next) => {
-    res.send('Something went wrong! :(')
+    console.log(err);
+    res.send('Something went wrong! :(');
 })
 
 app.listen(3000, () => {
