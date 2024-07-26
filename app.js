@@ -80,13 +80,13 @@ app.get('/campgrounds/:id/edit', catchAsync(async (req, res) => {
     res.render('campgrounds/edit', {campground})
 }))
 
-app.put('/campgrounds/:id', async (req, res) => {
+app.put('/campgrounds/:id', catchAsync(async (req, res) => {
     const {id} = req.params;
     const campground = await Campground.findByIdAndUpdate(id, req.body.campground);
     res.redirect(`/campgrounds/${campground._id}`);
     // console.log(req.body.campground);
     // res.send('It works!!!')
-})
+}))
 
 app.delete('/campgrounds/:id', async (req, res) => {
     const {id} = req.params;
