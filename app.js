@@ -49,14 +49,14 @@ app.get('/', (req, res) => {
     // res.send('Hello from YelpCamp!')
 })
 
-app.get('/campgrounds', async (req, res) => {
+app.get('/campgrounds', catchAsync(async (req, res) => {
 
     // Find all campgrounds in db and save it to const campgrounds
     const campgrounds = await Campground.find({});
 
     // Pass the found data to our template
     res.render('campgrounds/index', {campgrounds});
-})
+}))
 
 app.get('/campgrounds/new', (req, res) => {
     res.render('campgrounds/new');
