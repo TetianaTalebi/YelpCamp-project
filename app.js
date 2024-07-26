@@ -62,15 +62,11 @@ app.get('/campgrounds/new', (req, res) => {
     res.render('campgrounds/new');
 })
 
-app.post('/campgrounds', async (req, res, next) => {
+app.post('/campgrounds', catchAsync(async (req, res, next) => {
     const campground = new Campground(req.body.campground);
     await campground.save();
     res.redirect(`/campgrounds/${campground._id}`)
-    
-
-    // res.send(req.body)
-    // console.log(req.body.campground)
-})
+}))
 
 app.get('/campgrounds/:id', async (req, res) => {
     const {id} = req.params;
