@@ -4,6 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const catchAsync = require('./utils/catchasync');
+const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
 
 // Require Campground model from models/campground.js
