@@ -107,7 +107,10 @@ app.use((err, req, res, next) => {
 })
 
 app.all('*', (req, res, next) => {
-    res.send('404!!!')
+    //This next is going to hit our next error handler middleware
+    next(new ExpressError('Page Not Found', 404));
+
+    // res.send('404!!!')
 })
 
 app.listen(3000, () => {
