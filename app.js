@@ -109,8 +109,17 @@ app.all('*', (req, res, next) => {
 })
 
 app.use((err, req, res, next) => {
-    console.log(err);
-    res.send('Something went wrong! :(');
+
+    // Destructure the values of statusCode and message from the err object 
+    // that is an instance of the class ExpressError, that is an extended class of generic Express Error
+
+    // Give statusCode and message the default values
+    
+    const {statusCode = 500, message = 'Something went wrong!!!'} = err;
+    res.status(statusCode).send(message);
+
+    // console.log(err);
+    // res.send('Something went wrong! :(');
 })
 
 app.listen(3000, () => {
