@@ -101,16 +101,16 @@ app.delete('/campgrounds/:id', catchAsync(async (req, res) => {
 //     res.send(camp)
 // })
 
-app.use((err, req, res, next) => {
-    console.log(err);
-    res.send('Something went wrong! :(');
-})
-
 app.all('*', (req, res, next) => {
     //This next is going to hit our next error handler middleware
     next(new ExpressError('Page Not Found', 404));
 
     // res.send('404!!!')
+})
+
+app.use((err, req, res, next) => {
+    console.log(err);
+    res.send('Something went wrong! :(');
 })
 
 app.listen(3000, () => {
