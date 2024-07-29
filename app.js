@@ -86,6 +86,9 @@ app.get('/campgrounds/:id/edit', catchAsync(async (req, res) => {
 
 app.put('/campgrounds/:id', catchAsync(async (req, res) => {
     const {id} = req.params;
+    if (!req.body.campground){
+        throw new ExpressError('Invalid Campground Data', 400);
+    }
     const campground = await Campground.findByIdAndUpdate(id, req.body.campground);
     res.redirect(`/campgrounds/${campground._id}`);
     // console.log(req.body.campground);
