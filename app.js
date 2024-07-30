@@ -121,7 +121,10 @@ app.use((err, req, res, next) => {
 
     // Give statusCode and message the default values
     
-    const {statusCode = 500, message = 'Something went wrong!!!'} = err;
+    const {statusCode = 500} = err;
+    if (!err.message){
+        err.message='Oh no, something went wrong!!!';
+    }
     res.status(statusCode).render('error', {err});
 
     // console.log(err);
