@@ -79,6 +79,7 @@ app.post('/campgrounds', catchAsync(async (req, res) => {
             }
         ).required()
     });
+    const result = campgroundSchema.validate(req.body);
 
     const campground = new Campground(req.body.campground);
     await campground.save();
