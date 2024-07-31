@@ -81,6 +81,12 @@ app.post('/campgrounds', catchAsync(async (req, res) => {
     });
     const result = campgroundSchema.validate(req.body);
 
+    if (result.error){
+        throw new ExpressError(result.error.details, 400)
+    }
+
+    console.log(result);
+
     const campground = new Campground(req.body.campground);
     await campground.save();
     res.redirect(`/campgrounds/${campground._id}`)
