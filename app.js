@@ -79,7 +79,7 @@ app.post('/campgrounds', catchAsync(async (req, res) => {
             }
         ).required()
     });
-    const result = campgroundSchema.validate(req.body);
+    const {error} = campgroundSchema.validate(req.body);
 
     if (result.error){
         throw new ExpressError(result.error.details, 400)
