@@ -86,7 +86,7 @@ app.post('/campgrounds', catchAsync(async (req, res) => {
         throw new ExpressError(msg, 400)
     }
 
-    console.log(result);
+    // console.log(result);
 
     const campground = new Campground(req.body.campground);
     await campground.save();
@@ -107,9 +107,28 @@ app.get('/campgrounds/:id/edit', catchAsync(async (req, res) => {
 
 app.put('/campgrounds/:id', catchAsync(async (req, res) => {
     const {id} = req.params;
-    if (!req.body.campground){
-        throw new ExpressError('Invalid Campground Data', 400);
+    // if (!req.body.campground){
+    //     throw new ExpressError('Invalid Campground Data', 400);
+    // }
+
+    const campgroundSchema = Joi.object({
+        campground: Joi.object(
+            {
+                title: Joi.string().required(),
+                image: Joi.string().required(),
+                price: Joi.number().required().min(0),
+                description: Joi.string().required(),
+                location: Joi.string().required()
+            }
+        ).required()
+    });
+    const {error} = campgroundSchema.validate(req.body);
+
+    if (error){
+        const msg = error.details.map(el=>el.message).join(',');
+        throw new ExpressError(msg, 400)
     }
+
     const campground = await Campground.findByIdAndUpdate(id, req.body.campground);
     res.redirect(`/campgrounds/${campground._id}`);
     // console.log(req.body.campground);
