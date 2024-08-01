@@ -45,6 +45,26 @@ app.use(express.urlencoded({extended: true}));
 // in places where the client doesn't support it.
 app.use(methodOverride('_method')); // '_method' will be used as a query string
 
+const validateCampground = (req, res, next) => {
+
+    const campgroundSchema = Joi.object({
+        campground: Joi.object(
+            {
+                title: Joi.string().required(),
+                image: Joi.string().required(),
+                price: Joi.number().required().min(0),
+                description: Joi.string().required(),
+                location: Joi.string().required()
+            }
+        ).required()
+    });
+    const {error} = campgroundSchema.validate(req.body);
+
+    if (error){
+        const msg = error.details.map(el=>el.message).join(',');
+        throw new ExpressError(msg, 400)
+    } else {next()}
+}
 
 app.get('/', (req, res) => {
     res.render('home')
@@ -65,29 +85,7 @@ app.get('/campgrounds/new', (req, res) => {
 })
 
 app.post('/campgrounds', catchAsync(async (req, res) => {
-    // if(!req.body.campground){
-    //     throw new ExpressError('Invalid Campground Data', 400);
-    // }
-    const campgroundSchema = Joi.object({
-        campground: Joi.object(
-            {
-                title: Joi.string().required(),
-                image: Joi.string().required(),
-                price: Joi.number().required().min(0),
-                description: Joi.string().required(),
-                location: Joi.string().required()
-            }
-        ).required()
-    });
-    const {error} = campgroundSchema.validate(req.body);
-
-    if (error){
-        const msg = error.details.map(el=>el.message).join(',');
-        throw new ExpressError(msg, 400)
-    }
-
-    // console.log(result);
-
+    
     const campground = new Campground(req.body.campground);
     await campground.save();
     res.redirect(`/campgrounds/${campground._id}`)
@@ -107,9 +105,6 @@ app.get('/campgrounds/:id/edit', catchAsync(async (req, res) => {
 
 app.put('/campgrounds/:id', catchAsync(async (req, res) => {
     const {id} = req.params;
-    // if (!req.body.campground){
-    //     throw new ExpressError('Invalid Campground Data', 400);
-    // }
 
     const campgroundSchema = Joi.object({
         campground: Joi.object(
