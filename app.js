@@ -103,31 +103,12 @@ app.get('/campgrounds/:id/edit', catchAsync(async (req, res) => {
     res.render('campgrounds/edit', {campground})
 }))
 
-app.put('/campgrounds/:id', catchAsync(async (req, res) => {
+app.put('/campgrounds/:id', validateCampground, catchAsync(async (req, res) => {
+
     const {id} = req.params;
-
-    const campgroundSchema = Joi.object({
-        campground: Joi.object(
-            {
-                title: Joi.string().required(),
-                image: Joi.string().required(),
-                price: Joi.number().required().min(0),
-                description: Joi.string().required(),
-                location: Joi.string().required()
-            }
-        ).required()
-    });
-    const {error} = campgroundSchema.validate(req.body);
-
-    if (error){
-        const msg = error.details.map(el=>el.message).join(',');
-        throw new ExpressError(msg, 400)
-    }
-
     const campground = await Campground.findByIdAndUpdate(id, req.body.campground);
     res.redirect(`/campgrounds/${campground._id}`);
-    // console.log(req.body.campground);
-    // res.send('It works!!!')
+    
 }))
 
 app.delete('/campgrounds/:id', catchAsync(async (req, res) => {
