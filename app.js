@@ -106,6 +106,20 @@ app.delete('/campgrounds/:id', catchAsync(async (req, res) => {
     res.redirect('/campgrounds')
 }))
 
+// Creating a nested route for adding reviews for a campground
+app.post('/campgrounds/:id/reviews', catchAsync( async (req, res) => {
+    const campground = await Campground.findById(req.params.id);
+
+    // Instantiating a new review
+    const review = new Review(req.body.review);
+   
+    campground.reviews.push(review);
+    await review.save();
+    await campground.save();
+    res.redirect(`/campgrounds/${campground._id}`);
+    // res.send('You posted a review!!!')
+}))
+
 // app.get('/makecampground', async (req, res) => {
 //     const camp = new Campground({title: 'My Backyard', description: 'Cheap Camping'});
 //     await camp.save();
