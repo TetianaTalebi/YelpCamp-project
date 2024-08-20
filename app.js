@@ -11,6 +11,9 @@ const methodOverride = require('method-override');
 // Require Campground model from models/campground.js
 const Campground = require('./models/campground');
 
+// Require Review model from models/review.js
+const Review = require('./models/review');
+
 // Create a mongoose.connection shortcut
 const db = mongoose.connection;
 
