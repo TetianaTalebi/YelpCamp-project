@@ -58,6 +58,16 @@ const validateCampground = (req, res, next) => {
     } else {next()}
 }
 
+// Setting up a middleware for Joi validation of campground reviews
+const validateReview = (req, res, next) => {
+    const {error} = reviewSchema.validate(req.body);
+
+    if (error){
+        const msg = error.details.map(el => el.message).join(',');
+        throw new ExpressError(msg, 400)
+    } else {next()}
+}
+
 app.get('/', (req, res) => {
     res.render('home')
     // res.send('Hello from YelpCamp!')
