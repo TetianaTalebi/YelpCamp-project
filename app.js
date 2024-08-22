@@ -120,7 +120,7 @@ app.delete('/campgrounds/:id', catchAsync(async (req, res) => {
 }))
 
 // Creating a nested route for adding reviews for a campground
-app.post('/campgrounds/:id/reviews', catchAsync( async (req, res) => {
+app.post('/campgrounds/:id/reviews', validateReview, catchAsync( async (req, res) => {
     const campground = await Campground.findById(req.params.id);
 
     // Instantiating a new review
