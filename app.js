@@ -133,6 +133,15 @@ app.post('/campgrounds/:id/reviews', validateReview, catchAsync( async (req, res
     // res.send('You posted a review!!!')
 }))
 
+// Adding a delete route for campground reviews
+app.delete('/campgrounds/:id/reviews/:reviewId', catchAsync( async (req, res) => {
+    const {id, reviewId} = req.params;
+    await Campground.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
+    await Review.findByIdAndDelete(reviewId);
+    res.redirect(`/campgrounds/${id}`);
+    // res.send('Delete me!!!')
+}))
+
 // app.get('/makecampground', async (req, res) => {
 //     const camp = new Campground({title: 'My Backyard', description: 'Cheap Camping'});
 //     await camp.save();
