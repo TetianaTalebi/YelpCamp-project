@@ -22,8 +22,9 @@ const CampgroundSchema = new Schema({
 // deletes all related to that campground reviews
 
 CampgroundSchema.post('findOneAndDelete', async function (campground) {
-    console.log("The following campground has been deleted:");
-    console.log(campground);
+    if (campground.reviews.length) {
+        await Review.deleteMany({_id: {$in: campground.reviews}});
+    }
 })
 
 // Exporting our Campground model
