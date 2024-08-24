@@ -1,5 +1,6 @@
 const { ref } = require('joi');
 const mongoose = require('mongoose');
+const Review = require('./review');
 
 // Making a shortcut for mongoose.Schema
 const Schema = mongoose.Schema;
@@ -16,6 +17,14 @@ const CampgroundSchema = new Schema({
         ref: 'Review'
     }]
 });
+
+// Defining a Mongoose Middleware that after deleting a certain campground 
+// deletes all related to that campground reviews
+
+CampgroundSchema.post('findOneAndDelete', async function (campground) {
+    console.log("The following campground has been deleted:");
+    console.log(campground);
+})
 
 // Exporting our Campground model
 module.exports = mongoose.model('Campground', CampgroundSchema);
