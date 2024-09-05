@@ -7,6 +7,9 @@ const ExpressError = require('../utils/expresserror');
 // Require Campground model from models/campground.js
 const Campground = require('../models/campground');
 
+// Require Campground Joi Schema
+const {campgroundSchema} = require('../schemas');
+
 // A middleware for Joi validation of campgrounds
 const validateCampground = (req, res, next) => {
 
