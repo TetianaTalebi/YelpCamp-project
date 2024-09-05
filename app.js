@@ -14,6 +14,9 @@ const Campground = require('./models/campground');
 // Require Review model from models/review.js
 const Review = require('./models/review');
 
+// Require campground routes
+const campgrounds = require('./routes/campgrounds');
+
 // Create a mongoose.connection shortcut
 const db = mongoose.connection;
 
@@ -47,6 +50,9 @@ app.use(express.urlencoded({extended: true}));
 // that lets us use HTTP verbs such as PUT or DELETE 
 // in places where the client doesn't support it.
 app.use(methodOverride('_method')); // '_method' will be used as a query string
+
+// A middleware that specifies what prefix is used for campground routes
+app.use('/campgrounds', campgrounds);
 
 const validateCampground = (req, res, next) => {
 
