@@ -71,38 +71,6 @@ app.get('/', (req, res) => {
     // res.send('Hello from YelpCamp!')
 })
 
-
-
-
-// Creating a nested route for adding reviews for a campground
-app.post('/campgrounds/:id/reviews', validateReview, catchAsync( async (req, res) => {
-    const campground = await Campground.findById(req.params.id);
-
-    // Instantiating a new review
-    const review = new Review(req.body.review);
-   
-    campground.reviews.push(review);
-    await review.save();
-    await campground.save();
-    res.redirect(`/campgrounds/${campground._id}`);
-    // res.send('You posted a review!!!')
-}))
-
-// Adding a delete route for campground reviews
-app.delete('/campgrounds/:id/reviews/:reviewId', catchAsync( async (req, res) => {
-    const {id, reviewId} = req.params;
-    await Campground.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
-    await Review.findByIdAndDelete(reviewId);
-    res.redirect(`/campgrounds/${id}`);
-    // res.send('Delete me!!!')
-}))
-
-// app.get('/makecampground', async (req, res) => {
-//     const camp = new Campground({title: 'My Backyard', description: 'Cheap Camping'});
-//     await camp.save();
-//     res.send(camp)
-// })
-
 app.all('*', (req, res, next) => {
     //This next is going to hit our next error handler middleware
     next(new ExpressError('Page Not Found', 404));
