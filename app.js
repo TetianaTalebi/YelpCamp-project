@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
-const {campgroundSchema, reviewSchema} = require('./schemas');
+const {reviewSchema} = require('./schemas');
 const catchAsync = require('./utils/catchasync');
 const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
@@ -54,15 +54,7 @@ app.use(methodOverride('_method')); // '_method' will be used as a query string
 // A middleware that specifies what prefix is used for campground routes
 app.use('/campgrounds', campgrounds);
 
-const validateCampground = (req, res, next) => {
 
-    const {error} = campgroundSchema.validate(req.body);
-
-    if (error){
-        const msg = error.details.map(el=>el.message).join(',');
-        throw new ExpressError(msg, 400)
-    } else {next()}
-}
 
 // Setting up a middleware for Joi validation of campground reviews
 const validateReview = (req, res, next) => {
