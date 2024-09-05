@@ -17,6 +17,9 @@ const Review = require('./models/review');
 // Require campground routes
 const campgrounds = require('./routes/campgrounds');
 
+// Require review routes
+const reviews = require('./routes/reviews');
+
 // Create a mongoose.connection shortcut
 const db = mongoose.connection;
 
