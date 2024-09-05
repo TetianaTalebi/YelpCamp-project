@@ -7,6 +7,17 @@ const ExpressError = require('../utils/expresserror');
 // Require Campground model from models/campground.js
 const Campground = require('../models/campground');
 
+// A middleware for Joi validation of campgrounds
+const validateCampground = (req, res, next) => {
+
+    const {error} = campgroundSchema.validate(req.body);
+
+    if (error){
+        const msg = error.details.map(el=>el.message).join(',');
+        throw new ExpressError(msg, 400)
+    } else {next()}
+}
+
 
 // A route for viewing all campgrounds
 router.get('/', catchAsync(async (req, res) => {
