@@ -1,6 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
+const catchAsync = require('../utils/catchasync');
+const ExpressError = require('../utils/expresserror');
+
+// Require Campground model from models/campground.js
+const Campground = require('../models/campground');
+
+
 // A route for viewing all campgrounds
 router.get('/', catchAsync(async (req, res) => {
 
