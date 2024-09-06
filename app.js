@@ -4,7 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const {reviewSchema} = require('./schemas');
-const catchAsync = require('./utils/catchasync');
+
 const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
 

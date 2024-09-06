@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const catchAsync = require('./utils/catchasync');
+
 // Creating a nested route for adding reviews for a campground
 router.post('/', validateReview, catchAsync( async (req, res) => {
     const campground = await Campground.findById(req.params.id);
