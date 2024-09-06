@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
-const {reviewSchema} = require('./schemas');
 const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
 
@@ -52,18 +51,6 @@ app.use('/campgrounds', campgrounds);
 
 // A middleware that specifies what prefix to use for review routes
 app.use('/campgrounds/:id/reviews', reviews);
-
-
-
-// Setting up a middleware for Joi validation of campground reviews
-const validateReview = (req, res, next) => {
-    const {error} = reviewSchema.validate(req.body);
-
-    if (error){
-        const msg = error.details.map(el => el.message).join(',');
-        throw new ExpressError(msg, 400)
-    } else {next()}
-}
 
 app.get('/', (req, res) => {
     res.render('home')
