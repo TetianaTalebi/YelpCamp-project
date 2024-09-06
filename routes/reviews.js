@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+// Require Campground model from models/campground.js
+const Campground = require('./models/campground');
+
+// Require Review model from models/review.js
+const Review = require('./models/review');
+
 const catchAsync = require('./utils/catchasync');
 
 // Creating a nested route for adding reviews for a campground
