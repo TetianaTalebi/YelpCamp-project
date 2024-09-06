@@ -57,6 +57,9 @@ app.use(methodOverride('_method')); // '_method' will be used as a query string
 // A middleware that specifies what prefix is used for campground routes
 app.use('/campgrounds', campgrounds);
 
+// A middleware that specifies what prefix to use for review routes
+app.use('/campgrounds/:id/reviews', reviews);
+
 
 
 // Setting up a middleware for Joi validation of campground reviews
