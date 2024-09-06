@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-const ExpressError = require('./utils/expresserror');
+const ExpressError = require('../utils/expresserror');
 
 // Require Campground model from models/campground.js
-const Campground = require('./models/campground');
+const Campground = require('../models/campground');
 
 // Require Review model from models/review.js
-const Review = require('./models/review');
+const Review = require('../models/review');
 
 // Require Review Joi Schema
-const {reviewSchema} = require('./schemas');
+const { reviewSchema } = require('../schemas');
 
-const catchAsync = require('./utils/catchasync');
+const catchAsync = require('../utils/catchasync');
 
 // Setting up a middleware for Joi validation of campground reviews
 const validateReview = (req, res, next) => {
