@@ -47,7 +47,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method')); // '_method' will be used as a query string
 
 // Telling Express to serve 'public' directory
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // A middleware that specifies what prefix is used for campground routes
 app.use('/campgrounds', campgrounds);
