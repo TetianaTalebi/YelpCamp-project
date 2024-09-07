@@ -46,6 +46,9 @@ app.use(express.urlencoded({extended: true}));
 // in places where the client doesn't support it.
 app.use(methodOverride('_method')); // '_method' will be used as a query string
 
+// Telling Express to serve 'public' directory
+app.use(express.static('public'));
+
 // A middleware that specifies what prefix is used for campground routes
 app.use('/campgrounds', campgrounds);
 
