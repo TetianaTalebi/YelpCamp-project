@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
+const session = require('express-session');
 const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
 
@@ -48,6 +49,14 @@ app.use(methodOverride('_method')); // '_method' will be used as a query string
 
 // Telling Express to serve 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+const sessionConfig = {
+    secret: 'thisshouldbeabettersecret',
+    resave: false,
+    saveUninitialized: true
+}
+
+app.use(session(sessionConfig));
 
 // A middleware that specifies what prefix is used for campground routes
 app.use('/campgrounds', campgrounds);
