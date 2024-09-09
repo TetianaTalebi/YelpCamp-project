@@ -4,6 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
+const flash = require('connect-flash');
 const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
 
@@ -49,6 +50,9 @@ app.use(methodOverride('_method')); // '_method' will be used as a query string
 
 // Telling Express to serve 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Telling Express to use 'Connect-Flash' Node package
+app.use(flash());
 
 const sessionConfig = {
     secret: 'thisshouldbeabettersecret',
