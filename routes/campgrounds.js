@@ -51,7 +51,7 @@ router.get('/:id', catchAsync(async (req, res) => {
     const {id} = req.params;
     const campground = await Campground.findById(id).populate('reviews');
     // console.log(campground)
-    res.render('campgrounds/show', { campground, msg: req.flash('success') })
+    res.render('campgrounds/show', { campground })
 }))
 
 // A route that renders a form for editing a particular campground
