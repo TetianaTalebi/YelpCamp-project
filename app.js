@@ -67,6 +67,13 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 
+// This middleware allows us to have access to req.flash on every single request
+// We have access to res.locals in our templates automatically.
+app.use((req, res, next) => {
+    res.locals.success = req.flash('success');
+    next();
+});
+
 // A middleware that specifies what prefix is used for campground routes
 app.use('/campgrounds', campgrounds);
 
