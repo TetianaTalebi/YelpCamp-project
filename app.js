@@ -2,6 +2,11 @@ const express = require('express');
 
 const path = require('path');
 const mongoose = require('mongoose');
+
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+
+
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -66,6 +71,10 @@ const sessionConfig = {
 };
 
 app.use(session(sessionConfig));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 // This middleware allows us to have access to req.flash on every single request
 // We have access to res.locals in our templates automatically.
