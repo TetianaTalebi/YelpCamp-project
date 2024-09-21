@@ -96,6 +96,13 @@ app.use((req, res, next) => {
     next();
 });
 
+// Making a route where the creation of a new user is hardcoded
+app.get('/fakeUser', async (req, res) => {
+    const user = new User({email: '123@123.com', username: 'Rosa'});
+    const newUser = await User.register(user, 'notagoodpassword');
+    res.send(newUser);
+})
+
 // A middleware that specifies what prefix is used for campground routes
 app.use('/campgrounds', campgrounds);
 
