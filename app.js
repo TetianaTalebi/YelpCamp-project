@@ -77,8 +77,16 @@ app.use(passport.session());
 
 // Tell passport to use a LocalStrategy
 // The authenticate method for LocalStrategy locates on a User Model
+
+// authenticate(), serializeUser(), deserializeUser() are methods on a User Model 
+// that were added automatically by a plugin passportLocalMongoose
 passport.use(new LocalStrategy(User.authenticate()));
 
+// This refers to how a user is stored on a session
+passport.serializeUser(User.serializeUser());
+
+// This refers to how a user is got out of a session
+passport.deserializeUser(User.deserializeUser());
 
 // This middleware allows us to have access to req.flash on every single request
 // We have access to res.locals in our templates automatically.
