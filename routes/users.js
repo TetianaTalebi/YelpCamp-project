@@ -29,4 +29,23 @@ router.get('/login', (req, res)=>{
     res.render('users/login');
 })
 
+router.post('/login', 
+
+    // This middleware is provided by Passport Node package
+    passport.authenticate( 
+        // Specifying what strategy is used
+        'local', 
+        {
+            // This option specifies to flash a message automatically
+            failureFlash: true, 
+
+            // To redirect if there is an error
+            failureRedirect: '/login'
+        }), 
+        (req, res)=>{
+            // If a passport middleware is passed successfully this code will run
+            req.flash('success', 'Welcome back!');
+            res.redirect('/campgrounds');
+})
+
 module.exports = router;
