@@ -17,10 +17,10 @@ const methodOverride = require('method-override');
 const userRoutes = require('./routes/users');
 
 // Require campground routes
-const campgrounds = require('./routes/campgrounds');
+const campgroundRoutes = require('./routes/campgrounds');
 
 // Require review routes
-const reviews = require('./routes/reviews');
+const reviewRoutes = require('./routes/reviews');
 
 // Create a mongoose.connection shortcut
 const db = mongoose.connection;
@@ -110,10 +110,10 @@ app.get('/fakeUser', async (req, res) => {
 app.use('/', userRoutes);
 
 // A middleware that specifies what prefix is used for campground routes
-app.use('/campgrounds', campgrounds);
+app.use('/campgrounds', campgroundRoutes);
 
 // A middleware that specifies what prefix to use for review routes
-app.use('/campgrounds/:id/reviews', reviews);
+app.use('/campgrounds/:id/reviews', reviewRoutes);
 
 app.get('/', (req, res) => {
     res.render('home')
