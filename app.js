@@ -13,6 +13,9 @@ const flash = require('connect-flash');
 const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
 
+// Require user routes
+const userRoutes = require('./routes/users');
+
 // Require campground routes
 const campgrounds = require('./routes/campgrounds');
 
@@ -102,6 +105,9 @@ app.get('/fakeUser', async (req, res) => {
     const newUser = await User.register(user, 'notagoodpassword');
     res.send(newUser);
 })
+
+// A middleware that specifies what prefix is used for user routes
+app.use('/', userRoutes);
 
 // A middleware that specifies what prefix is used for campground routes
 app.use('/campgrounds', campgrounds);
