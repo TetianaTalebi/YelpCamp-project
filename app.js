@@ -94,6 +94,7 @@ passport.deserializeUser(User.deserializeUser());
 // This middleware allows us to have access to req.flash on every single request
 // We have access to res.locals in our templates automatically.
 app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();
