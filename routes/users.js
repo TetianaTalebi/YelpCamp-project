@@ -49,4 +49,16 @@ router.post('/login',
             res.redirect('/campgrounds');
 })
 
+router.get('/logout', (req, res) => {
+    // Passport provides .logout() method that is automatically added on req object
+    req.logout( function (err){
+        if(err){
+            req.flash('error', err.message);
+            return res.redirect('/campgrounds');
+        };
+        req.flash('success', 'Goodbye!');
+        res.redirect('/campgrounds');
+    });  
+})
+
 module.exports = router;
