@@ -34,6 +34,15 @@ router.get('/', catchAsync(async (req, res) => {
 
 // A route that renders a form for creating a new campground
 router.get('/new', (req, res) => {
+
+    // A route for creating a new campground is protected
+    // A user cannot create a new campground unless he is logged in
+    // .isAuthenticated() is Passport Node package helper method
+    // This method is added automatically on req object
+    if(!req.isAuthenticated()){
+        req.flash('error', 'You must be signed in!');
+        return res.redirect('/login');
+    }
     res.render('campgrounds/new');
 })
 
