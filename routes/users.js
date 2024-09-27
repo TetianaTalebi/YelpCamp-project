@@ -37,6 +37,9 @@ router.get('/login', (req, res)=>{
 
 router.post('/login', 
 
+    // this middleware saves the returnTo value from session to res.locals
+    storeReturnTo,
+
     // This middleware is provided by Passport Node package
     passport.authenticate( 
         // Specifying what strategy is used
@@ -51,9 +54,7 @@ router.post('/login',
         (req, res)=>{
             // If a passport middleware is passed successfully this code will run
             req.flash('success', 'Welcome back!');
-            const redirectUrl = req.session.returnTo || '/campgrounds';
-            console.log(`redirectUrl = ${redirectUrl}`)
-            // delete req.session.returnTo;
+            const redirectUrl = res.locals.returnTo || '/campgrounds';
             res.redirect(redirectUrl);
 })
 
