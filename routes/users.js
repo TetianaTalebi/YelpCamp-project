@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const catchAsync = require('../utils/catchasync');
 const User = require('../models/user');
+const { storeReturnTo } = require('../middleware');
 
 // This route gives a registration form for a user
 router.get('/register', (req, res)=>{
@@ -50,7 +51,10 @@ router.post('/login',
         (req, res)=>{
             // If a passport middleware is passed successfully this code will run
             req.flash('success', 'Welcome back!');
-            res.redirect('/campgrounds');
+            const redirectUrl = req.session.returnTo || '/campgrounds';
+            console.log(`redirectUrl = ${redirectUrl}`)
+            // delete req.session.returnTo;
+            res.redirect(redirectUrl);
 })
 
 router.get('/logout', (req, res) => {
