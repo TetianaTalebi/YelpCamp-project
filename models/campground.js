@@ -11,6 +11,10 @@ const CampgroundSchema = new Schema({
     price: Number,
     description: String,
     location: String,
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     // Campground and Review have One-to-Many Mongo DB relationship
     reviews: [{
         type: Schema.Types.ObjectId,
