@@ -5,6 +5,7 @@ module.exports.isLoggedIn = (req, res, next)=>{
     // .isAuthenticated() is Passport Node package helper method
     // This method is added automatically on req object
     if(!req.isAuthenticated()){
+        req.session.returnTo = req.originalUrl;
         req.flash('error', 'You must be signed in first!');
         return res.redirect('/login');
     }
