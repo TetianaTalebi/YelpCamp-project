@@ -49,6 +49,7 @@ const seedDB = async () => {
             image: 'https://picsum.photos/400?random=${Math.random()}',
             price,
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis saepe nulla rerum, sit perferendis cumque eos labore minima esse blanditiis assumenda maiores animi non commodi voluptatem eveniet eum quas molestiae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae velit odit libero facere soluta, magnam molestias rerum aspernatur perferendis possimus dolores voluptate repudiandae tempora provident incidunt cumque repellendus in adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            author: '66f0e0cfafa6e339ae846860',
             location: `${cities[randomCities].city}, ${cities[randomCities].state}`
 
         });
