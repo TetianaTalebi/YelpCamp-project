@@ -2,10 +2,10 @@
 const ExpressError = require('./utils/expresserror');
 
 // Require Campground Joi Schema
-const {campgroundSchema} = require('./schemas');
+const {campgroundSchema, reviewSchema} = require('./schemas');
 
 // Require Campground model from models/campground.js
-const Campground = require('../models/campground');
+const Campground = require('./models/campground');
 
 module.exports.isLoggedIn = (req, res, next)=>{
     
@@ -50,4 +50,14 @@ module.exports.isAuthor = async (req, res, next) => {
         return res.redirect(`/campgrounds/${id}`);
     }
     next();
+}
+
+// Setting up a middleware for Joi validation of campground reviews
+module.exports.validateReview = (req, res, next) => {
+    const {error} = reviewSchema.validate(req.body);
+
+    if (error){
+        const msg = error.details.map(el => el.message).join(',');
+        throw new ExpressError(msg, 400)
+    } else {next()}
 }

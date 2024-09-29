@@ -1,28 +1,15 @@
 const express = require('express');
 const router = express.Router({mergeParams: true});
 
-const ExpressError = require('../utils/expresserror');
-
 // Require Campground model from models/campground.js
 const Campground = require('../models/campground');
 
 // Require Review model from models/review.js
 const Review = require('../models/review');
 
-// Require Review Joi Schema
-const { reviewSchema } = require('../schemas');
-
 const catchAsync = require('../utils/catchasync');
 
-// Setting up a middleware for Joi validation of campground reviews
-const validateReview = (req, res, next) => {
-    const {error} = reviewSchema.validate(req.body);
-
-    if (error){
-        const msg = error.details.map(el => el.message).join(',');
-        throw new ExpressError(msg, 400)
-    } else {next()}
-}
+const {validateReview} = require('../middleware');
 
 // Creating a nested route for adding reviews for a campground
 router.post('/', validateReview, catchAsync( async (req, res) => {
