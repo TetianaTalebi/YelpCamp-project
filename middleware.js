@@ -1,3 +1,6 @@
+
+const ExpressError = require('./utils/expresserror');
+
 module.exports.isLoggedIn = (req, res, next)=>{
     
     // A middleware for some routes protection
