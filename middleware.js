@@ -19,3 +19,26 @@ module.exports.storeReturnTo = (req, res, next) => {
     }
     next();
 }
+
+// A middleware for Joi validation of campgrounds
+module.exports.validateCampground = (req, res, next) => {
+
+    const {error} = campgroundSchema.validate(req.body);
+
+    if (error){
+        const msg = error.details.map(el=>el.message).join(',');
+        throw new ExpressError(msg, 400)
+    } else {next()}
+}
+
+// A middleware that checks whether a logged-in user is the same as a user who created a campground 
+// (i.e. it checks whether a logged-in user is an author of a campground)
+module.exports.isAuthor = async (req, res, next) => {
+    const {id} = req.params;
+    const camp = await Campground.findById(id);
+    if (!camp.author.equals(req.user._id)){
+        req.flash('error', "You don't have permission to do thet!");
+        return res.redirect(`/campgrounds/${id}`);
+    }
+    next();
+}

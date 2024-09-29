@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {isLoggedIn} = require('../middleware');
+const {isLoggedIn, validateCampground, isAuthor} = require('../middleware');
 
 const catchAsync = require('../utils/catchasync');
 const ExpressError = require('../utils/expresserror');
@@ -11,30 +11,6 @@ const Campground = require('../models/campground');
 
 // Require Campground Joi Schema
 const {campgroundSchema} = require('../schemas');
-
-// A middleware for Joi validation of campgrounds
-const validateCampground = (req, res, next) => {
-
-    const {error} = campgroundSchema.validate(req.body);
-
-    if (error){
-        const msg = error.details.map(el=>el.message).join(',');
-        throw new ExpressError(msg, 400)
-    } else {next()}
-}
-
-// A middleware that checks whether a logged-in user is the same as a user who created a campground 
-// (i.e. it checks whether a logged-in user is an author of a campground)
-const isAuthor = async (req, res, next) => {
-    const {id} = req.params;
-    const camp = await Campground.findById(id);
-    if (!camp.author.equals(req.user._id)){
-        req.flash('error', "You don't have permission to do thet!");
-        return res.redirect(`/campgrounds/${id}`);
-    }
-    next();
-}
-
 
 // A route for viewing all campgrounds
 router.get('/', catchAsync(async (req, res) => {
