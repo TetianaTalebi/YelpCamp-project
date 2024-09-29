@@ -49,15 +49,7 @@ router.get('/:id', catchAsync(async (req, res) => {
 }))
 
 // A route that renders a form for editing a particular campground
-router.get('/:id/edit', isLoggedIn, catchAsync(async (req, res) => {
-
-    const {id} = req.params;
-
-    const camp = await Campground.findById(id);
-    if (!camp.author.equals(req.user._id)){
-        req.flash('error', 'You do not have permission to do that!');
-        return res.redirect(`/campgrounds/${id}`);
-    }
+router.get('/:id/edit', isLoggedIn, isAuthor, catchAsync(async (req, res) => {
 
     const campground = await Campground.findById(req.params.id);
     if (!campground){
@@ -68,15 +60,8 @@ router.get('/:id/edit', isLoggedIn, catchAsync(async (req, res) => {
 }))
 
 // A route that posts an update for a particular campground into a database
-router.put('/:id', isLoggedIn, validateCampground, catchAsync(async (req, res) => {
+router.put('/:id', isLoggedIn, isAuthor, validateCampground, catchAsync(async (req, res) => {
     const {id} = req.params;
-
-    const camp = await Campground.findById(id);
-    if (!camp.author.equals(req.user._id)){
-        req.flash('error', 'You do not have permission to do that!');
-        return res.redirect(`/campgrounds/${id}`);
-    }
-
     const campground = await Campground.findByIdAndUpdate(id, req.body.campground);
     req.flash('success', 'Successfully updated campground!!!');
     res.redirect(`/campgrounds/${campground._id}`);
@@ -86,13 +71,6 @@ router.put('/:id', isLoggedIn, validateCampground, catchAsync(async (req, res) =
 // A route that deletes a particular campground from a database
 router.delete('/:id', isLoggedIn, isAuthor, catchAsync(async (req, res) => {
     const {id} = req.params;
-
-    const camp = await Campground.findById(id);
-    if (!camp.author.equals(req.user._id)){
-        req.flash('error', 'You do not have permission to do that!');
-        return res.redirect(`/campgrounds/${id}`);
-    }
-
     await Campground.findByIdAndDelete(id);
     req.flash('success', 'Successfully deleted campground!!!');
     res.redirect('/campgrounds')
