@@ -17,6 +17,7 @@ router.post('/', isLoggedIn, validateReview, catchAsync( async (req, res) => {
 
     // Instantiating a new review
     const review = new Review(req.body.review);
+    review.author = req.user._id;
    
     campground.reviews.push(review);
     await review.save();
