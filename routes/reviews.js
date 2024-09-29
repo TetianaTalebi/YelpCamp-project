@@ -9,10 +9,10 @@ const Review = require('../models/review');
 
 const catchAsync = require('../utils/catchasync');
 
-const {validateReview} = require('../middleware');
+const {validateReview, isLoggedIn} = require('../middleware');
 
 // Creating a nested route for adding reviews for a campground
-router.post('/', validateReview, catchAsync( async (req, res) => {
+router.post('/', isLoggedIn, validateReview, catchAsync( async (req, res) => {
     const campground = await Campground.findById(req.params.id);
 
     // Instantiating a new review
