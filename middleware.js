@@ -1,6 +1,9 @@
 
 const ExpressError = require('./utils/expresserror');
 
+// Require Campground Joi Schema
+const {campgroundSchema} = require('./schemas');
+
 module.exports.isLoggedIn = (req, res, next)=>{
     
     // A middleware for some routes protection

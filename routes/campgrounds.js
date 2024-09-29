@@ -8,9 +8,6 @@ const catchAsync = require('../utils/catchasync');
 // Require Campground model from models/campground.js
 const Campground = require('../models/campground');
 
-// Require Campground Joi Schema
-const {campgroundSchema} = require('../schemas');
-
 // A route for viewing all campgrounds
 router.get('/', catchAsync(async (req, res) => {
 
