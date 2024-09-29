@@ -39,6 +39,8 @@
 
         <div class="col-6">
           <h2>Leave a Review</h2>
+
+          <% if (currentUser) { %>
             <form class="mb-3 validated-form" novalidate action="/campgrounds/<%= campground._id %>/reviews" method="POST">
 
               <div class="mb-3">
@@ -60,6 +62,8 @@
               <button class="btn btn-success">Add A Review</button>
 
             </form>
+          <% } %>
+
 
             <% for (let review of campground.reviews) { %>
 
