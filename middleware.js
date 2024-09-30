@@ -7,6 +7,9 @@ const {campgroundSchema, reviewSchema} = require('./schemas');
 // Require Campground model from models/campground.js
 const Campground = require('./models/campground');
 
+// Require Review model from models/review.js
+const Review = require('./models/review');
+
 module.exports.isLoggedIn = (req, res, next)=>{
     
     // A middleware for some routes protection
@@ -47,6 +50,18 @@ module.exports.isAuthor = async (req, res, next) => {
     const camp = await Campground.findById(id);
     if (!camp.author.equals(req.user._id)){
         req.flash('error', "You don't have permission to do thet!");
+        return res.redirect(`/campgrounds/${id}`);
+    }
+    next();
+}
+
+// A middleware that checks whether a logged-in user is a review author
+module.exports.isReviewAuthor = async (req, res, next) => {
+    // Destructuring a campground id and a review id from req.params object
+    const {id, reviewId} = req.params;
+    const review = await Review.findById(reviewId);
+    if(!review.author.equals(req.user._id)){
+        req.flash('error', "You don't have permission to do that!");
         return res.redirect(`/campgrounds/${id}`);
     }
     next();
