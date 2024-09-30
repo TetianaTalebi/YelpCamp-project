@@ -9,7 +9,7 @@ const Review = require('../models/review');
 
 const catchAsync = require('../utils/catchasync');
 
-const {validateReview, isLoggedIn} = require('../middleware');
+const {validateReview, isLoggedIn, isReviewAuthor} = require('../middleware');
 
 // Creating a nested route for adding reviews for a campground
 router.post('/', isLoggedIn, validateReview, catchAsync( async (req, res) => {
@@ -27,7 +27,7 @@ router.post('/', isLoggedIn, validateReview, catchAsync( async (req, res) => {
 }))
 
 // Adding a delete route for campground reviews
-router.delete('/:reviewId', isLoggedIn, catchAsync( async (req, res) => {
+router.delete('/:reviewId', isLoggedIn, isReviewAuthor, catchAsync( async (req, res) => {
     const {id, reviewId} = req.params;
     await Campground.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
     await Review.findByIdAndDelete(reviewId);
