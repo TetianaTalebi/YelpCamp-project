@@ -3,12 +3,11 @@ const router = express.Router();
 const passport = require('passport');
 const catchAsync = require('../utils/catchasync');
 const User = require('../models/user');
+const users = require('../controllers/users');
 const { storeReturnTo } = require('../middleware');
 
 // This route gives a registration form for a user
-router.get('/register', (req, res)=>{
-    res.render('users/register');
-})
+router.get('/register', users.renderRegister);
 
 router.post('/register', catchAsync( async (req, res, next) =>{
     // In order a user has much better experience, 
