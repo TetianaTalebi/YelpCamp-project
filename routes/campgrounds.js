@@ -12,12 +12,10 @@ const catchAsync = require('../utils/catchasync');
 const Campground = require('../models/campground');
 
 // A route for viewing all campgrounds
-router.get('/', catchAsync(campgrounds.index))
+router.get('/', catchAsync(campgrounds.index));
 
 // A route that renders a form for creating a new campground
-router.get('/new', isLoggedIn, (req, res) => {
-    res.render('campgrounds/new');
-})
+router.get('/new', isLoggedIn, campgrounds.renderNewForm);
 
 // A route for posting a new campground into a database
 router.post('/', isLoggedIn, validateCampground, catchAsync(async (req, res) => {

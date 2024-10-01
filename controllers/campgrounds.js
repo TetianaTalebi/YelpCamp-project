@@ -7,3 +7,8 @@ module.exports.index = async (req, res) => {
     // Pass the found data to our template
     res.render('campgrounds/index', {campgrounds});
 }
+
+// Renders a form for creating a new campground
+module.exports.renderNewForm = (req, res) => {
+    res.render('campgrounds/new');
+}
