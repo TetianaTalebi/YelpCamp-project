@@ -30,11 +30,6 @@ router.get('/:id/edit', isLoggedIn, isAuthor, catchAsync(campgrounds.renderEditF
 router.put('/:id', isLoggedIn, isAuthor, validateCampground, catchAsync(campgrounds.updateCampground));
 
 // A route that deletes a particular campground from a database
-router.delete('/:id', isLoggedIn, isAuthor, catchAsync(async (req, res) => {
-    const {id} = req.params;
-    await Campground.findByIdAndDelete(id);
-    req.flash('success', 'Successfully deleted campground!!!');
-    res.redirect('/campgrounds')
-}))
+router.delete('/:id', isLoggedIn, isAuthor, catchAsync(campgrounds.deleteCampground));
 
 module.exports = router;
