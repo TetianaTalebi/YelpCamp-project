@@ -18,14 +18,7 @@ router.get('/', catchAsync(campgrounds.index));
 router.get('/new', isLoggedIn, campgrounds.renderNewForm);
 
 // A route for posting a new campground into a database
-router.post('/', isLoggedIn, validateCampground, catchAsync(async (req, res) => {
-    
-    const campground = new Campground(req.body.campground);
-    campground.author = req.user._id;
-    await campground.save();
-    req.flash('success', 'Successfully made a new campground!!!');
-    res.redirect(`/campgrounds/${campground._id}`)
-}))
+router.post('/', isLoggedIn, validateCampground, catchAsync(campgrounds.createCampground));
 
 // A route for viewing a particular campground
 router.get('/:id', catchAsync(async (req, res) => {

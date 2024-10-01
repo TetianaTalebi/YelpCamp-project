@@ -12,3 +12,12 @@ module.exports.index = async (req, res) => {
 module.exports.renderNewForm = (req, res) => {
     res.render('campgrounds/new');
 }
+
+// Creates and save a new campground in a database
+module.exports.createCampground = async (req, res) => {
+    const campground = new Campground(req.body.campground);
+    campground.author = req.user._id;
+    await campground.save();
+    req.flash('success', 'Successfully made a new campground!!!');
+    res.redirect(`/campgrounds/${campground._id}`)
+}
