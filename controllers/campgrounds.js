@@ -42,3 +42,11 @@ module.exports.renderEditForm = async (req, res) => {
     }
     res.render('campgrounds/edit', {campground})
 }
+
+// Updates details about a campground in a database
+module.exports.updateCampground = async (req, res) => {
+    const {id} = req.params;
+    const campground = await Campground.findByIdAndUpdate(id, req.body.campground);
+    req.flash('success', 'Successfully updated campground!!!');
+    res.redirect(`/campgrounds/${campground._id}`);
+}
