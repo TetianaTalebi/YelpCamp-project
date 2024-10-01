@@ -21,15 +21,7 @@ router.get('/new', isLoggedIn, campgrounds.renderNewForm);
 router.post('/', isLoggedIn, validateCampground, catchAsync(campgrounds.createCampground));
 
 // A route for viewing a particular campground
-router.get('/:id', catchAsync(async (req, res) => {
-    const {id} = req.params;
-    const campground = await Campground.findById(id).populate({path: 'reviews', populate: {path: 'author'}}).populate('author');
-    if (!campground){
-        req.flash('error', 'Cannot find that campground!!!');
-        return res.redirect('/campgrounds');
-    }
-    res.render('campgrounds/show', { campground })
-}))
+router.get('/:id', catchAsync(campgrounds.showCampground));
 
 // A route that renders a form for editing a particular campground
 router.get('/:id/edit', isLoggedIn, isAuthor, catchAsync(async (req, res) => {

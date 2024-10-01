@@ -21,3 +21,14 @@ module.exports.createCampground = async (req, res) => {
     req.flash('success', 'Successfully made a new campground!!!');
     res.redirect(`/campgrounds/${campground._id}`)
 }
+
+// Displays details about a particular campground
+module.exports.showCampground = async (req, res) => {
+    const {id} = req.params;
+    const campground = await Campground.findById(id).populate({path: 'reviews', populate: {path: 'author'}}).populate('author');
+    if (!campground){
+        req.flash('error', 'Cannot find that campground!!!');
+        return res.redirect('/campgrounds');
+    }
+    res.render('campgrounds/show', { campground })
+}
