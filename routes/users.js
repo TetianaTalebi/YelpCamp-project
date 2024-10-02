@@ -12,9 +12,8 @@ router.get('/register', users.renderRegister);
 // This route registers a user
 router.post('/register', catchAsync(users.register));
 
-router.get('/login', (req, res)=>{
-    res.render('users/login');
-})
+// This route renders a login form
+router.get('/login', users.renderLogin);
 
 router.post('/login', 
 
