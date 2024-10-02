@@ -41,6 +41,7 @@ module.exports.login = (req, res)=>{
     res.redirect(redirectUrl);
 }
 
+// Logs a user out
 module.exports.logout = (req, res) => {
     // Passport provides .logout() method that is automatically added on req object
     req.logout( function (err){

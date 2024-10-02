@@ -34,6 +34,7 @@ router.post('/login',
         // This controller function logs a user in
         users.login);
 
+// This route logs a user out
 router.get('/logout', users.logout);
 
 module.exports = router;
