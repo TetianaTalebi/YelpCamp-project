@@ -40,3 +40,15 @@ module.exports.login = (req, res)=>{
     const redirectUrl = res.locals.returnTo || '/campgrounds';
     res.redirect(redirectUrl);
 }
+
+module.exports.logout = (req, res) => {
+    // Passport provides .logout() method that is automatically added on req object
+    req.logout( function (err){
+        if(err){
+            req.flash('error', err.message);
+            return res.redirect('/campgrounds');
+        };
+        req.flash('success', 'Goodbye!');
+        res.redirect('/campgrounds');
+    });  
+}
