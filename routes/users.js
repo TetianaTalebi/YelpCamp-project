@@ -31,12 +31,8 @@ router.post('/login',
             // To redirect if there is an error
             failureRedirect: '/login'
         }), 
-        (req, res)=>{
-            // If a passport middleware is passed successfully this code will run
-            req.flash('success', 'Welcome back!');
-            const redirectUrl = res.locals.returnTo || '/campgrounds';
-            res.redirect(redirectUrl);
-})
+        // This controller function logs a user in
+        users.login);
 
 router.get('/logout', (req, res) => {
     // Passport provides .logout() method that is automatically added on req object

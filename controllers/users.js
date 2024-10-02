@@ -32,3 +32,11 @@ module.exports.register = async (req, res, next) =>{
 module.exports.renderLogin = (req, res)=>{
     res.render('users/login');
 }
+
+// Logs a user in
+module.exports.login = (req, res)=>{
+    // If a passport middleware is passed successfully this code will run
+    req.flash('success', 'Welcome back!');
+    const redirectUrl = res.locals.returnTo || '/campgrounds';
+    res.redirect(redirectUrl);
+}
