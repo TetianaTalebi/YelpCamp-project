@@ -2,21 +2,20 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const catchAsync = require('../utils/catchasync');
-const User = require('../models/user');
 const users = require('../controllers/users');
 const { storeReturnTo } = require('../middleware');
 
+router.route('/register')
 // This route gives a registration form for a user
-router.get('/register', users.renderRegister);
-
+.get(users.renderRegister)
 // This route registers a user
-router.post('/register', catchAsync(users.register));
+.post(catchAsync(users.register));
 
+router.route('/login')
 // This route renders a login form
-router.get('/login', users.renderLogin);
-
-router.post('/login', 
-
+.get(users.renderLogin)
+// This route logs a user in
+.post( 
     // this middleware saves the returnTo value from session to res.locals
     storeReturnTo,
 
