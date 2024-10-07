@@ -46,7 +46,21 @@ const seedDB = async () => {
         let randomCities = Math.floor(Math.random()*(cities.length));
         const camp = new Campground({
             title: `${sample(descriptors)} ${sample(places)}`,
-            image: 'https://picsum.photos/400?random=${Math.random()}',
+            images: [
+                {
+                    url:'https://res.cloudinary.com/dljmlxtmx/image/upload/v1728274651/YelpCamp/ldjs8sxrmnsxy0jbrpzc.jpg',
+                    filename: 'YelpCamp/ldjs8sxrmnsxy0jbrpzc'
+                },{
+                    url: 'https://res.cloudinary.com/dljmlxtmx/image/upload/v1728274651/YelpCamp/rglqq3sjus1rszypyxqt.jpg',
+                    filename: 'YelpCamp/rglqq3sjus1rszypyxqt'
+                },{
+                    url: 'https://res.cloudinary.com/dljmlxtmx/image/upload/v1728274651/YelpCamp/ektmez6kxmfv2huod6sz.jpg',
+                    filename: 'YelpCamp/ektmez6kxmfv2huod6sz'
+                },{
+                    url: 'https://res.cloudinary.com/dljmlxtmx/image/upload/v1728274651/YelpCamp/a2erd1lfnq9naz8atwbo.jpg',
+                    filename: 'YelpCamp/a2erd1lfnq9naz8atwbo'
+                }
+            ],
             price,
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis saepe nulla rerum, sit perferendis cumque eos labore minima esse blanditiis assumenda maiores animi non commodi voluptatem eveniet eum quas molestiae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae velit odit libero facere soluta, magnam molestias rerum aspernatur perferendis possimus dolores voluptate repudiandae tempora provident incidunt cumque repellendus in adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
             author: '66f0e0cfafa6e339ae846860',
