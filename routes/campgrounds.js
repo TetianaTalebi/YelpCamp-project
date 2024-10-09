@@ -32,7 +32,7 @@ router.route('/:id')
 // A route for viewing a particular campground
 .get(catchAsync(campgrounds.showCampground))
 // A route that posts an update for a particular campground into a database
-.put(isLoggedIn, isAuthor, validateCampground, catchAsync(campgrounds.updateCampground))
+.put(isLoggedIn, isAuthor, upload.array('image'), validateCampground, catchAsync(campgrounds.updateCampground))
 // A route that deletes a particular campground from a database
 .delete(isLoggedIn, isAuthor, catchAsync(campgrounds.deleteCampground));
 
