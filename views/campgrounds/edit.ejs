@@ -3,7 +3,7 @@
     <div class="row">
         <h1 class="text-center">Edit Campground</h1>
         <div class="col-6 offset-3">
-            <form class="validated-form" action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate>
+            <form class="validated-form" enctype="multipart/form-data" action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate>
                 <div class="mb-3">
                     <label class="form-label" for="title">Title</label>
                     <input class="form-control" type="text" id="title" name="campground[title]" placeholder="Campground title" required value="<%= campground.title %>">
@@ -16,14 +16,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="image" class="form-label">Image URL</label>
-                    <input type="text" class="form-control" id="image" name="campground[image]" required value="<%= campground.image %>">
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                      Please provide campground image URL.
-                    </div>
+                    <label for="image" class="form-label">Add images</label>
+                    <input type="file" name="image" id="image" multiple>
                 </div>
 
                 <div class="mb-3">
