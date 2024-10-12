@@ -9,7 +9,10 @@ module.exports.campgroundSchema = Joi.object({
             description: Joi.string().required(),
             location: Joi.string().required()
         }
-    ).required()
+    ).required(),
+
+    // 'deleteImages' array is NOT a part of a campground !!!
+    deleteImages: Joi.array()
 });
 
 module.exports.reviewSchema = Joi.object({
