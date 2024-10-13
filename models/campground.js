@@ -5,12 +5,18 @@ const Review = require('./review');
 // Making a shortcut for mongoose.Schema
 const Schema = mongoose.Schema;
 
+// Define an image Schema, because the virtual property will be used on image url
+// Virtual property can only be set up on Schema
+const ImageSchema = new Schema({
+    url: String,
+    filename: String
+});
+
 const CampgroundSchema = new Schema({
     title: String,
-    images: [{
-            url: String,
-            filename: String
-        }],
+    images: [
+        ImageSchema
+    ],
     price: Number,
     description: String,
     location: String,
