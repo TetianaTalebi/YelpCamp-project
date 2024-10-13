@@ -51,6 +51,7 @@ module.exports.renderEditForm = async (req, res) => {
 // Updates details about a campground in a database
 module.exports.updateCampground = async (req, res) => {
     const {id} = req.params;
+    // console.log(req.body);
     const campground = await Campground.findByIdAndUpdate(id, req.body.campground);
 
     const imgs = req.files.map(f=>({
@@ -59,6 +60,18 @@ module.exports.updateCampground = async (req, res) => {
     }));
     campground.images.push(...imgs);
     await campground.save();
+
+    if(req.body.deleteImages){
+        await campground.updateOne( 
+
+            // $pull operator removes those image references 
+            // from campground.images array in MongoDB
+            // that have filenames listed in req.body.deleteImages array
+            {$pull:{images:{filename:{$in: req.body.deleteImages}}}}
+        );
+    }
+    // console.log(campground);
+
     req.flash('success', 'Successfully updated campground!!!');
     res.redirect(`/campgrounds/${campground._id}`);
 }
