@@ -21,7 +21,13 @@ module.exports.renderNewForm = (req, res) => {
 
 // Creates and save a new campground in a database
 module.exports.createCampground = async (req, res) => {
+
+    const geoData = await maptilerClient
+    .geocoding.forward(req.body.campground.location, {limit: 1});
+    
     const campground = new Campground(req.body.campground);
+    campground.geometry = geoData.features[0].geometry;
+    
     campground.images = req.files.map(f=>({
         url: f.path, 
         filename: f.filename
