@@ -1,4 +1,9 @@
 const Campground = require('../models/campground');
+
+const maptilerClient = require('@maptiler/client');
+maptilerClient.config.apiKey = process.env.MAPTILER_API_KEY;
+
+
 const { cloudinary } = require('../cloudinary');
 
 // This 'index' function finds all campgrounds and renders index page
