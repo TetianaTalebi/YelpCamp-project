@@ -2,7 +2,7 @@ maptilersdk.config.apiKey = maptilerApiKey;
 
 const map = new maptilersdk.Map({
     container: 'map',
-    style: maptilersdk.MapStyle.BRIGHT,
+    style: maptilersdk.MapStyle.BASIC,
 
     // starting position [longitude, latitude]
     center: campground.geometry.coordinates,
