@@ -35,10 +35,10 @@ const seedDB = async () => {
 
     await Campground.deleteMany({});
 
-    // Add 50 campgrounds to the db that have random location
+    // Add 750 campgrounds to the db that have random location
     // Choose location randomly from cities array
 
-    for (let i=0; i<50; i++){
+    for (let i=0; i<750; i++){
 
         // cities is an array that contains objects
         // we are generating a random number from 0 to cities.length-1
