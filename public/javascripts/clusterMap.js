@@ -32,16 +32,20 @@ map.on('load', function () {
                 10,
                 '#2196F3',
                 30,
-                '#3F51B5'
+                '#3F51B5',
+                100,
+                '#7400b8'
             ],
             'circle-radius': [
                 'step',
                 ['get', 'point_count'],
-                15,
-                10,
-                20,
-                30,
-                25
+                15, //radius
+                10, //qu-ty (radius 15 for qu-ties less than 10)
+                20, //radius
+                30, //qu-ty (radius 20 for qu-ties less than 30)
+                25, //radius
+                100, //qu-ty (radius 25 for qu-ties less than 100)
+                30 //radius 30 for qu-ties larger than or equal to 100
             ]
         }
     });
