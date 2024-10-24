@@ -49,7 +49,7 @@ const CampgroundSchema = new Schema({
 }, opts);
 
 CampgroundSchema.virtual('properties.popUpMarkup').get(function(){
-    return "I am a PopUp Text!!!"
+    return `<strong><a href="/campgrounds/${this._id}">${this.title}</a></strong>`
 });
 
 // Defining a Mongoose Middleware that after deleting a certain campground 
