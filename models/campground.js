@@ -46,6 +46,10 @@ const CampgroundSchema = new Schema({
     }]
 });
 
+CampgroundSchema.virtual('properties.popUpMarkup').get(function(){
+    return "I am a PopUp Text!!!"
+});
+
 // Defining a Mongoose Middleware that after deleting a certain campground 
 // deletes all related to that campground reviews
 
