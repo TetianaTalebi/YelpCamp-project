@@ -2,6 +2,8 @@ const { ref } = require('joi');
 const mongoose = require('mongoose');
 const Review = require('./review');
 
+const opts = {toJSON:{virtuals: true}};
+
 // Making a shortcut for mongoose.Schema
 const Schema = mongoose.Schema;
 
@@ -44,7 +46,7 @@ const CampgroundSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Review'
     }]
-});
+}, opts);
 
 CampgroundSchema.virtual('properties.popUpMarkup').get(function(){
     return "I am a PopUp Text!!!"
