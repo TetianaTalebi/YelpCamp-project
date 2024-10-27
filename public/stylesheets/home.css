@@ -2,7 +2,10 @@ body {
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url("https://res.cloudinary.com/dljmlxtmx/image/upload/v1728104316/YelpCamp/wbyo1y5nhsnxha4dit0j.jpg");
+    background-size: cover;
+    background-position: center;
 }
+
 .cover-container {
     max-width: 60vw;
    
