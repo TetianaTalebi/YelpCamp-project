@@ -65,7 +65,15 @@ app.use(methodOverride('_method')); // '_method' will be used as a query string
 // Telling Express to serve 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(mongoSanitize());
+// Replace the prohibited characters '$' and '.' with '_' in
+// - req.body
+// - req.params
+// - req.headers
+// - req.query
+app.use(mongoSanitize({
+        replaceWith: '_',
+    }),
+);
 
 // Telling Express to use 'Connect-Flash' Node package
 app.use(flash());
