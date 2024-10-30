@@ -11,6 +11,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
+const mongoSanitize = require('express-mongo-sanitize');
+
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -63,6 +65,8 @@ app.use(methodOverride('_method')); // '_method' will be used as a query string
 // Telling Express to serve 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(mongoSanitize());
+
 // Telling Express to use 'Connect-Flash' Node package
 app.use(flash());
 
@@ -104,12 +108,16 @@ app.use((req, res, next) => {
     next();
 });
 
+// app.use((req, res, next)=>{
+//     console.log(req.query);
+// });
+
 // Making a route where the creation of a new user is hardcoded
-app.get('/fakeUser', async (req, res) => {
-    const user = new User({email: '123@123.com', username: 'Rosa'});
-    const newUser = await User.register(user, 'notagoodpassword');
-    res.send(newUser);
-})
+// app.get('/fakeUser', async (req, res) => {
+//     const user = new User({email: '123@123.com', username: 'Rosa'});
+//     const newUser = await User.register(user, 'notagoodpassword');
+//     res.send(newUser);
+// })
 
 // A middleware that specifies what prefix is used for user routes
 app.use('/', userRoutes);
