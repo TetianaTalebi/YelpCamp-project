@@ -8,7 +8,12 @@ const map = new maptilersdk.Map({
     center: campground.geometry.coordinates,
 
     // starting zoom
-    zoom: 10
+    zoom: 10,
+    navigationControl: 'bottom-right',
+    geolocateControl: 'bottom-right',
+    terrainControl: 'bottom-right',
+    scaleControl: true,
+    fullscreenControl: 'bottom-right'
 });
 
 new maptilersdk.Marker()

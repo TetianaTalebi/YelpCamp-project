@@ -5,7 +5,12 @@ const map = new maptilersdk.Map({
     container: 'cluster-map',
     style: maptilersdk.MapStyle.BASIC,
     center: [-103.59179687498357, 40.66995747013945],
-    zoom: 3
+    zoom: 3,
+    navigationControl: 'bottom-right',
+    geolocateControl: 'bottom-right',
+    terrainControl: 'bottom-right',
+    scaleControl: true,
+    fullscreenControl: 'bottom-right'
 });
 
 map.on('load', function () {
