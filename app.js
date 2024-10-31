@@ -79,6 +79,7 @@ app.use(mongoSanitize({
 app.use(flash());
 
 const sessionConfig = {
+    name: '_y_c',
     secret: 'thisshouldbeabettersecret',
     resave: false,
     saveUninitialized: true,
