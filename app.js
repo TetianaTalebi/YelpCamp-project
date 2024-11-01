@@ -11,6 +11,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
+const helmet = require('helmet');
+
 const mongoSanitize = require('express-mongo-sanitize');
 
 const ejsMate = require('ejs-mate');
@@ -77,6 +79,9 @@ app.use(mongoSanitize({
 
 // Telling Express to use 'Connect-Flash' Node package
 app.use(flash());
+
+// Telling Express to use 'Helmet' Node package
+app.use(helmet());
 
 const sessionConfig = {
     name: '_y_c',
