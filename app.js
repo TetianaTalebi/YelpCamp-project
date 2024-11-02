@@ -17,6 +17,9 @@ const mongoSanitize = require('express-mongo-sanitize');
 
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
+
+const MongoStore = require('connect-mongo');
+
 const flash = require('connect-flash');
 const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
