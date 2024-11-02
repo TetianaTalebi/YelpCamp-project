@@ -30,6 +30,8 @@ const campgroundRoutes = require('./routes/campgrounds');
 // Require review routes
 const reviewRoutes = require('./routes/reviews');
 
+// const dbUrl = process.env.DB_URL;
+
 // Create a mongoose.connection shortcut
 const db = mongoose.connection;
 
@@ -39,6 +41,8 @@ db.on('disconnected', () => console.log('disconnected'));
 db.on('reconnected', () => console.log('reconnected'));
 db.on('disconnecting', () => console.log('disconnecting'));
 db.on('close', () => console.log('close'));
+
+// 'mongodb://127.0.0.1:27017/myyelpcamp'
 
 mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
 .then(() => console.log("Mongo connection is open!"))
