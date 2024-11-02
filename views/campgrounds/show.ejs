@@ -119,7 +119,7 @@
                                   Rated: <%= review.rating %>
                             </p>
                             
-                            <p class="card-text">Review: <%= review.body %></p>
+                            <p class="card-text"><%= review.body %></p>
 
                             <!-- Display this form (Delete review button) only for a user who is an author of a review -->
                              <% if(currentUser && review.author.equals(currentUser._id)){ %>
