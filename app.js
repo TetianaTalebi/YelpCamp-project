@@ -41,10 +41,16 @@ const dbUrl = 'mongodb://127.0.0.1:27017/myyelpcamp';
 
 const store = MongoStore.create({
     mongoUrl: dbUrl,
-    touchAfter: 24 * 60 * 60, // A session will be updated one time a day
+
+    //  A session will be updated one time a day
+    touchAfter: 24 * 60 * 60, // Time period in seconds.
     crypto: {
         secret: 'thisshouldbeabettersecret!'
     }
+});
+
+store.on('error', function(e){
+    console.log("Session store error!", e);
 });
 
 // Create a mongoose.connection shortcut
@@ -143,6 +149,7 @@ app.use(
 );
 
 const sessionConfig = {
+    store, // it's equal to 'store: store'
     name: '_y_c',
     secret: 'thisshouldbeabettersecret',
     resave: false,
