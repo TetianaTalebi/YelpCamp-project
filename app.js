@@ -33,7 +33,19 @@ const campgroundRoutes = require('./routes/campgrounds');
 // Require review routes
 const reviewRoutes = require('./routes/reviews');
 
+// Local database
+const dbUrl = 'mongodb://127.0.0.1:27017/myyelpcamp';
+
+// Production database
 // const dbUrl = process.env.DB_URL;
+
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    touchAfter: 24 * 60 * 60, // A session will be updated one time a day
+    crypto: {
+        secret: 'thisshouldbeabettersecret!'
+    }
+});
 
 // Create a mongoose.connection shortcut
 const db = mongoose.connection;
@@ -45,9 +57,7 @@ db.on('reconnected', () => console.log('reconnected'));
 db.on('disconnecting', () => console.log('disconnecting'));
 db.on('close', () => console.log('close'));
 
-// 'mongodb://127.0.0.1:27017/myyelpcamp'
-
-mongoose.connect('mongodb://127.0.0.1:27017/myyelpcamp')
+mongoose.connect(dbUrl)
 .then(() => console.log("Mongo connection is open!"))
 .catch((err) => {
     console.log("Mongo connection error!");
