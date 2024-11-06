@@ -22,6 +22,8 @@ const MongoStore = require('connect-mongo');
 
 const mongoStoreSecret = process.env.MONGO_STORE_PW;
 
+const sessionConfigSecret = process.env.SESSION_CONFIG_SECRET;
+
 const flash = require('connect-flash');
 const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
@@ -153,7 +155,7 @@ app.use(
 const sessionConfig = {
     store, // it's equal to 'store: store'
     name: '_y_c',
-    secret: 'thisshouldbeabettersecret',
+    secret: sessionConfigSecret,
     resave: false,
     saveUninitialized: true,
     cookie: { 
