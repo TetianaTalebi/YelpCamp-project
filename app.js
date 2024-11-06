@@ -20,6 +20,8 @@ const session = require('express-session');
 
 const MongoStore = require('connect-mongo');
 
+const mongoStoreSecret = process.env.MONGO_STORE_PW;
+
 const flash = require('connect-flash');
 const ExpressError = require('./utils/expresserror');
 const methodOverride = require('method-override');
@@ -45,7 +47,7 @@ const store = MongoStore.create({
     //  A session will be updated one time a day
     touchAfter: 24 * 60 * 60, // Time period in seconds.
     crypto: {
-        secret: 'thisshouldbeabettersecret!'
+        secret: mongoStoreSecret
     }
 });
 
