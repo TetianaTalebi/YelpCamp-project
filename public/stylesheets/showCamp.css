@@ -17,7 +17,7 @@ h2 {
     z-index: 1;
 }
 
-
+/* These styles relate to all elements inside #containerShowCamp */
 #containerShowCamp > * {
     display: flex;
     border: 4px solid blue;
@@ -88,6 +88,14 @@ h2 {
     margin: 0 auto;
     border: 5px solid greenyellow;
 }
+
+@media (max-width: 1200px){
+    #containerShowCamp {
+        width: 95%;
+    }
+}
+
+
 
 
 
