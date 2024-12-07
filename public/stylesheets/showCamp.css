@@ -1,0 +1,99 @@
+h2 {
+    text-align: center;
+}
+
+#alertContainer{
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.alert {
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: bold;
+    z-index: 1;
+}
+
+
+#containerShowCamp > * {
+    display: flex;
+    border: 4px solid blue;
+    padding: 1.5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+#containerShowCamp {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 90%;
+    height: 90vh;
+    margin: 0 auto;
+    border: 4px solid red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    /* grid-gap: 10px; */
+    grid-template-areas:
+    "campCard campCard campCard campReview";
+}
+
+/* #map {
+    grid-area: map;
+    height: 100%;
+} */
+#campCard {
+    grid-area: campCard;
+    justify-content: start;
+    overflow-y: scroll;
+    /* scrollbar-color: #386641 #6a994e; */
+    scrollbar-width: none;
+    border: 10px solid purple;
+}
+
+#campReview {
+    grid-area: campReview;
+    justify-content: start;
+    overflow-y: scroll;
+    /* scrollbar-color: #386641 #6a994e; */
+    scrollbar-width: none;
+}
+
+#reviewForm {
+    border: 10px solid teal;
+}
+
+#allCampReviews {
+    border: 10px solid slateblue;  
+}
+#allCampReviews > p {
+    text-align: center;
+}
+
+#campgroundCarousel {
+    width: 100%;
+    border: 10px solid yellow;
+}
+
+
+#campShowImg {
+    height: 400px;
+    width: auto;
+    aspect-ratio: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 5px solid greenyellow;
+}
+
+
+
+/* #imgContainerCarousel {
+    border: 5px solid orange;
+
+} */
+
+
