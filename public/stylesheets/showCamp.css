@@ -5,6 +5,7 @@ h2 {
 #alertContainer{
     width: 90%;
     margin: 0 auto;
+    border: solid salmon 10px;
     position: relative;
     display: grid;
     place-items: center;
@@ -95,7 +96,17 @@ h2 {
     }
 }
 
-
+@media (max-width: 800px){
+    #containerShowCamp {
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        /* grid-gap: 10px; */
+        grid-template-areas:
+        "campCard"
+        "campReview";
+    }
+}
 
 
 

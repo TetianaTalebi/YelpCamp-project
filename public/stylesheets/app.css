@@ -1,3 +1,7 @@
+body {
+    background: linear-gradient(#ffffff, #6a994e);
+    background-attachment: fixed;
+}
 
 #cluster-map {
     width: 100%;
