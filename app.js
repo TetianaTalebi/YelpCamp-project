@@ -38,10 +38,10 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
 // Local database
-// const dbUrl = 'mongodb://127.0.0.1:27017/myyelpcamp';
+const dbUrl = 'mongodb://127.0.0.1:27017/myyelpcamp';
 
-// Production database
-const dbUrl = process.env.DB_URL;
+// // Production database
+// const dbUrl = process.env.DB_URL;
 
 const store = MongoStore.create({
     mongoUrl: dbUrl,
