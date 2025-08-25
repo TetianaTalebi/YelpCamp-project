@@ -38,12 +38,13 @@ const seedDB = async () => {
     // Add 750 campgrounds to the db that have random location
     // Choose location randomly from cities array
 
-    for (let i=0; i<500; i++){
+    for (let i=0; i<750; i++){
 
         // cities is an array that contains objects
-        // we are generating a random number from 0 to cities.length-1
 
+        // we are generating a random number from 0 to cities.length-1
         let randomCities = Math.floor(Math.random()*(cities.length));
+
         const camp = new Campground({
             title: `${sample(descriptors)} ${sample(places)}`,
             images: [
@@ -63,10 +64,12 @@ const seedDB = async () => {
             ],
             geometry: {
                 type: 'Point',
+
                 coordinates: [
                     `${cities[randomCities].longitude}`,
                     `${cities[randomCities].latitude}`
                     ]
+
             },
             price,
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis saepe nulla rerum, sit perferendis cumque eos labore minima esse blanditiis assumenda maiores animi non commodi voluptatem eveniet eum quas molestiae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae velit odit libero facere soluta, magnam molestias rerum aspernatur perferendis possimus dolores voluptate repudiandae tempora provident incidunt cumque repellendus in adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
