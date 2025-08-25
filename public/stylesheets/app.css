@@ -1,5 +1,6 @@
 body {
-    background: linear-gradient(#ffffff, #6a994e);
+    background-image: url("https://res.cloudinary.com/dljmlxtmx/image/upload/v1756157465/Boreal_Forest_tile_zeecqz.png");
+    /* background: linear-gradient(#ffffff, #6a994e); */
     background-attachment: fixed;
 }
 
