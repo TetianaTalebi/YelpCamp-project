@@ -44,13 +44,13 @@ map.on('load', function () {
             'circle-radius': [
                 'step',
                 ['get', 'point_count'],
-                15, //radius
-                10, //qu-ty (radius 15 for qu-ties less than 10)
-                20, //radius
-                30, //qu-ty (radius 20 for qu-ties less than 30)
                 25, //radius
-                100, //qu-ty (radius 25 for qu-ties less than 100)
-                30 //radius 30 for qu-ties larger than or equal to 100
+                10, //qu-ty (radius 25 for qu-ties less than 10)
+                30, //radius
+                30, //qu-ty (radius 30 for qu-ties less than 30)
+                35, //radius
+                100, //qu-ty (radius 35 for qu-ties less than 100)
+                40 //radius 40 for qu-ties larger than or equal to 100
             ]
         }
     });
