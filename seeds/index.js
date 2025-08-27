@@ -8,7 +8,7 @@ const db = mongoose.connection;
 
 const Campground = require('../models/campground');
 
-const cities = require('./cities');
+const cities = require('./cities_Canada');
 const {descriptors, places} = require('./seedHelpers');
 
 db.on('connected', () => console.log('connected'));
@@ -49,9 +49,10 @@ const seedDB = async () => {
     for (let i=0; i<750; i++){
 
         // cities is an array that contains objects
-        // we are generating a random number from 0 to cities.length-1
 
+        // we are generating a random number from 0 to cities.length-1
         let randomCities = Math.floor(Math.random()*(cities.length));
+
         const camp = new Campground({
             title: `${sample(descriptors)} ${sample(places)}`,
             images: [
@@ -71,21 +72,24 @@ const seedDB = async () => {
             ],
             geometry: {
                 type: 'Point',
+
                 coordinates: [
                     `${cities[randomCities].longitude}`,
                     `${cities[randomCities].latitude}`
                     ]
+
             },
             price,
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis saepe nulla rerum, sit perferendis cumque eos labore minima esse blanditiis assumenda maiores animi non commodi voluptatem eveniet eum quas molestiae?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae velit odit libero facere soluta, magnam molestias rerum aspernatur perferendis possimus dolores voluptate repudiandae tempora provident incidunt cumque repellendus in adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            author: '66f0e0cfafa6e339ae846860',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis saepe nulla rerum, sit perferendis cumque eos labore minima esse blanditiis assumenda maiores animi non commodi voluptatem eveniet eum quas molestiae?Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
 
             // author for external database
             // '672658a117ef894175db3f95'
 
             // author for internal database
             // '66f0e0cfafa6e339ae846860'
-            location: `${cities[randomCities].city}, ${cities[randomCities].state}`
+
+            author: '66f0e0cfafa6e339ae846860',
+            location: `${cities[randomCities].city}, ${cities[randomCities].province}`
 
         });
         await camp.save();
