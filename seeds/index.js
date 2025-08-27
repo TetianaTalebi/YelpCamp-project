@@ -81,7 +81,7 @@ const seedDB = async () => {
             // '66f0e0cfafa6e339ae846860'
 
             author: '66f0e0cfafa6e339ae846860',
-            location: `${cities[randomCities].city}, ${cities[randomCities].state}`
+            location: `${cities[randomCities].city}, ${cities[randomCities].province}`
 
         });
         await camp.save();
