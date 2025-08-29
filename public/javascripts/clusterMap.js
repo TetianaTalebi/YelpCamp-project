@@ -13,7 +13,12 @@ const map = new maptilersdk.Map({
     fullscreenControl: 'bottom-right'
 });
 
-map.on('load', function () {
+map.on('load', async function () {
+
+    const tent_img = await map.loadImage('../images/MapTiler_tent_icon_PNG.png');
+
+    map.addImage('pinTent', tent_img.data);
+
     map.addSource('campgrounds', {
         type: 'geojson',
         data: campgrounds,
@@ -69,16 +74,28 @@ map.on('load', function () {
 
     map.addLayer({
         id: 'unclustered-point',
-        type: 'circle',
+        type: 'symbol',
         source: 'campgrounds',
         filter: ['!', ['has', 'point_count']],
-        paint: {
-            'circle-color':  '#008000', //'#f72585',  //'#11b4da',
-            'circle-radius': 10,
-            'circle-stroke-width': 0, //2,
-            'circle-stroke-color': '#008000'//'#fb5607'
-        }
+        layout: {
+            'icon-image': 'pinTent',
+            'icon-size': ['*', ['get', 'scalerank'], 0.01]
+        },
+        paint: {}
     });
+
+    // map.addLayer({
+    //     id: 'unclustered-point',
+    //     type: 'circle',
+    //     source: 'campgrounds',
+    //     filter: ['!', ['has', 'point_count']],
+    //     paint: {
+    //         'circle-color':  '#008000', //'#f72585',  //'#11b4da',
+    //         'circle-radius': 10,
+    //         'circle-stroke-width': 0, //2,
+    //         'circle-stroke-color': '#008000'//'#fb5607'
+    //     }
+    // });
 
     // inspect a cluster on click
     map.on('click', 'clusters', async (e) => {
