@@ -1,4 +1,11 @@
 body {
+    /* Winky Rough Google font */
+    font-family: 'Winky Rough', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+
     background-image: url("../images/Boreal_Forest_tile.png");
     background-size: 30%;
     /* background: linear-gradient(#ffffff, #6a994e); */

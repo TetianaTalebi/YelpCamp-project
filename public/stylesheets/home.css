@@ -1,4 +1,10 @@
 body {
+    /* Winky Rough Google font */
+    font-family: 'Winky Rough', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url("https://res.cloudinary.com/dljmlxtmx/image/upload/v1728104316/YelpCamp/wbyo1y5nhsnxha4dit0j.jpg");
