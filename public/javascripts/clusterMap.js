@@ -79,7 +79,11 @@ map.on('load', async function () {
         filter: ['!', ['has', 'point_count']],
         layout: {
             'icon-image': 'pinTent',
-            'icon-size': ['*', ['get', 'scalerank'], 0.01]
+
+            // Show an icon on the map as half of its original size (the original size is 'icon-size': 1)
+            'icon-size': 0.5
+
+            // 'icon-size': ['*', ['get', 'scalerank'], 0.01]
         },
         paint: {}
     });
