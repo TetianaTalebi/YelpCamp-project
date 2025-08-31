@@ -128,7 +128,9 @@ const styleSrcUrls = [
 const connectSrcUrls = [
     "https://api.maptiler.com/",
 ];
-const fontSrcUrls = [];
+const fontSrcUrls = [
+    "https://fonts.gstatic.com",
+];
 
 app.use(
     helmet.contentSecurityPolicy({
