@@ -9,6 +9,8 @@
             <div class="my-3">
                 <a href="/campgrounds/new"class="btn btn-info">Add New Campground</a>
             </div>
+
+
             <% for (let campground of campgrounds) { %>
                 <div class="card mb-5 shadow p-3 mb-5 bg-body rounded">
                     <!-- Logic to display a default image 
@@ -34,6 +36,28 @@
                     </div>
                 </div>
             <% } %>
+
+            <nav aria-label="All campgrounds pages">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-current="page">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+
         </div>
     </div>
     <script>
