@@ -9,7 +9,8 @@ const { cloudinary } = require('../cloudinary');
 // This 'index' function finds all campgrounds and renders index page
 module.exports.index = async (req, res) => {
     // Find all campgrounds in db and save it to const campgrounds
-    const campgrounds = await Campground.find({});
+    // add .sort({_id:-1}) in order to see the latest campgrounds first
+    const campgrounds = await Campground.find({}).sort({_id:-1});
     // Pass the found data to our template
     res.render('campgrounds/index', {campgrounds});
 }
