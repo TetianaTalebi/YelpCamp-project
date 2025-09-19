@@ -64,7 +64,8 @@
     </div>
     <script>
         const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>';
-        const campgrounds = {features: <%- JSON.stringify(campgrounds) %>}
+        const campgrounds = {features: <%- JSON.stringify(campgrounds) %>};
+        let totalCamps = <%- count %>;
     </script>
     <script src="/javascripts/clusterMap.js"></script>
     <script src="/javascripts/pagination.js"></script>
