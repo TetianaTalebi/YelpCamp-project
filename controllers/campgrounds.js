@@ -11,8 +11,9 @@ module.exports.index = async (req, res) => {
     // Find all campgrounds in db and save it to const campgrounds
     // add .sort({_id:-1}) in order to see the latest campgrounds first
     const campgrounds = await Campground.find({}).sort({_id:-1});
+    let count = await Campground.countDocuments({});
     // Pass the found data to our template
-    res.render('campgrounds/index', {campgrounds});
+    res.render('campgrounds/index', {campgrounds, count});
 }
 
 // Renders a form for creating a new campground
