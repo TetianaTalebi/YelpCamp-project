@@ -10,7 +10,7 @@
                 <a href="/campgrounds/new"class="btn btn-info">Add New Campground</a>
             </div>
 
-
+        <div id="paginated">
             <% for (let campground of campgrounds) { %>
                 <div class="card mb-5 shadow p-3 mb-5 bg-body rounded hidden">
                     <!-- Logic to display a default image 
@@ -36,6 +36,7 @@
                     </div>
                 </div>
             <% } %>
+        </div>
 
             <nav aria-label="All campgrounds pages">
                 <ul class="pagination justify-content-center">
