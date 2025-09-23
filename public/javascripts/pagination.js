@@ -4,3 +4,9 @@ let campsPerPage = 10;
 // The total qu-ty of campgrounds that app has
 // totalCamps was defined in campgrounds/index.ejs template
 let totalQtyCamps = totalCamps;
+
+// The total qu-ty of pages
+let totalPages = Math.ceil(totalQtyCamps/campsPerPage);
+
+
+
