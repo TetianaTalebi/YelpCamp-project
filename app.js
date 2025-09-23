@@ -127,6 +127,7 @@ const styleSrcUrls = [
 ];
 const connectSrcUrls = [
     "https://api.maptiler.com/",
+    "https://cdn.jsdelivr.net",
 ];
 const fontSrcUrls = [
     "https://fonts.gstatic.com",
