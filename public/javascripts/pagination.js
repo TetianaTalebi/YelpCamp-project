@@ -33,4 +33,31 @@ function toggleHiddenClass(ActivePageNum){
     }
 }
 
-toggleHiddenClass(1);
+// nextPreviousBtns() function deactivates '#previsousPage' button (<<) when the current active page is 1
+// and this function also deactivates '#nextPage' button (>>) if the current active page is equal to totalPages
+
+function nextPreviousBtns(activePageNum){
+    // if activePageNum == 1, disable '#previousPage' button
+    const previousPageEl = document.querySelector('#previousPage');
+    if (activePageNum==1){
+        if(!previousPageEl.classList.contains('disabled')){
+            previousPageEl.classList.add('disabled');
+        }
+    } else {
+        if(previousPageEl.classList.contains('disabled')){
+            previousPageEl.classList.remove('disabled');
+        }
+    }
+
+    // if pageNum == totalPages, disable '#nextPage' button
+    const nextPageEl = document.querySelector('#nextPage');
+    if(activePageNum==totalPages){
+        if(!nextPageEl.classList.contains('disabled')){
+            nextPageEl.classList.add('disabled');
+        }
+    } else {
+        if(nextPageEl.classList.contains('disabled')){
+            nextPageEl.classList.remove('disabled');
+        }
+    }
+}
