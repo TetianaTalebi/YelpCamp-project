@@ -100,4 +100,52 @@ function addActiveClassToPage(activePageNum){
             }
 }
 
+function changePageBtnsInnerText(curPageN){
+    // The total number of page btn-s
+    const allPageBtns = document.querySelectorAll('.page');
+    let totalNumPageBtns = allPageBtns.length;
+
+    let centerPageBtnIndex = Math.floor(totalNumPageBtns/2);
+
+    switch (true){
+        case (curPageN<=centerPageBtnIndex):
+            for(let i=0; i<totalNumPageBtns; i++){
+                if(allPageBtns[i]){
+                    allPageBtns[i].children[0].innerText=i+1;
+                }  
+            }
+            break;
+        case (totalPages-curPageN<centerPageBtnIndex):
+            // Create tempTotalPages in order to not change the value of global variable totalPages
+            let tempTotalPages = totalPages;
+            for(let i=totalNumPageBtns-1; i>=0; i--){
+                if(allPageBtns[i]){
+                    allPageBtns[i].children[0].innerText=tempTotalPages--;
+                }
+            }
+            break;
+        default:
+            let tempCurPage1 = curPageN;
+            
+            let i = centerPageBtnIndex;
+            while (i>=0){
+                if(allPageBtns[i]){
+                    allPageBtns[i].children[0].innerText=tempCurPage1--;  
+                }
+                i--;
+            }
+            let tempCurPage2 = curPageN;
+            let j= centerPageBtnIndex+1;
+            while (j<totalNumPageBtns){
+                if(allPageBtns[j]){
+                    allPageBtns[j].children[0].innerText=++tempCurPage2;
+                }
+                j++;
+            }
+    }
+    
+}
+
+
+
 
