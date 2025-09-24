@@ -74,3 +74,17 @@ function hideElsPrevPage(){
 
     return previousActivePageNumber;
 }
+
+function showElsCurrPage(){
+    // Grab the li element with classes .page.active
+    // Find value of this element span child
+    
+    let curPageNumber = findActivePageNumber();
+
+    nextPreviousBtns(curPageNumber);
+
+    toggleHiddenClass(curPageNumber);
+    
+}
+
+
