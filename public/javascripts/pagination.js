@@ -223,6 +223,9 @@ for (let pageButton of allPageButtons){
 const prevPage = document.querySelector('#previousPage');
 prevPage.addEventListener('click', clickOnPrevious);
 
+// Add event listener to nextPage button
+const nextPage = document.querySelector('#nextPage');
+nextPage.addEventListener('click', clickOnNext);
 
 
 
