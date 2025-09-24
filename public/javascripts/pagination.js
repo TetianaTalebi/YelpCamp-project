@@ -210,7 +210,14 @@ function clickOnPrevious(){
     }
 
  window.addEventListener('load', showElsCurrPage());
- 
+
+// Grab all page buttons
+const allPageButtons = document.querySelectorAll('.page');
+
+// Add event listener to the each page button
+for (let pageButton of allPageButtons){
+    pageButton.addEventListener('click', clickOnPageBtn);
+}
 
 
 
