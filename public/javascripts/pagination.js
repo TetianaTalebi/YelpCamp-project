@@ -209,7 +209,8 @@ function clickOnPrevious(){
         }
     }
 
-
+ window.addEventListener('load', showElsCurrPage());
+ 
 
 
 
