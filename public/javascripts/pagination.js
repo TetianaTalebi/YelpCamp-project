@@ -161,6 +161,30 @@ function clickOnPageBtn(){
         toggleHiddenClass(clickedPageNum);
 }
 
+function clickOnPrevious(){
+        if (!this.classList.contains('disabled')){
+            // hide elements previous page
+            // find prev page number
+
+            let previousPageNum = hideElsPrevPage();
+
+            let currentPageNum = previousPageNum-1;
+
+            // Move to the page currentPageNum
+            toggleHiddenClass(currentPageNum);
+
+            // Deactivate previous if current page number == 1
+            // Deactivate next if current page num == total pages
+            nextPreviousBtns(currentPageNum);
+
+            // Align page buttons in order the current active btn will be in the list
+            changePageBtnsInnerText(currentPageNum);
+
+            // Add class active to currentPageNum
+            addActiveClassToPage(currentPageNum);
+        }
+    }
+
 
 
 
