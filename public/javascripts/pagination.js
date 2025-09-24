@@ -61,3 +61,16 @@ function nextPreviousBtns(activePageNum){
         }
     }
 }
+
+function hideElsPrevPage(){
+    // Find previous active page 
+    let previousActivePageNumber = findActivePageNumber();
+
+    // Hide previous page elements (i.e. toggle .hidden class)
+    toggleHiddenClass(previousActivePageNumber);
+
+    // Remove active class from previous page
+    document.querySelector('.page.active').classList.remove('active');
+
+    return previousActivePageNumber;
+}
