@@ -146,6 +146,24 @@ function changePageBtnsInnerText(curPageN){
     
 }
 
+function clickOnPageBtn(){
+        
+        hideElsPrevPage();
+
+        // Add active class to clicked page button
+        this.classList.add('active');
+
+        // Find the number of the page that was clicked
+        let clickedPageNum = findActivePageNumber();
+
+        nextPreviousBtns(clickedPageNum);
+
+        toggleHiddenClass(clickedPageNum);
+}
+
+
+
+
 
 
 
