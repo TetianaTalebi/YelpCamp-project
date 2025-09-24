@@ -87,4 +87,17 @@ function showElsCurrPage(){
     
 }
 
+function addActiveClassToPage(activePageNum){
+    // Add class .active to li.page element that has as a firstChild a span element with innerText that is equal to 'activePageNum'
+    // Grab all li el-s with class .page
+    // Iterate over them and to check whether their first child inner text equal to currentPageNum
+    // if yes, give this li element class .active
+            const myLis = document.querySelectorAll('.page');
+            for (let myLi of myLis){
+                if(myLi.children[0].innerText==activePageNum){
+                    myLi.classList.add('active');
+                }
+            }
+}
+
 
