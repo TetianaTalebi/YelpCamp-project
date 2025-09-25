@@ -33,3 +33,31 @@ body {
 .hidden {
     display: none;
 }
+
+.page-item.page.active .page-link {
+    background-color: rgb(26, 185, 26);
+    border-color: rgb(26, 185, 26);
+    color: white;
+    cursor: pointer;
+}
+
+.page-link:hover {
+    background-color: lime;
+    border-color: lime;
+    cursor: pointer;
+}
+
+.page-link:active {
+    background-color: limegreen;
+    border-color: limegreen;
+    color: white;
+    cursor: pointer;
+}
+
+.page-link:focus {
+    /* Remove Bootstrap bluish color */
+    box-shadow: none;
+}
+
+ 
+    
