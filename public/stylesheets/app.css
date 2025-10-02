@@ -5,28 +5,14 @@ body {
     font-weight: 300;
     font-style: normal;
 
-
+    /* body background-image tile */
     background-image: url("../images/Boreal_Forest_tile.png");
+
+    /* size of body background-image tile */
     background-size: 30%;
-    /* background: linear-gradient(#ffffff, #6a994e); */
+
+    /* background image's position is fixed within the viewport */
     background-attachment: fixed;
-}
-
-#cluster-map {
-    width: 100%;
-    height: 500px;
-}
-
-/* #cluster-map settings for screen width > 1000 px */
-/* #cluster-map {
-    aspect-ratio: 1.618;
-    height: 500px;
-    margin: 0 auto;
-} */
-
-#map {
-    width: 100%;
-    height: 300px;
 }
 
 /* Pagination */
@@ -58,6 +44,196 @@ body {
     /* Remove Bootstrap bluish color */
     box-shadow: none;
 }
+
+/* styles of Flash messages */
+#alertContainer {
+    /* temporarily turn Flash messages off */
+    display: none;
+    /* position: fixed;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    z-index: 1000; */
+}
+
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+/* Grid layout for "All Campgrounds" page */
+
+/* For extra large screens (width > 1200 px) */
+#parent-grid-container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "a a a a a a a a"
+                         "b b b b b b b b"
+                         "d d d d d d d d";
+}
+
+#parent-grid-navbar {
+    grid-area: a;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Temporary turn adds off */
+/* #parent-grid-ads {
+    background: cyan;
+    grid-area: c;
+} */
+
+#parent-grid-footer {
+    grid-area: d;
+}
+
+/* the 1st nested grid container  */
+#nested1-grid-container {
+    background: magenta;
+    display: grid;
+    grid-area: b;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: ". e e e e ."
+                         ". f f f g ."
+                         ". h h h h ."
+                         ". h h h h ."
+                         ". i i i i .";
+}
+
+/* Nested1-grid-container elements */
+
+#cluster-map-container {
+    grid-area: e;
+}
+
+#cluster-map {
+    width: 100%;
+    height: 400px;
+}
+
+#title-all-camps {
+    grid-area: f;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#button-add-new-camp {
+    grid-area: g;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto 10px;
+}
+
+/* the 2nd nested grid container */
+
+#paginated {
+    background: yellow;
+    display: grid;
+    grid-area: h;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: 10px;  
+}
+
+/* each campground-card is a grid itself */
+.campground-card {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(3, auto);
+    /* grid-template-rows: 25% 55% 20%; */
+    height: 100%;
+    /* height: 400px; */
+    background-color: salmon;
+    border-radius: 10px;
+}
+
+.campground-card-img-wrapper,
+.campground-card-text-wrapper,
+.campground-card-btn-wrapper,
+.campground-card-text-location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.campground-card-text-wrapper {
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.campground-card-text-location {
+    /* margin: 10px;
+    margin-top: auto; */
+    margin: auto 10px 10px 10px;
+}
+
+.campground-card-img-wrapper > img {
+    height: 70px;
+    width: auto;
+
+}
+
+.campground-card-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 60px;
+    border-radius: 10px;
+}
+.campground-card-btn-wrapper {
+    justify-content: flex-end;
+}
+
+
+ul.pagination {
+    margin: 10px;
+}
+
+#nav-pagination-wrapper {
+    grid-area: i;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+#nav-pagination {
+    margin-bottom: auto;
+}
+
+
+
+
+/* #cluster-map settings for screen width > 1000 px */
+/* #cluster-map {
+    aspect-ratio: 1.618;
+    height: 500px;
+    margin: 0 auto;
+} */
+
+#map {
+    width: 100%;
+    height: 300px;
+}
+
 
  
     

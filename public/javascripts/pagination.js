@@ -23,10 +23,11 @@ function toggleHiddenClass(ActivePageNum){
     let firstElOfCurPageIndex = (ActivePageNum-1)*campsPerPage;
 
     // Grab all el-s from paginated container
-    const allPaginatedEls = document.querySelectorAll('#paginated > .campground-card');
+    const allPaginatedEls = document.querySelectorAll('#paginated > .campground-card-wrapper');
+
 
     for (let i = 0; i<campsPerPage; i++) {
-        // if an element exists (i.e. is not undefined) toggle its class .hidden
+        // if an element exists (i.e. is not undefined) toggle its class .hidden (i.e. to disable 'hidden')
         if(allPaginatedEls[firstElOfCurPageIndex + i]){
         allPaginatedEls[firstElOfCurPageIndex + i].classList.toggle('hidden');
         }
