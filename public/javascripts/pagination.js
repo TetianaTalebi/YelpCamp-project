@@ -1,14 +1,35 @@
 // The total number of campgrounds at one 'All Campgrounds' page
-let campsPerPage = 10;
+// This value will depend from the window.innerWidth
+let campsPerPage;
 
 // The total qu-ty of campgrounds that app has
 // totalCamps was defined in campgrounds/index.ejs template
 let totalQtyCamps = totalCamps;
 
-// The total qu-ty of pages
-let totalPages = Math.ceil(totalQtyCamps/campsPerPage);
+// The total qu-ty of pages (it depends from the total qu-ty of campgrounds and qu-ty of campgrounds per 1 page)
+let totalPages;
 
-// Find our which page is active and show campgrounds that relate to the active page (i.e. toggle .hidden class)
+//  This function defines window width and value of campsPerPage
+function defineWindowWidthAndCampsPerPage(){
+    let windowWidth = window.innerWidth;
+
+    switch (true){
+        case (windowWidth > 1200): 
+            campsPerPage = 10;
+        break;
+        case (windowWidth > 800): 
+            campsPerPage = 8;
+        break;
+        default:
+            campsPerPage = 6;
+    }
+    console.log(`The window width is ${windowWidth}px`);
+    console.log(`The campsPerPage is ${campsPerPage}`);
+}
+
+
+// Find out which page is active and show campgrounds that relate to the active page (i.e. toggle .hidden class)
+// When the pages is loaded first time the active page is 1
 
 function findActivePageNumber(){
     const curPageLiActive = document.querySelector('.page.active');
@@ -37,6 +58,10 @@ function toggleHiddenClass(ActivePageNum){
 // and this function also deactivates '#nextPage' button (>>) if the current active page is equal to totalPages
 
 function nextPreviousBtns(activePageNum){
+    totalPages = Math.ceil(totalQtyCamps/campsPerPage);
+    console.log(`totalPages= ${totalPages}`);
+
+
     // if activePageNum == 1, disable '#previousPage' button
     const previousPageEl = document.querySelector('#previousPage');
     if (activePageNum==1){
@@ -101,6 +126,9 @@ function addActiveClassToPage(activePageNum){
 }
 
 function changePageBtnsInnerText(curPageN){
+    totalPages = Math.ceil(totalQtyCamps/campsPerPage);
+    console.log(`totalPages= ${totalPages}`);
+
     // The total number of page btn-s
     const allPageBtns = document.querySelectorAll('.page');
     let totalNumPageBtns = allPageBtns.length;
@@ -161,6 +189,7 @@ function clickOnPageBtn(){
         toggleHiddenClass(clickedPageNum);
 }
 
+// handles click on '<<' button
 function clickOnPrevious(){
         if (!this.classList.contains('disabled')){
             // hide elements previous page
@@ -171,20 +200,22 @@ function clickOnPrevious(){
             let currentPageNum = previousPageNum-1;
 
             // Move to the page currentPageNum
+            // Remove class .hidden from the elements that belong to the current page
             toggleHiddenClass(currentPageNum);
 
-            // Deactivate previous if current page number == 1
-            // Deactivate next if current page num == total pages
+            // Deactivate previous button (i.e. "<<" button) if current page number == 1
+            // Deactivate next button (i.e. ">>" button) if current page num == total pages
             nextPreviousBtns(currentPageNum);
 
             // Align page buttons in order the current active btn will be in the list
             changePageBtnsInnerText(currentPageNum);
 
-            // Add class active to currentPageNum
+            // Add class .active to currentPageNum
             addActiveClassToPage(currentPageNum);
         }
     }
 
+    // handles click on '>>' button
     function clickOnNext(){
         if (!this.classList.contains('disabled')){
 
@@ -195,21 +226,30 @@ function clickOnPrevious(){
             let curPageNum = previousPageNum+1;
 
             // Move to the page curPageNum
+            // Remove class .hidden from the elements that belong to the current page number
             toggleHiddenClass(curPageNum);
 
-            // Deactivate previous if current page number == 1
-            // Deactivate next if current page num == total pages
+            // Deactivate previous button (i.e. "<<" button) if current page number == 1
+            // Deactivate next button (i.e. ">>" button) if current page num == total pages
             nextPreviousBtns(curPageNum);
             
             // Align page buttons in order the current active btn will be in the list
             changePageBtnsInnerText(curPageNum);
 
-            // Add class active to currentPageNum
+            // Add class .active to currentPageNum
             addActiveClassToPage(curPageNum);
         }
     }
 
- window.addEventListener('load', showElsCurrPage());
+// When we load the page first time, the event handler defines the value of campsPerPage (how many campground cards at one page) that depends from window.innerWidth
+window.addEventListener('load', defineWindowWidthAndCampsPerPage);
+
+window.addEventListener('load', showElsCurrPage);
+
+// Each time when we resize the window, the event handler defines the new value of CampsPerPage (how many campground cards at one page) that depends from window.innerWidth
+window.addEventListener('resize', defineWindowWidthAndCampsPerPage);
+
+window.addEventListener('resize', showElsCurrPage);
 
 // Grab all page buttons
 const allPageButtons = document.querySelectorAll('.page');
