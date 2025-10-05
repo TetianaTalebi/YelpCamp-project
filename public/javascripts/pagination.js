@@ -19,7 +19,7 @@ function defineWindowWidthAndCampsPerPage(){
 
     switch (true){
         case (windowWidth > 1200): 
-            campsPerPage = 5;
+            campsPerPage = 10;
         break;
         case (windowWidth > 800): 
             campsPerPage = 3;
@@ -29,10 +29,6 @@ function defineWindowWidthAndCampsPerPage(){
     }
     // totalPages is global variable
     totalPages = Math.ceil(totalQtyCamps/campsPerPage);
-    
-    console.log(`The window width is ${windowWidth}px`);
-    console.log(`The campsPerPage is ${campsPerPage}`);
-    console.log(`totalPages= ${totalPages}`);
 }
 
 
@@ -124,8 +120,7 @@ function showElsCurrPage(qtyCampsPerPage) {
     toggleHiddenClass(curPageNumber, qtyCampsPerPage);
 
     // Save the quantity of campground cards per page in global variable previousCampsPerPage
-    previousCampsPerPage = qtyCampsPerPage;
-    console.log(`previousCampsPerPage = ${previousCampsPerPage}`);   
+    previousCampsPerPage = qtyCampsPerPage;  
 }
 
 function showElsCurrPage2(){
@@ -140,7 +135,6 @@ function showElsCurrPage2(){
 
         // Now when all campground cards are hidden, show only that camp cards that correspond to the active page number and CURRENT VALUE OF camps per page
        showElsCurrPage(campsPerPage);
-       console.log("*****INSIDE showElsCurrPage2 *****");
     } 
 }
 
