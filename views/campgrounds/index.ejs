@@ -1,21 +1,18 @@
     <% layout ('layouts/boilerplate') %>
 <div id="nested1-grid-container">
+    
     <div id="cluster-map-container">
         <div id="cluster-map"></div>
     </div>
     
 
-    <!-- <div class="row"> -->
-        <!-- <div class="col-md-6 offset-md-3"> -->
-            <div id="title-all-camps">
+    
+            <div id="title-and-button-container">
                 <h1>All Campgrounds</h1>
-            </div>
-            
-            <!-- <div class="my-3"> -->
-            <div id="button-add-new-camp">
                 <a href="/campgrounds/new"class="btn btn-info">Add New Campground</a>
             </div>
-
+            
+            
         <div id="paginated">
             <% for (let campground of campgrounds) { %>
                 <div class="campground-card-wrapper hidden">
@@ -33,22 +30,22 @@
                             <img src="https://res.cloudinary.com/dljmlxtmx/image/upload/v1729315701/YelpCamp/rpph59cajsqxrfxtzdgb.jpg" alt="" class="img-fluid">
                         <% } %>
                     </div>
-                        
-                    <div class="campground-card-text-wrapper">
-                        <h5 class="card-title"><%= campground.title %></h5>
-                        <p class="card-text campground-card-text-description">
-                             <%= campground.description.slice(0, 120) %>...
-                        </p>
-                        <p class="card-text campground-card-text-location">
-                            <small class="text-muted">
+
+                   
+                    <h5 class="card-title"><%= campground.title %></h5>
+
+                    <p class="campground-card-text-location">
                                 <%= campground.location %>
-                            </small>
-                        </p>
-                    </div>
-                    <div class="campground-card-btn-wrapper"> 
-                        <a href="/campgrounds/<%=campground._id %>" class="btn btn-primary campground-card-btn">View <%= campground.title %>
-                        </a>
-                    </div>   
+                    </p>
+                    
+                    <p class="campground-card-text-description">
+                            <%= campground.description.slice(0, 120) %>...
+                    </p>
+                    
+                        
+                    <a class="campground-card-btn" href="/campgrounds/<%=campground._id %>" >View
+                    </a>
+                       
                 </div>
                 </div>
             <% } %>

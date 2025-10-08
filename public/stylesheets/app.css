@@ -1,15 +1,17 @@
+/* #CCFF33 is rgba(204, 255, 51, 1) */
+
 body {
     /* Winky Rough Google font */
     font-family: 'Winky Rough', sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
 
     /* body background-image tile */
-    background-image: url("../images/Boreal_Forest_tile.png");
+    background-image: url("../images/Boreal_Forest_tile.webp");
 
     /* size of body background-image tile */
-    background-size: 30%;
+    background-size: 20%;
 
     /* background image's position is fixed within the viewport */
     background-attachment: fixed;
@@ -20,28 +22,81 @@ body {
     display: none;
 }
 
-.page-item.page.active .page-link {
-    background-color: rgb(26, 185, 26);
-    border-color: rgb(26, 185, 26);
+/* color for highlighting active elements   #eb5e28 */
+/* ??? complementary color of #CCFF33 is #6633FF ??? */
+
+ul.pagination {
+    margin-top: 20px;
+}
+#previousPage > .page-link,
+#nextPage > .page-link {
+    font-size: 1.5rem;
+    font-weight: 500;
+    min-width: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    color: darkgreen;
+    background-color: #CCFF33;
+    border-color: #CCFF33;
+}
+
+#previousPage > .page-link {
+    border-radius: 1.5rem 0 0 1.5rem;
+}
+
+#nextPage > .page-link {
+    border-radius: 0 1.5rem 1.5rem 0;
+}
+
+#previousPage > .page-link:hover,
+#nextPage > .page-link:hover,
+.page-item.page > .page-link:hover {
+    background-color: #9EF01A;
+    border-color: #9EF01A;
+}
+
+#previousPage > .page-link:active,
+#nextPage > .page-link:active,
+.page-item.page > .page-link:active {
+    background-color: #38B000;
+    border-color: #38B000;
+    color: white;
+}
+
+#previousPage.disabled > .page-link,
+#nextPage.disabled > .page-link {
+    background-color: lightgray;
+    border-color: lightgray;
+    color: slategrey;
+}
+
+
+.page-item.page > .page-link {
+    font-size: 1.5rem;
+    font-weight: 500;
+    min-width: 3rem;
+    text-align: center;
+    color: darkgreen;
+    background-color: #CCFF33;
+    border-color: #CCFF33;
+    padding: 0.5rem;
+}
+
+.page-item.page.active > .page-link {
+    background-color: #eb5e28;
+    border-color: #eb5e28;
     color: white;
     cursor: pointer;
 }
 
 .page-link:hover {
-    background-color: lime;
-    border-color: lime;
-    cursor: pointer;
-}
-
-.page-link:active {
-    background-color: limegreen;
-    border-color: limegreen;
-    color: white;
+    background-color: #9EF01A;
+    border-color: #9EF01A;
     cursor: pointer;
 }
 
 .page-link:focus {
-    /* Remove Bootstrap bluish color */
+    /* Remove Bootstrap bluish color from pagination navbar */
     box-shadow: none;
 }
 
@@ -58,8 +113,10 @@ body {
 
 html, body {
     min-height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 /* Grid layout for "All Campgrounds" page */
 
@@ -67,11 +124,12 @@ html, body {
 #parent-grid-container {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: repeat(8, 1fr);
+    width: 100vw;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: "a a a a a a a a"
-                         "b b b b b b b b"
-                         "d d d d d d d d";
+    grid-template-areas: "a"
+                         "b"
+                         "d";
 }
 
 #parent-grid-navbar {
@@ -79,30 +137,102 @@ html, body {
     position: sticky;
     top: 0;
     z-index: 10;
+    box-shadow: 0 0.5rem 1rem black;
 }
 
-/* Temporary turn adds off */
-/* #parent-grid-ads {
-    background: cyan;
-    grid-area: c;
-} */
+#navbar-top {
+    height: 6rem;
+    font-size: 1.5rem;
+}
+
+#navbar-brand {
+    font-size: 2rem;
+    font-weight: 600;
+    white-space: preserve nowrap;
+    overflow: visible;
+    margin-left: 1rem;
+}
+
+#navbar-top .nav-link {
+    margin: 1rem;
+    color: rgba(255,255,255,1);
+}
+
+#navbar-brand:hover,
+#navbar-top .nav-link:hover {
+    color: #CCFF33;
+}
+
+#navbar-brand:active,
+#navbar-top .nav-link:active {
+    text-shadow: 0.5rem 0 1.5rem #CCFF33,
+    0 0.5rem 1.5rem #CCFF33,
+    -0.5rem 0 1.5rem #CCFF33,
+    0 -0.5rem 1.5rem #CCFF33;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+#title-and-button-container a.btn {
+    font-size: 1.5rem;
+    color: darkgreen;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+}
+
+#title-and-button-container a.btn-info {
+    background-color: #CCFF33;
+    border-color: #CCFF33;
+}
+
+#title-and-button-container a.btn-info:hover{
+    background-color: #9EF01A;
+    border-color: #9EF01A;
+
+}
+
+#title-and-button-container a.btn-info:active{
+    background-color: #38B000;
+    border-color: #38B000;
+}
+
+#title-and-button-container a.btn:active{
+    color: white;
+    box-shadow: none;
+}
+
+
 
 #parent-grid-footer {
     grid-area: d;
+    position: relative;
+    bottom: 0;
+}
+
+#footer-app {
+    height: 5rem;
+    color: rgba(204, 255, 51, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* the 1st nested grid container  */
 #nested1-grid-container {
-    background: magenta;
     display: grid;
     grid-area: b;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, auto);
-    grid-template-areas: ". e e e e ."
-                         ". f f f g ."
-                         ". h h h h ."
-                         ". h h h h ."
-                         ". i i i i .";
+    grid-template-columns: minmax(0, 1fr) 1060px minmax(0, 1fr);
+    grid-template-rows: auto 128px repeat(2, auto);
+    grid-template-areas: ". e  ."
+                         ". f  ."
+                         ". h  ."
+                         ". i  .";
 }
 
 /* Nested1-grid-container elements */
@@ -113,121 +243,120 @@ html, body {
 
 #cluster-map {
     width: 100%;
-    height: 400px;
+    height: 655px;
 }
 
-#title-all-camps {
+#title-and-button-container {
     grid-area: f;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-}
-
-h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-#button-add-new-camp {
-    grid-area: g;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin: auto 10px;
 }
 
 /* the 2nd nested grid container */
 
 #paginated {
-    background: yellow;
     display: grid;
     grid-area: h;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 10px;
-    column-gap: 10px;
-    padding: 10px;  
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
 }
 
-/* each campground-card is a grid itself */
 .campground-card {
-    display: grid;
-    grid-template-columns: 1;
-    grid-template-rows: repeat(3, auto);
-    /* grid-template-rows: 25% 55% 20%; */
-    height: 100%;
-    /* height: 400px; */
-    background-color: salmon;
-    border-radius: 10px;
-}
-
-.campground-card-img-wrapper,
-.campground-card-text-wrapper,
-.campground-card-btn-wrapper,
-.campground-card-text-location {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.campground-card-text-wrapper {
+    height: 404px;
+    width: 250px;
+    background-color: white;
     text-align: center;
-    justify-content: flex-start;
-}
+    position: relative;
+    padding: 1.5rem;
 
-.campground-card-text-location {
-    /* margin: 10px;
-    margin-top: auto; */
-    margin: auto 10px 10px 10px;
 }
 
 .campground-card-img-wrapper > img {
-    height: 70px;
+    height: 6.5rem;
     width: auto;
-
 }
 
-.campground-card-btn {
+.campground-card-img-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 180px;
-    height: 60px;
-    border-radius: 10px;
+    overflow: hidden;
+    width: 168px;
+    margin: 0 auto;
 }
-.campground-card-btn-wrapper {
-    justify-content: flex-end;
+
+h5.card-title,
+.campground-card-text-location,
+.campground-card-text-description {
+    margin: 8px auto;
+}
+
+h5.card-title,
+.campground-card-text-location {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.campground-card-text-location {
+    color: rgba(33, 37, 41, 0.8);
+    font-weight: 300;
+    font-size: 0.9rem;
 }
 
 
-ul.pagination {
-    margin: 10px;
+.campground-card-text-description {
+    text-align: justify;
+}
+
+
+.campground-card-btn {
+    display: block;
+    text-decoration: none;
+
+    font-size: 1.5rem;
+    color: white;
+
+    background-color: darkgreen;
+    border-color: darkgreen;
+    border-radius: 1.4rem;
+    
+    height: 52px;
+    line-height: 52px;
+    width: 84px;
+    margin: 0 auto;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.5rem;
+}
+
+.campground-card-btn:hover {
+    color: white;
+    background-color: #38B000;
+    border-color: #38B000;
+}
+
+.campground-card-btn:active {
+    color: darkgreen;
+    background-color: #CCFF33;
+    border-color: #CCFF33;
 }
 
 #nav-pagination-wrapper {
     grid-area: i;
+    height: 8rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: start;
 }
-#nav-pagination {
-    margin-bottom: auto;
-}
-
-
-
-
-/* #cluster-map settings for screen width > 1000 px */
-/* #cluster-map {
-    aspect-ratio: 1.618;
-    height: 500px;
-    margin: 0 auto;
-} */
 
 #map {
     width: 100%;
