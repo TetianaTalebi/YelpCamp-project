@@ -140,6 +140,7 @@ html, body {
     top: 0;
     z-index: 10;
     box-shadow: 0 0.5rem 1rem black;
+    opacity: 0.9;
 }
 
 #navbar-top {
