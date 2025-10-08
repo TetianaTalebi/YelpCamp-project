@@ -17,6 +17,11 @@ body {
     background-attachment: fixed;
 }
 
+/* Active top navbar links to be highlighted */
+.active-top-link {
+    color:#eb5e28;
+}
+
 /* Pagination */
 .hidden {
     display: none;
