@@ -8,14 +8,14 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
 
-          <a class="nav-link" href="/campgrounds">All Campgrounds</a>
-          <a class="nav-link" href="/campgrounds/new">New Campground</a>
+          <a class="nav-link nav-top-link" href="/campgrounds">All Campgrounds</a>
+          <a class="nav-link nav-top-link" href="/campgrounds/new">New Campground</a>
           
           <% if (!currentUser){ %>
-          <a class="nav-link" href="/login">Login</a>
-          <a class="nav-link" href="/register">Register</a>
+          <a class="nav-link nav-top-link" href="/login">Login</a>
+          <a class="nav-link nav-top-link" href="/register">Register</a>
           <% } else { %>
-          <a class="nav-link" href="/logout">Logout</a>
+          <a class="nav-link nav-top-link" href="/logout">Logout</a>
           <% } %>
          
         </div>
