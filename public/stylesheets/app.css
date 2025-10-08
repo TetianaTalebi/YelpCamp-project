@@ -277,6 +277,11 @@ h1 {
 
 }
 
+.campground-card:hover {
+    transform: rotateX(20deg) skewX(2deg);
+    background: linear-gradient( grey, white 6%);
+}
+
 .campground-card-img-wrapper > img {
     height: 6.5rem;
     width: auto;
