@@ -19,7 +19,7 @@ function defineWindowWidthAndCampsPerPage(){
 
     switch (true){
         case (windowWidth > 1200): 
-            campsPerPage = 10;
+            campsPerPage = 16;
         break;
         case (windowWidth > 800): 
             campsPerPage = 3;
