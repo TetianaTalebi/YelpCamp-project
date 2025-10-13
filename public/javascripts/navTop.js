@@ -9,7 +9,6 @@ const allTopNavLinks = document.querySelectorAll(".nav-top-link");
 
 const highlightTopLink = function(){
     const currentPagePath = window.location.pathname;
-    console.log(currentPagePath);
     for (let link of allTopNavLinks){
         const linkText = link.pathname;
         if(linkText == currentPagePath){
