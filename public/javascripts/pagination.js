@@ -273,6 +273,16 @@ nextPage.addEventListener('click', function(){
     clickOnNextPrevious.call(nextPage, 1);
 });
 
+const prev10Pages = document.querySelector('#previous10Pages');
+prev10Pages.addEventListener('click', function(){
+    clickOnNextPrevious.call(prev10Pages, -10);
+});
+
+const next10Pages = document.querySelector('#next10Pages');
+next10Pages.addEventListener('click', function(){
+    clickOnNextPrevious.call(next10Pages, 10);
+});
+
 // #paginationStart, #paginationEnd
 
 // #previous10Pages, #next10Pages
