@@ -246,16 +246,26 @@ function clickOnPageBtn(){
         toggleHiddenClass(clickedPageNum, campsPerPage);
 }
 
+
+
 function clickOnNextPrevious(qtyOfPagesToMove){
 
     if (!this.classList.contains('disabled')){
+
+            let currentPageNum;
             // hide elements previous page
             // find prev page number
 
             let previousPageNum = hideElsPrevPage(campsPerPage);
 
-            let currentPageNum = previousPageNum + qtyOfPagesToMove;
-
+            if ((typeof qtyOfPagesToMove === 'string')&&(qtyOfPagesToMove=='start')){
+                currentPageNum=1;
+            } else if ((typeof qtyOfPagesToMove === 'string')&&(qtyOfPagesToMove=='end')){
+                currentPageNum=totalPages;
+            } else if (typeof qtyOfPagesToMove === 'number'){
+                currentPageNum = previousPageNum + qtyOfPagesToMove;
+            }
+            
             // Move to the page currentPageNum
             // Remove class .hidden from the elements that belong to the current page
             toggleHiddenClass(currentPageNum, campsPerPage);
@@ -316,9 +326,15 @@ next10Pages.addEventListener('click', function(){
     clickOnNextPrevious.call(next10Pages, 10);
 });
 
-// #paginationStart, #paginationEnd
+const paginationMoveToStart = document.querySelector('#paginationStart');
+paginationMoveToStart.addEventListener('click', function(){
+    clickOnNextPrevious.call(paginationMoveToStart, 'start');
+});
 
-// #previous10Pages, #next10Pages
+const paginationMoveToEnd = document.querySelector('#paginationEnd');
+paginationMoveToEnd.addEventListener('click', function(){
+    clickOnNextPrevious.call(paginationMoveToEnd, 'end');
+});
 
 
 
