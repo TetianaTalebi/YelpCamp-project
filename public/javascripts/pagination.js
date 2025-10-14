@@ -69,9 +69,33 @@ function toggleHiddenClass(activePageNum, qtyCampsPerPage){
 
 function nextPreviousBtns(activePageNum){
 
-        function addRemoveDisabled(myElement, myNumber){
+        function isEqual(someNumber){
+            if(activePageNum==someNumber) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
-            if (activePageNum == myNumber){
+        function isLessThan(someNumber){
+            if(activePageNum-someNumber<=0){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function isMoreThan(someNumber){
+            if(activePageNum+someNumber>totalPages){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function addRemoveDisabled(myElement, myNumber,  myFunction){
+
+            if (myFunction(myNumber)){
                 if(!myElement.classList.contains('disabled')){
                     myElement.classList.add('disabled');
                 }
@@ -85,14 +109,23 @@ function nextPreviousBtns(activePageNum){
     
     // if activePageNum == 1, disable '#previousPage' button
     const previousPageEl = document.querySelector('#previousPage');
-    addRemoveDisabled(previousPageEl, 1);
+    addRemoveDisabled(previousPageEl, 1, isEqual);
 
 
     // if pageNum == totalPages, disable '#nextPage' button
     const nextPageEl = document.querySelector('#nextPage');
-    addRemoveDisabled(nextPageEl, totalPages);
+    addRemoveDisabled(nextPageEl, totalPages, isEqual);
 
- 
+    // if activePageNum-10<=0, disable '#previous10Pages' button
+
+    const previous10PagesEl = document.querySelector('#previous10Pages');
+    addRemoveDisabled(previous10PagesEl, 10, isLessThan);
+
+    // if activePageNum+10>totalPages, disable '#next10Pages' button
+
+    const next10PagesEl = document.querySelector('#next10Pages');
+    addRemoveDisabled(next10PagesEl, 10, isMoreThan);
+
 }
 
 function hideElsPrevPage(qtyCampsPerPage){
