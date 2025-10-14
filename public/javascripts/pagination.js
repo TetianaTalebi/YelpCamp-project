@@ -106,15 +106,25 @@ function nextPreviousBtns(activePageNum){
                 }
             }
         }
+
+     // #paginationStart #paginationEnd
     
     // if activePageNum == 1, disable '#previousPage' button
     const previousPageEl = document.querySelector('#previousPage');
     addRemoveDisabled(previousPageEl, 1, isEqual);
 
+    // if activePageNum == 1, disable '#paginationStart' button
+    const paginationStartEl = document.querySelector('#paginationStart');
+    addRemoveDisabled(paginationStartEl, 1, isEqual);
 
-    // if pageNum == totalPages, disable '#nextPage' button
+    // if activePageNum == totalPages, disable '#nextPage' button
     const nextPageEl = document.querySelector('#nextPage');
     addRemoveDisabled(nextPageEl, totalPages, isEqual);
+
+    // if activePageNum == totalPages, disable '#paginationEnd' button
+
+    const paginationEndEl = document.querySelector('#paginationEnd');
+    addRemoveDisabled(paginationEndEl, totalPages, isEqual);
 
     // if activePageNum-10<=0, disable '#previous10Pages' button
 
