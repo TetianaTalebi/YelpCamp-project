@@ -29,6 +29,7 @@ function defineWindowWidthAndCampsPerPage(){
     }
     // totalPages is global variable
     totalPages = Math.ceil(totalQtyCamps/campsPerPage);
+    console.log(`totalPages = ${totalPages}`);
 }
 
 
@@ -67,32 +68,55 @@ function toggleHiddenClass(activePageNum, qtyCampsPerPage){
 // and this function also deactivates '#nextPage' button (>>) if the current active page is equal to totalPages
 
 function nextPreviousBtns(activePageNum){
+
+        function addRemoveDisabled(myElement, myNumber){
+
+            if (activePageNum == myNumber){
+                if(!myElement.classList.contains('disabled')){
+                    myElement.classList.add('disabled');
+                }
+            } else {
+                // else activePageNum != myNumber, remove class .disabled from '#previousPage' button if it has this class
+                if(myElement.classList.contains('disabled')){
+                    myElement.classList.remove('disabled');
+                }
+            }
+
+        }
     
     // if activePageNum == 1, disable '#previousPage' button
     const previousPageEl = document.querySelector('#previousPage');
-    if (activePageNum==1){
-        if(!previousPageEl.classList.contains('disabled')){
-            previousPageEl.classList.add('disabled');
-        }
-    } else {
-        // else activePageNum != 1, remove class .disabled from '#previousPage' button if it has this class
-        if(previousPageEl.classList.contains('disabled')){
-            previousPageEl.classList.remove('disabled');
-        }
-    }
+
+    addRemoveDisabled(previousPageEl, 1);
+
+
+    // if (activePageNum==1){
+    //     if(!previousPageEl.classList.contains('disabled')){
+    //         previousPageEl.classList.add('disabled');
+    //     }
+    // } else {
+    //     // else activePageNum != 1, remove class .disabled from '#previousPage' button if it has this class
+    //     if(previousPageEl.classList.contains('disabled')){
+    //         previousPageEl.classList.remove('disabled');
+    //     }
+    // }
 
     // if pageNum == totalPages, disable '#nextPage' button
     const nextPageEl = document.querySelector('#nextPage');
-    if(activePageNum==totalPages){
-        if(!nextPageEl.classList.contains('disabled')){
-            nextPageEl.classList.add('disabled');
-        }
-    } else {
-        // else pageNum != totalPages, remove class .disabled from '#nextPage' button if it has this class
-        if(nextPageEl.classList.contains('disabled')){
-            nextPageEl.classList.remove('disabled');
-        }
-    }
+
+    addRemoveDisabled(nextPageEl, totalPages);
+
+
+    // if(activePageNum==totalPages){
+    //     if(!nextPageEl.classList.contains('disabled')){
+    //         nextPageEl.classList.add('disabled');
+    //     }
+    // } else {
+    //     // else pageNum != totalPages, remove class .disabled from '#nextPage' button if it has this class
+    //     if(nextPageEl.classList.contains('disabled')){
+    //         nextPageEl.classList.remove('disabled');
+    //     }
+    // }
 }
 
 function hideElsPrevPage(qtyCampsPerPage){
