@@ -6,11 +6,11 @@ let campsPerPage;
 // (i.e. how many camps per page were before the last window.innerWidth change happened)
 let previousCampsPerPage = -1;
 
-// The total qu-ty of campgrounds that app has
+// The total q-ty of campgrounds that app has
 // totalCamps was defined in campgrounds/index.ejs template
 let totalQtyCamps = totalCamps;
 
-// The total qu-ty of pages (it depends from the total qu-ty of campgrounds and qu-ty of campgrounds per 1 page)
+// The total q-ty of pages (it depends from the total qu-ty of campgrounds and q-ty of campgrounds per 1 page)
 let totalPages;
 
 //  This function defines window width and value of campsPerPage (campsPerPage is global variable)
@@ -29,7 +29,6 @@ function defineWindowWidthAndCampsPerPage(){
     }
     // totalPages is global variable
     totalPages = Math.ceil(totalQtyCamps/campsPerPage);
-    console.log(`totalPages = ${totalPages}`);
 }
 
 
@@ -42,6 +41,53 @@ function findActivePageNumber(){
 
     const curPageLiActive = document.querySelector('.page.active');
     return Number(curPageLiActive.children[0].innerText);
+}
+
+function changePageBtnsInnerText(activePageNum){
+   
+    // The total number of page btn-s
+    const allPageBtns = document.querySelectorAll('.page');
+    let totalNumPageBtns = allPageBtns.length;
+
+    let centerPageBtnIndex = Math.floor(totalNumPageBtns/2);
+
+    switch (true){
+        case (activePageNum<=centerPageBtnIndex):
+            for(let i=0; i<totalNumPageBtns; i++){
+                if(allPageBtns[i]){
+                    allPageBtns[i].children[0].innerText=i+1;
+                }  
+            }
+            break;
+        case (totalPages-activePageNum<centerPageBtnIndex):
+            // Create tempTotalPages in order to not change the value of global variable totalPages
+            let tempTotalPages = totalPages;
+            for(let i=totalNumPageBtns-1; i>=0; i--){
+                if(allPageBtns[i]){
+                    allPageBtns[i].children[0].innerText=tempTotalPages--;
+                }
+            }
+            break;
+        default:
+            let tempCurPage1 = activePageNum;
+            
+            let i = centerPageBtnIndex;
+            while (i>=0){
+                if(allPageBtns[i]){
+                    allPageBtns[i].children[0].innerText=tempCurPage1--;  
+                }
+                i--;
+            }
+            let tempCurPage2 = activePageNum;
+            let j= centerPageBtnIndex+1;
+            while (j<totalNumPageBtns){
+                if(allPageBtns[j]){
+                    allPageBtns[j].children[0].innerText=++tempCurPage2;
+                }
+                j++;
+            }
+    }
+    
 }
 
 // toggleHiddenClass function accepts the number of the page that is currently active and toggle .hidden class of the campground cards (to show only that cards that relate to the currently active page)
@@ -167,17 +213,34 @@ function showElsCurrPage(qtyCampsPerPage) {
 }
 
 function showElsCurrPage2(){
-    // Run this code only if the quantity of campground cards per page have been changed
+    // Run this code only if the quantity of campground cards per page have been changed as a result of changing window width
     if (previousCampsPerPage != campsPerPage){
-        // Find active page
-        let activePageNumber = findActivePageNumber();
 
-        // Hide campground cards that relate to activePageNumber and PREVIOUS VALUE OF camps per page
-        // After running toggleHiddenClass all campground cards become hidden
-        toggleHiddenClass(activePageNumber, previousCampsPerPage);
+        let previousActivePageNumber = hideElsPrevPage(previousCampsPerPage);
 
-        // Now when all campground cards are hidden, show only that camp cards that correspond to the active page number and CURRENT VALUE OF camps per page
-       showElsCurrPage(campsPerPage);
+        // Find the 1st campground card that was at previousActivePageNumber with previousCampsPerPage
+
+        let the1stElPrevPage = (previousActivePageNumber-1)*previousCampsPerPage+1;
+
+        // Find out to what page to move in order to see the same chunk of campground cards with the new number of camps per page as we saw with old number camps per page
+        let newActivePageToMoveTo = the1stElPrevPage % campsPerPage === 0 ? (the1stElPrevPage/campsPerPage):(Math.ceil(the1stElPrevPage/campsPerPage));
+
+        // Move to the page newActivePageToMoveTo
+        // Remove class .hidden from the elements that belong to the current page
+        toggleHiddenClass(newActivePageToMoveTo, campsPerPage);
+
+        // Deactivate previous button (i.e. "<<" button) if current page number == 1
+        // Deactivate next button (i.e. ">>" button) if current page num == total pages
+        nextPreviousBtns(newActivePageToMoveTo);
+
+    
+        // Align page buttons in order the current active btn will be in the list
+        changePageBtnsInnerText(newActivePageToMoveTo);
+
+        // Add class .active to currentPageNum
+        addActiveClassToPage(newActivePageToMoveTo);
+
+        previousCampsPerPage = campsPerPage;
     } 
 }
 
@@ -194,52 +257,7 @@ function addActiveClassToPage(activePageNum){
             }
 }
 
-function changePageBtnsInnerText(activePageNum){
-   
-    // The total number of page btn-s
-    const allPageBtns = document.querySelectorAll('.page');
-    let totalNumPageBtns = allPageBtns.length;
 
-    let centerPageBtnIndex = Math.floor(totalNumPageBtns/2);
-
-    switch (true){
-        case (activePageNum<=centerPageBtnIndex):
-            for(let i=0; i<totalNumPageBtns; i++){
-                if(allPageBtns[i]){
-                    allPageBtns[i].children[0].innerText=i+1;
-                }  
-            }
-            break;
-        case (totalPages-activePageNum<centerPageBtnIndex):
-            // Create tempTotalPages in order to not change the value of global variable totalPages
-            let tempTotalPages = totalPages;
-            for(let i=totalNumPageBtns-1; i>=0; i--){
-                if(allPageBtns[i]){
-                    allPageBtns[i].children[0].innerText=tempTotalPages--;
-                }
-            }
-            break;
-        default:
-            let tempCurPage1 = activePageNum;
-            
-            let i = centerPageBtnIndex;
-            while (i>=0){
-                if(allPageBtns[i]){
-                    allPageBtns[i].children[0].innerText=tempCurPage1--;  
-                }
-                i--;
-            }
-            let tempCurPage2 = activePageNum;
-            let j= centerPageBtnIndex+1;
-            while (j<totalNumPageBtns){
-                if(allPageBtns[j]){
-                    allPageBtns[j].children[0].innerText=++tempCurPage2;
-                }
-                j++;
-            }
-    }
-    
-}
 
 function clickOnPageBtn(){
         
