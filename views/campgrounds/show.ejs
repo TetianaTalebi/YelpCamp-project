@@ -5,19 +5,31 @@
     <link rel="stylesheet" href="/stylesheets/showCamp.css">
     
     <div id="containerShowCamp">
-        
-      <div id="campCard">
-          
 
+            <div id="showCampAuthorTimeTitleLocation">
+             
+                <div id="showCampAuthorAndTime">
+                  <span id="showCampAuthor">Submitted by <%= campground.author.username %></span>
+                  <span id="showCampTime">2 days ago</span>
+                </div>
+
+                <h1 id="showCampTitle" class="card-title"><%= campground.title %></h1>
+                
+                <p id="showCampLocation"><%= campground.location %></p>
+            </div> 
+    
             <div id="campgroundCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
               
               <div id="imgContainerCarousel" class="carousel-inner">
               <!-- Logic for displaying multiple images for a campground -->
               <% campground.images.forEach((img, i) =>{ %>
                 <!-- Only the first image has 'active' class -->
-                <div id="imgContainer" class="carousel-item <%= i===0?'active':'' %>">
-                  <img id="campShowImg" src="<%= img.url %>" class="d-block" alt="">
-                </div>
+                
+                  <div id="imgContainer" class="carousel-item <%= i===0?'active':'' %>">
+                    <div id="showCampImgWrapper">
+                      <img id="campShowImg" src="<%= img.url %>" class="d-block" alt="">
+                    </div>
+                  </div>
               <% }) %>
               </div>
 
@@ -34,47 +46,52 @@
 
             </div>
 
-            <div class="card mb-3">
-                <div class="card-body">
-                  <h1 class="card-title"><%= campground.title %></h1>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><%= campground.location %></li>
-                  <li class="list-group-item text-muted">
-                    Submitted by: <%= campground.author.username %>
-                  </li>
-                </ul>
-                <div class="card-footer text-muted">
-                  2 days ago
-                </div>
-                <div class="card-body">
-                  <p class="card-text"><%= campground.description %></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><strong>$<%= campground.price %>/night</strong></li>
-                </ul>
-                <div class="card-body">
-                  <div id="map"></div>
-                </div>
-                <div class="card-body">
+            <div id="showCampMapWrapper">
+                <div id="showMapBtn" >Show on map</div>
 
-                  <% if (currentUser && campground.author.equals(currentUser._id)){ %>
-
-                  <a href="/campgrounds/<%= campground._id %>/edit" class="card-link btn btn-info">Edit Campground</a>
-                  <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
-                    <button class="btn btn-danger">Delete</button>
-                  </form>
-
-                  <% } %>
-
-                  <a href="/campgrounds" class="card-link btn btn-primary">All Campgrounds</a>
+                <div id="showHideMap" class="hidden">
+                    <div id="map"></div>
                 </div>
-                
+            </div>
+            
+            
+            <div id="showCampDescriptionWrapper">
+                <p id="showCampDescription"><%= campground.description %></p>
+            </div>
+            
+            <div id="showCampPriceWrapper">
+
+                <div id="showPriceBtn">Show price</div>
+
+                <p id="showHideCampPriceTaxes" class="hidden">
+                Price for 1 night<br>
+                  <span id="campgroundPrice">
+                    CAD<%= campground.price %>
+                  </span><br>
+                  <span id="campgroundTax">
+                    +CAD <%= Math.ceil(campground.price*0.18) %> taxes and fees
+                  </span>
+                </p>
+            </div>
+            
+ 
+            <div id="showCampUpdateDeleteBtnsWrapper">
+
+              <% if (currentUser && campground.author.equals(currentUser._id)){ %>
+                  <div id="showCampUpdateDeleteBtn">
+                      <a id="showCampEditBtn" href="/campgrounds/<%= campground._id %>/edit" class="card-link btn btn-info">Edit Campground</a>
+
+                      <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                        <button id="showCampDeleteBtn" class="btn btn-danger">Delete</button>
+                      </form>
+                  </div>
+
+              <% } %>
+
             </div>
 
             
-        </div>
-        <!-- <div id="map"></div> -->
+                
         <div id="campReview">
 
           <% if (currentUser) { %>
@@ -149,7 +166,9 @@
 
             <% } %>
           </div>
+
         </div>
+
     </div>
     <script>
       const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>';

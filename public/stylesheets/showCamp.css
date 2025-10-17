@@ -1,118 +1,172 @@
-h2 {
-    text-align: center;
-}
 
-#alertContainer{
-    width: 90%;
-    margin: 0 auto;
-    border: solid salmon 10px;
-    position: relative;
-    display: grid;
-    place-items: center;
-}
-
-.alert {
+/* .alert {
     position: absolute;
     font-size: 1.5em;
     font-weight: bold;
     z-index: 1;
-}
-
-/* These styles relate to all elements inside #containerShowCamp */
-#containerShowCamp > * {
-    display: flex;
-    border: 4px solid blue;
-    padding: 1.5em;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-}
-
-#containerShowCamp {
-    background-color: #ffffff;
-    border-radius: 10px;
-    width: 90%;
-    height: 90vh;
-    margin: 0 auto;
-    border: 4px solid red;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    /* grid-gap: 10px; */
-    grid-template-areas:
-    "campCard campCard campCard campReview";
-}
-
-/* #map {
-    grid-area: map;
-    height: 100%;
 } */
-#campCard {
-    grid-area: campCard;
-    justify-content: start;
-    overflow-y: scroll;
-    /* scrollbar-color: #386641 #6a994e; */
-    scrollbar-width: none;
-    border: 10px solid purple;
+
+
+
+/* Styling "Show Campground" images */
+#campgroundCarousel {
+    width: 100%;
+    padding: 2rem 0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-#campReview {
-    grid-area: campReview;
-    justify-content: start;
-    overflow-y: scroll;
-    /* scrollbar-color: #386641 #6a994e; */
-    scrollbar-width: none;
+#imgContainerCarousel {
+    background-color: white;
 }
 
-#reviewForm {
-    border: 10px solid teal;
+#showCampImgWrapper {
+    overflow: hidden;
+    width: 800px;
+    margin: 0 auto;
+    
 }
 
-#allCampReviews {
-    border: 10px solid slateblue;  
+#campShowImg {
+    height: 450px;
+    width: auto;
+    margin: 0 auto;  
 }
-#allCampReviews > p {
+
+/* End of styling "Show Campground" images */
+
+
+/* the nested grid container for "Show Campground" page for screens > 1200px  */
+#containerShowCamp {
+    grid-area: b;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1060px minmax(0, 1fr);
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas: ". title ."
+                         ". photos ."
+                         ". map ."
+                         ". description ."
+                         ". price ."
+                         ". updateDelBtns ."
+                         ". reviews .";
+}
+
+/* Nested1-grid-container elements */
+
+#showCampAuthorTimeTitleLocation {
+    grid-area: title;
+    background-color: white;
+    padding: 2rem 0 0.5rem 0;
+}
+
+/* Styling "Show Campground" title, author, location */
+
+#showCampAuthorAndTime {
+    font-size:1.2rem;
+    color: darkgreen;
+    margin-left: 1rem;
+}
+
+h1#showCampTitle {
+    color: black;
     text-align: center;
 }
 
+#showCampLocation {
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-align: center;
+    color: #000000AA;
+}
+
+/* End of styling "Show Campground" title, author, location */
+
 #campgroundCarousel {
+    grid-area: photos;
+}
+
+#showCampMapWrapper {
+    grid-area: map;
+    background-color: white;
+    text-align: center;
+   
+}
+
+#map {
     width: 100%;
-    border: 10px solid yellow;
-}
-
-
-#campShowImg {
     height: 400px;
-    width: auto;
-    aspect-ratio: auto;
-    overflow: hidden;
-    margin: 0 auto;
-    border: 5px solid greenyellow;
 }
 
-@media (max-width: 1200px){
-    #containerShowCamp {
-        width: 95%;
-    }
-}
-
-@media (max-width: 800px){
-    #containerShowCamp {
-        height: auto;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        /* grid-gap: 10px; */
-        grid-template-areas:
-        "campCard"
-        "campReview";
-    }
+#showCampDescriptionWrapper {
+    grid-area: description;
+     background-color: white;
+    text-indent: 3rem;
+    font-size: 1.5rem;
+    text-align: justify;
+    padding: 1rem;
 }
 
 
+#showCampPriceWrapper {
+    grid-area: price;
+    color: darkgreen;
+    background-color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
 
-/* #imgContainerCarousel {
-    border: 5px solid orange;
+span#campgroundPrice {
+    font-weight: 700;
+    font-size: 2.2rem;
+}
 
-} */
+#showCampUpdateDeleteBtnsWrapper {
+    grid-area: updateDelBtns;
+}
+
+#showCampUpdateDeleteBtn {
+    height: 8rem;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#campReview {
+    grid-area: reviews;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
