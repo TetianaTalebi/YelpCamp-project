@@ -31,7 +31,11 @@ ul.pagination {
     margin-top: 20px;
 }
 #previousPage > .page-link,
-#nextPage > .page-link {
+#nextPage > .page-link,
+#previous10Pages > .page-link,
+#next10Pages > .page-link,
+#paginationStart > .page-link,
+#paginationEnd > .page-link {
     font-size: 1.5rem;
     font-weight: 500;
     min-width: 3rem;
@@ -42,23 +46,34 @@ ul.pagination {
     border-color: #CCFF33;
 }
 
-#previousPage > .page-link {
+#paginationStart > .page-link {
     border-radius: 1.5rem 0 0 1.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
 }
 
-#nextPage > .page-link {
+#paginationEnd > .page-link {
     border-radius: 0 1.5rem 1.5rem 0;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
 }
 
 #previousPage > .page-link:hover,
 #nextPage > .page-link:hover,
+#previous10Pages > .page-link:hover,
+#next10Pages > .page-link:hover,
+#paginationStart > .page-link:hover,
+#paginationEnd > .page-link:hover,
 .page-item.page > .page-link:hover {
     background-color: #9EF01A;
     border-color: #9EF01A;
+    cursor: pointer;
 }
 
 #previousPage > .page-link:active,
 #nextPage > .page-link:active,
+#previous10Pages > .page-link:active,
+#next10Pages > .page-link:active,
+#paginationStart > .page-link:active,
+#paginationEnd > .page-link:active,
 .page-item.page > .page-link:active {
     background-color: #38B000;
     border-color: #38B000;
@@ -66,7 +81,11 @@ ul.pagination {
 }
 
 #previousPage.disabled > .page-link,
-#nextPage.disabled > .page-link {
+#nextPage.disabled > .page-link,
+#previous10Pages.disabled > .page-link,
+#next10Pages.disabled > .page-link,
+#paginationStart.disabled > .page-link,
+#paginationEnd.disabled > .page-link  {
     background-color: lightgray;
     border-color: lightgray;
     color: slategrey;
@@ -91,11 +110,11 @@ ul.pagination {
     cursor: pointer;
 }
 
-.page-link:hover {
+/* .page-link:hover {
     background-color: #9EF01A;
     border-color: #9EF01A;
     cursor: pointer;
-}
+} */
 
 .page-link:focus {
     /* Remove Bootstrap bluish color from pagination navbar */
@@ -151,7 +170,7 @@ html, body {
 #navbar-brand {
     font-size: 2rem;
     font-weight: 600;
-    white-space: preserve nowrap;
+    white-space: nowrap;
     overflow: visible;
     margin-left: 1rem;
 }
@@ -226,7 +245,7 @@ h1 {
     justify-content: center;
 }
 
-/* the 1st nested grid container  */
+/* the 1st nested grid container for "All Campgrounds" page for screens > 1200px  */
 #nested1-grid-container {
     display: grid;
     grid-area: b;
@@ -364,11 +383,6 @@ h5.card-title,
     flex-direction: row;
     justify-content: center;
     align-items: start;
-}
-
-#map {
-    width: 100%;
-    height: 300px;
 }
 
 /* Active top navbar links to be highlighted */
