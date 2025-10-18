@@ -17,33 +17,40 @@
                 
                 <p id="showCampLocation"><%= campground.location %></p>
             </div> 
-    
-            <div id="campgroundCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
-              
-              <div id="imgContainerCarousel" class="carousel-inner">
-              <!-- Logic for displaying multiple images for a campground -->
-              <% campground.images.forEach((img, i) =>{ %>
-                <!-- Only the first image has 'active' class -->
-                
-                  <div id="imgContainer" class="carousel-item <%= i===0?'active':'' %>">
-                    <div id="showCampImgWrapper">
-                      <img id="campShowImg" src="<%= img.url %>" class="d-block" alt="">
+            <div id="showCamp_pictures">
+                  <% if (campground.images.length>0) {%>
+                      <div id="campgroundCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    
+                            <div id="imgContainerCarousel" class="carousel-inner">
+                                <!-- Logic for displaying multiple images for a campground -->
+                                <% campground.images.forEach((img, i) =>{ %>
+                                  <!-- Only the first image has 'active' class -->
+                                  
+                                    <div id="imgContainer" class="carousel-item <%= i===0?'active':'' %>">
+                                      <div id="showCampImgWrapper">
+                                        <img id="campShowImg" src="<%= img.url %>" class="d-block" alt="">
+                                      </div>
+                                    </div>
+                                <% }) %>
+                            </div>
+
+                            <% if(campground.images.length>1){ %>
+                                  <button class="carousel-control-prev" type="button" data-bs-target="#campgroundCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                  </button>
+                                  <button class="carousel-control-next" type="button" data-bs-target="#campgroundCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                  </button>
+                            <% } %>
                     </div>
-                  </div>
-              <% }) %>
-              </div>
-
-              <% if(campground.images.length>1){ %>
-                <button class="carousel-control-prev" type="button" data-bs-target="#campgroundCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#campgroundCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              <% } %>
-
+                  <% } else { %>
+                            
+                            <!-- Display this img if a campground does not have any images -->
+                              <img id="no_img_available" src="https://res.cloudinary.com/dljmlxtmx/image/upload/v1760748840/No_Image_Available_exlv6b.png" alt="" class="img-fluid">
+                            
+                  <% } %>
             </div>
 
             <div id="showCampMapWrapper">
