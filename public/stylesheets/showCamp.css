@@ -14,14 +14,7 @@
     width: 100%;
     padding: 2rem 0;
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#imgContainerCarousel {
-    background-color: white;
+    
 }
 
 #showCampImgWrapper {
@@ -29,6 +22,15 @@
     width: 800px;
     margin: 0 auto;
     
+}
+
+#no_img_available_wrapper {
+    height: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #campShowImg, #no_img_available {

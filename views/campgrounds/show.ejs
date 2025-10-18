@@ -34,7 +34,7 @@
                                 <% }) %>
                             </div>
 
-                            <% if(campground.images.length>1){ %>
+                            <% if(campground.images.length > 1){ %>
                                   <button class="carousel-control-prev" type="button" data-bs-target="#campgroundCarousel" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
@@ -47,9 +47,10 @@
                     </div>
                   <% } else { %>
                             
+                          <div id="no_img_available_wrapper">
                             <!-- Display this img if a campground does not have any images -->
                               <img id="no_img_available" src="https://res.cloudinary.com/dljmlxtmx/image/upload/v1760748840/No_Image_Available_exlv6b.png" alt="" class="img-fluid">
-                            
+                          </div>
                   <% } %>
             </div>
 
