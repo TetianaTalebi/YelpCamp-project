@@ -27,7 +27,10 @@
                             <img src="<%=campground.images[0].url %>" alt="" >
                             <!-- class="img-fluid"> -->
                         <% } else { %>
-                            <img src="https://res.cloudinary.com/dljmlxtmx/image/upload/v1729315701/YelpCamp/rpph59cajsqxrfxtzdgb.jpg" alt="" class="img-fluid">
+                            
+                            <!-- Display this img if a campground does not have any images -->
+                            <img src="https://res.cloudinary.com/dljmlxtmx/image/upload/v1760748840/No_Image_Available_exlv6b.png" alt="" class="img-fluid">
+    
                         <% } %>
                     </div>
 
