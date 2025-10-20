@@ -5,7 +5,6 @@ const map = new maptilersdk.Map({
     container: 'cluster-map',
     style: maptilersdk.MapStyle.BASIC,
     center: [-92.3468, 62.1304],
-    // center: [-103.59179687498357, 40.66995747013945],
     zoom: 2.65,
     navigationControl: 'bottom-right',
     geolocateControl: 'bottom-right',
