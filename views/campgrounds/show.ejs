@@ -55,7 +55,7 @@
             </div>
 
             <div id="showCampMapWrapper">
-                <div id="showMapBtn" class="btn-block">Show on map</div>
+                <div id="showMapBtn">Show on map</div>
 
                 <div id="showHideMap" class="hidden">
                     <div id="map"></div>
@@ -64,14 +64,14 @@
             
             
             <div id="showCampDescriptionWrapper">
-                <p id="showCampDescription"><%= campground.description %></p>
+                <div id="showCampDescription"><%= campground.description %></div>
             </div>
             
             <div id="showCampPriceWrapper">
 
-                <div id="showPriceBtn" class="btn-block">Show price</div>
+                <div id="showPriceBtn">Show price</div>
 
-                <p id="showHideCampPriceTaxes" class="hidden">
+                <div id="showHideCampPriceTaxes" class="hidden">
                 Price for 1 night<br>
                   <span id="campgroundPrice">
                     CAD<%= campground.price %>
@@ -79,7 +79,7 @@
                   <span id="campgroundTax">
                     +CAD <%= Math.ceil(campground.price*0.18) %> taxes and fees
                   </span>
-                </p>
+                </div>
             </div>
             
  
