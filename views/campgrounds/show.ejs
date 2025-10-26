@@ -64,7 +64,9 @@
             
             
             <div id="showCampDescriptionWrapper">
-                <div id="showCampDescription"><%= campground.description %></div>
+                <span id="showCampDescription" class="showCampDescrShort"><%= campground.description %>
+                </span>
+                <span id="readMore">Read More</span>
             </div>
             
             <div id="showCampPriceWrapper">
@@ -77,7 +79,7 @@
                     CAD<%= campground.price %>
                   </span><br>
                   <span id="campgroundTax">
-                    +CAD <%= Math.ceil(campground.price*0.18) %> taxes and fees
+                    + CAD<%= Math.ceil(campground.price*0.18) %> taxes and fees
                   </span>
                 </div>
             </div>
