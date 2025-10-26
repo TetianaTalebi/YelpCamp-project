@@ -16,7 +16,14 @@ const map = new maptilersdk.Map({
     fullscreenControl: 'bottom-right'
 });
 
-new maptilersdk.Marker()
+// Create div DOM element
+// Add style="markerShowCamp" to created div element
+
+const markerDiv = document.createElement("div");
+markerDiv.classList.add('markerShowCamp');
+
+
+new maptilersdk.Marker({element: markerDiv})
 .setLngLat(campground.geometry.coordinates)
 .setPopup(
     new maptilersdk.Popup({offset: 25})

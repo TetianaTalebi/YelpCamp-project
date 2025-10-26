@@ -99,11 +99,26 @@ h1#showCampTitle {
    
 }
 
-#showMapBtn {
+#showMapBtn, #showPriceBtn {
     font-size: 2rem;
     font-weight: 500;
     color: darkgreen;
+    cursor: pointer;
+
+    border: 0.35rem solid darkgreen;
+    border-radius: 0.65rem;
+    margin: 1.2rem 9rem;
 }
+
+#showMapBtn:hover, #showPriceBtn:hover {
+    background-color: #CCFF33;
+}
+
+#showMapBtn:active, #showPriceBtn:active {
+    background-color: darkgreen;
+    color: white;
+}
+
 
 #map {
     width: 100%;
@@ -112,7 +127,7 @@ h1#showCampTitle {
 
 #showCampDescriptionWrapper {
     grid-area: description;
-     background-color: white;
+    background-color: white;
     text-indent: 3rem;
     font-size: 1.5rem;
     text-align: justify;
@@ -126,16 +141,9 @@ h1#showCampTitle {
     background-color: white;
     font-size: 2rem;
     font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+    text-align: center;
 }
 
-#showPriceBtn {
-    border: solid darkgreen 0.2rem;
-}
 
 span#campgroundPrice {
     font-weight: 700;
@@ -159,6 +167,28 @@ span#campgroundPrice {
     grid-area: reviews;
     background-color: white;
 }
+
+#readMore {
+    white-space: nowrap;
+    text-indent: 0;
+}
+
+/* Style for marker that is displayed at "Show Campground" map */
+
+.markerShowCamp {
+    display: block;
+    border: none;
+    padding: none;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    background-image: url("../images/MapTiler_tent_icon_PNG.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
 
 
 
