@@ -195,6 +195,11 @@ span#campgroundPrice {
 #readMore {
     white-space: nowrap;
     text-indent: 0;
+    color: darkgreen;
+    background: #CCFF33;
+    cursor: pointer;
+    padding: 0.3rem 1rem;
+    border-radius: 0.3rem;
 }
 
 /* Style for marker that is displayed at "Show Campground" map */
