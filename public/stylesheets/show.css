@@ -166,6 +166,8 @@ h1#showCampTitle {
     background-size: 100%;
     background-repeat: repeat;
     overflow: hidden;
+    text-shadow: 0px -0.1rem #00000099, 0px 0.1rem #FFFFFF99;
+    
 }
 
 
@@ -192,14 +194,24 @@ span#campgroundPrice {
     background-color: white;
 }
 
-#readMore {
+.readMore {
     white-space: nowrap;
     text-indent: 0;
-    color: darkgreen;
-    background: #CCFF33;
+    color: white;
+    font-weight: 500;
+    background: darkgreen;
     cursor: pointer;
-    padding: 0.3rem 1rem;
+    padding: 0.3rem 0.8rem;
     border-radius: 0.3rem;
+}
+
+.readMore:hover {
+    background-color: #38B000;
+}
+
+.readMore:active {
+    color: darkgreen;
+    background-color: #CCFF33;
 }
 
 /* Style for marker that is displayed at "Show Campground" map */
