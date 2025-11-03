@@ -4,7 +4,7 @@
 <div class="container d-flex justify-content-center align-items-center">
     <div class="row">
         <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 col-xxl-4 offset-xxl-4"> 
-            <div class="shadow p-3 mb-5 bg-body rounded">
+            <div id="registerWrapper" class="p-3 mb-5 bg-body rounded">
                 <img src="https://res.cloudinary.com/dljmlxtmx/image/upload/v1762127730/tanya00255_A_serene_peaceful_camping_scene_where_the_tent_sits__75e2a1f5-1369-4550-b87a-48a1f340b5f6_lwy1ms.webp" alt="" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">Register</h5>
@@ -12,7 +12,7 @@
 
                         <div class="mb-3">
                             <label class="form-label" for="username">Username</label>
-                            <input class="form-control" type="text" id="username" name="username" placeholder="Username" required autofocus>
+                            <input class="form-control" type="text" id="username" name="username" placeholder="Username" autocomplete="username" required autofocus>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -23,7 +23,7 @@
                     
                         <div class="mb-3">
                             <label class="form-label" for="email">Email</label>
-                            <input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -43,8 +43,9 @@
                             </div>
                         </div>
                         
-                        <div class="d-grid">
-                            <button class="btn btn-success">Register</button>
+                        <div id="registerBtnWrapper" class="d-grid">
+                            <!-- <button id="registerBtn" class="btn btn-success">Register</button> -->
+                            <button  class="btn btn-info">Register</button>
                         </div>
                     </form>
                 </div>

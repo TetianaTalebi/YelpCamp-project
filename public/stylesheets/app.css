@@ -243,7 +243,36 @@ h1 {
     color: white;
 }
 
-#title-and-button-container a.btn {
+#loginWrapper h5.card-title,
+#registerWrapper h5.card-title {
+    text-align: center;
+    font-weight: 500;
+    font-size:2rem;
+    margin-bottom: 2rem;
+}
+
+#loginWrapper,
+#registerWrapper {
+    font-size:1.5rem
+}
+
+#loginWrapper input,
+#registerWrapper input {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    background-color: #38B00022;
+}
+
+
+#loginWrapper input::placeholder,
+#registerWrapper input::placeholder {
+    color: #00000088;
+}
+
+
+#title-and-button-container a.btn,
+#loginBtnWrapper button.btn, #registerBtnWrapper button.btn {
     font-size: 1.5rem;
     color: darkgreen;
     font-weight: 500;
@@ -251,7 +280,13 @@ h1 {
     border-radius: 1.5rem;
 }
 
-#title-and-button-container a.btn-info {
+#loginBtnWrapper button.btn, 
+#registerBtnWrapper button.btn {
+    margin-top: 3rem;
+}
+
+#title-and-button-container a.btn-info,
+#loginBtnWrapper button.btn-info, #registerBtnWrapper button.btn-info {
     background-color: #CCFF33;
     box-shadow: inset -0.3rem -0.3rem 0.3rem #00000055, inset 0.3rem 0.3rem 0.3rem #FFFFFF66, 0.3rem 0.3rem 0.3rem #00000055;
     border-top-color: #FFFFFF66;
@@ -261,17 +296,21 @@ h1 {
     
 }
 
-#title-and-button-container a.btn-info:hover{
+#title-and-button-container a.btn-info:hover,
+#loginBtnWrapper button.btn-info:hover, 
+#registerBtnWrapper button.btn-info:hover {
     background-color: #9EF01A;
-    
-
 }
 
-#title-and-button-container a.btn-info:active{
+#title-and-button-container a.btn-info:active,
+#loginBtnWrapper button.btn-info:active, 
+#registerBtnWrapper button.btn-info:active {
     background-color: #38B000;
 }
 
-#title-and-button-container a.btn:active{
+#title-and-button-container a.btn:active,
+#loginBtnWrapper button.btn:active, 
+#registerBtnWrapper button.btn:active {
     color: white;
     box-shadow: inset 0.3rem 0.3rem 0.3rem #00000055, inset -0.3rem -0.3rem 0.3rem #FFFFFF66;
     border-top-color: #00000055;
@@ -457,6 +496,50 @@ h5.card-title,
     color:#eb5e28 !important;
     font-weight: 600;
 }
+
+#loginWrapper, #registerWrapper {
+    box-shadow: 0 2rem 2rem #00000099;
+}
+
+/* #loginBtn, #registerBtn {
+    font-weight: 500;
+    color: white;
+    background: darkgreen;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    box-shadow: none;
+}
+
+#loginBtn:hover, #registerBtn:hover {
+    background-color: #38B000;
+}
+
+#loginBtn:active, #registerBtn:active {
+    color: darkgreen;
+    background-color: #CCFF33; 
+} */
+
+/* .readMore {
+    white-space: nowrap;
+    text-indent: 0;
+    color: white;
+    font-weight: 500;
+    background: darkgreen;
+    cursor: pointer;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.3rem;
+}
+
+.readMore:hover {
+    background-color: #38B000;
+}
+
+.readMore:active {
+    color: darkgreen;
+    background-color: #CCFF33;
+} */
+
+
 
 
  
