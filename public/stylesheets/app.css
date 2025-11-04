@@ -126,14 +126,6 @@ ul.pagination {
     border-right-color: #FFFFFF66;
 }
 
-
-
-
-
-
-
-
-
 .page-link:focus {
     /* Remove Bootstrap bluish color from pagination navbar */
     box-shadow: none;
@@ -182,12 +174,13 @@ html, body {
 
 #navbar-top {
     height: 6rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 500;
 }
 
 #navbar-brand {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 400;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -237,9 +230,19 @@ html, body {
     color: white;
 }
 
+/* Active top navbar links to be highlighted */
+#navbar-top 
+a.active-top-link {
+    color: #eb5e28 !important;
+    text-shadow: none !important;
+    font-weight: 600;
+}
+
+
+
 h1 {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 400;
     color: white;
 }
 
@@ -523,53 +526,12 @@ h5.card-title,
     align-items: start;
 }
 
-/* Active top navbar links to be highlighted */
-.active-top-link {
-    color:#eb5e28 !important;
-    font-weight: 600;
-}
+
 
 #loginWrapper, #registerWrapper {
     box-shadow: 0 2rem 2rem #00000099;
 }
 
-/* #loginBtn, #registerBtn {
-    font-weight: 500;
-    color: white;
-    background: darkgreen;
-    cursor: pointer;
-    border-radius: 0.3rem;
-    box-shadow: none;
-}
-
-#loginBtn:hover, #registerBtn:hover {
-    background-color: #38B000;
-}
-
-#loginBtn:active, #registerBtn:active {
-    color: darkgreen;
-    background-color: #CCFF33; 
-} */
-
-/* .readMore {
-    white-space: nowrap;
-    text-indent: 0;
-    color: white;
-    font-weight: 500;
-    background: darkgreen;
-    cursor: pointer;
-    padding: 0.3rem 0.8rem;
-    border-radius: 0.3rem;
-}
-
-.readMore:hover {
-    background-color: #38B000;
-}
-
-.readMore:active {
-    color: darkgreen;
-    background-color: #CCFF33;
-} */
 
 
 
