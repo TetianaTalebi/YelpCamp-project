@@ -57,8 +57,6 @@ ul.pagination {
     padding: 0.5rem;
     color: darkgreen;
     background-color: #CCFF33;
-   
-
 }
 
 #paginationStart > .page-link {
@@ -132,14 +130,70 @@ ul.pagination {
 }
 
 /* styles of Flash messages */
+/* box-shadow for alerts */
+/* box-shadow: 0 2rem 2rem #00000099; */
+
 #alertContainer {
-    /* temporarily turn Flash messages off */
-    display: none;
-    /* position: fixed;
+    position: fixed;
     left: 50%;
-    top: 5%;
+    top: 20%;
     transform: translateX(-50%);
-    z-index: 1000; */
+    z-index: 1000;
+
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+#alertSuccessSvg, #alertErrorSvg {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.2rem;
+    margin-right: 1.5rem;
+}
+
+#alertSuccess, #alertError {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+
+    padding: 1.5rem 10rem 1.5rem 2rem;
+    box-shadow: 0 3rem 2rem #00000099;
+    font-weight: 400;
+    border-radius: 1.5rem;
+}
+
+#alertSuccess {
+    background: linear-gradient(#CCFF3355, #CCFF3355), white;
+    color: darkgreen;
+}
+
+#alertError {
+    background: linear-gradient(#eb5e2855, #eb5e2855), white;
+    color: #eb5e28;
+}
+
+#alertSuccess .btn-close {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkgreen" class="bi bi-x-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/></svg>');
+}
+
+#alertError .btn-close {
+     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(235, 94, 40)" class="bi bi-x-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/></svg>');
+}
+
+#alertSuccess .btn-close, 
+#alertError .btn-close {
+        opacity: 0.75;
+        background-size: 40%;
+        background-position-x: 60%;
+        background-position-y: 30%;
+        background-repeat: no-repeat;
+        box-shadow: none;
+}
+
+#alertSuccess .btn-close:hover, 
+#alertError .btn-close:hover {
+    opacity: 1;
 }
 
 html, body {
