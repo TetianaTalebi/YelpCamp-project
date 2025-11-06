@@ -407,7 +407,11 @@ h1 {
 }
 
 #footer-app p {
-    margin-bottom: 0.4rem;
+    margin-top:1.6rem;
+}
+
+#footer-app p:last-of-type {
+    margin-bottom: 3rem;
 }
 
  #gitHubFooterPartial,
