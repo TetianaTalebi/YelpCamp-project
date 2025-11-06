@@ -25,7 +25,8 @@ body {
 /* color for highlighting active elements   #eb5e28 */
 
 ul.pagination {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin-top: 3rem;
 }
 
 .page-item.page > .page-link {
@@ -385,7 +386,7 @@ h1 {
 }
 
 #footer-app {
-    height: 11rem;
+    height: 12rem;
     background-color: #00000088;
     display: flex;
     text-align: center;
@@ -401,25 +402,39 @@ h1 {
  font-weight: 500;
 }
 
+#footer-app a:hover {
+    color:#eb5e28; 
+}
 
-#footer-app .gitHub,
-#footer-app .linkedIn {
+#footer-app p {
+    margin-bottom: 0.4rem;
+}
+
+ #gitHubFooterPartial,
+ #linkedInFooterPartial {
     text-decoration: none;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-x: 100%;
+    background-position-y: 0%;
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    margin: 0 0 0 0.3rem;
+    width: 1.9rem;
+    height: 3rem;
 }
 
-#footer-app .gitHub {
-    background-image: url("../images/github_white.png");
+#gitHubFooterPartialSvg,
+#linkedInFooterPartialSvg {
+    width:1.9rem;
+    height:1.9rem;
+    margin-bottom: 0.5rem;
 }
 
-#footer-app .linkedIn {
-    background-image: url("../images/linkedin.png");
+#gitHubFooterPartial {
+    margin-left: 0.5rem;
+}
+
+#linkedInFooterPartial {
+    margin-left: 0.4rem;
 }
 
 
@@ -573,7 +588,7 @@ h5.card-title,
 
 #nav-pagination-wrapper {
     grid-area: i;
-    height: 8rem;
+    height: 10rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
