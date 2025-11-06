@@ -113,7 +113,9 @@ h1 {
     background-color: #F0E7F2;
 
     box-shadow: inset 0 -0.7rem 0.5rem #e4a44299,
-    inset -0.7rem 0.7rem 0.5rem #fdf1d755;
+    /* inset -0.7rem 0.7rem 0.5rem #fdf1d755, */
+    inset -0.7rem 0.7rem 0.5rem whitesmoke,
+    inset 0 1.5rem 1rem #0000FF30;
 
     border-top-color: #fdf1d755;
     border-right-color: #fdf1d755;
@@ -128,6 +130,7 @@ h1 {
     background-color: #647c92;
 
     box-shadow: inset 0 -0.7rem 0.5rem #e4a44244,
+    inset 0 0.9rem 0.9rem #0000FF99,
     inset -0.7rem 0.7rem 0.5rem #fdf1d744;
 
     border-top-color: #fdf1d744;
@@ -145,6 +148,14 @@ h1 {
  color: white;
  font-size: 1.5rem;
  font-weight: 500;
+}
+
+#homePageFooter p {
+    margin-bottom: 0.2rem;
+}
+
+#homePageFooter {
+    margin-bottom: 2rem;
 }
 
 #homePageFooter a:hover {
