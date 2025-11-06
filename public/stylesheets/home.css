@@ -142,6 +142,7 @@ h1 {
     max-width: 60vw; 
 }
 
+/* Styles of Home page footer */
  
 #homePageFooter a,
 #homePageFooter p {
@@ -172,28 +173,22 @@ h1 {
 #homePageFooter .gitHub,
 #homePageFooter .linkedIn {
     text-decoration: none;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 100%;
-    display: inline-block;
-    width: 2rem;
-    height: 3rem;
+    overflow: visible;
 }
 
 #linkedInHomeSvg, 
-#gitHumHomeSvg {
-    width: 1.9rem;
+#gitHubHomeSvg {
+    width: 2.5rem;
     height: 1.9rem;
-    margin-bottom: 0.8rem;
 }
+
+
 
 #homePageFooter .gitHub {
-    margin-left: 0.5rem;
+    margin-left: 0.35rem;
 }
 
-#homePageFooter .linkedIn {
-    margin-left: 0.4rem;
-}
+
 
 
 
