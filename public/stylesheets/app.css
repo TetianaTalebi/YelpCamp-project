@@ -413,30 +413,18 @@ h1 {
  #gitHubFooterPartial,
  #linkedInFooterPartial {
     text-decoration: none;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-position-y: 0%;
-    display: inline-block;
-    width: 1.9rem;
-    height: 3rem;
+    overflow: visible;
 }
 
 #gitHubFooterPartialSvg,
 #linkedInFooterPartialSvg {
-    width:1.9rem;
-    height:1.9rem;
-    margin-bottom: 0.5rem;
+    width: 2.5rem;
+    height: 1.9rem;
 }
 
 #gitHubFooterPartial {
-    margin-left: 0.5rem;
+   margin-left: 0.3rem;
 }
-
-#linkedInFooterPartial {
-    margin-left: 0.4rem;
-}
-
 
 
 /* the 1st nested grid container for "All Campgrounds" page for screens > 1200px  */
