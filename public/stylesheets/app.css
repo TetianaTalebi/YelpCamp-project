@@ -328,15 +328,32 @@ h1 {
     color: #00000088;
 }
 
+/* #showCampEditBtn */
+/* #showCampDeleteBtn */
+
 
 #title-and-button-container a.btn,
-#loginBtnWrapper button.btn, #registerBtnWrapper button.btn {
+#loginBtnWrapper button.btn, 
+#registerBtnWrapper button.btn,
+#showCampEditBtn,
+#showCampDeleteBtn {
     font-size: 1.5rem;
-    color: darkgreen;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
 }
+
+#title-and-button-container a.btn,
+#loginBtnWrapper button.btn, 
+#registerBtnWrapper button.btn,
+#showCampEditBtn {
+    color: darkgreen;
+}
+
+#showCampDeleteBtn {
+    color: white;
+}
+
 
 #loginBtnWrapper button.btn, 
 #registerBtnWrapper button.btn {
@@ -344,31 +361,47 @@ h1 {
 }
 
 #title-and-button-container a.btn-info,
-#loginBtnWrapper button.btn-info, #registerBtnWrapper button.btn-info {
-    background-color: #CCFF33;
+#loginBtnWrapper button.btn-info, #registerBtnWrapper button.btn-info,
+#showCampEditBtn,
+#showCampDeleteBtn {
     box-shadow: inset -0.3rem -0.3rem 0.3rem #00000055, inset 0.3rem 0.3rem 0.3rem #FFFFFF66, 0.3rem 0.3rem 0.3rem #00000055;
     border-top-color: #FFFFFF66;
     border-left-color: #FFFFFF66;
     border-bottom-color: #00000055;
-    border-right-color: #00000055;
-    
+    border-right-color: #00000055; 
+}
+
+#title-and-button-container a.btn-info,
+#loginBtnWrapper button.btn-info, #registerBtnWrapper button.btn-info,
+#showCampEditBtn {
+    background-color: #CCFF33;
+}
+
+#showCampDeleteBtn {
+    background-color:#eb5e28;
 }
 
 #title-and-button-container a.btn-info:hover,
 #loginBtnWrapper button.btn-info:hover, 
-#registerBtnWrapper button.btn-info:hover {
+#registerBtnWrapper button.btn-info:hover,
+#showCampEditBtn:hover,
+#showCampDeleteBtn:hover {
     background-color: #9EF01A;
 }
 
 #title-and-button-container a.btn-info:active,
 #loginBtnWrapper button.btn-info:active, 
-#registerBtnWrapper button.btn-info:active {
+#registerBtnWrapper button.btn-info:active,
+#showCampEditBtn:active,
+#showCampDeleteBtn:active {
     background-color: #38B000;
 }
 
 #title-and-button-container a.btn:active,
 #loginBtnWrapper button.btn:active, 
-#registerBtnWrapper button.btn:active {
+#registerBtnWrapper button.btn:active,
+#showCampEditBtn:active,
+#showCampDeleteBtn:active {
     color: white;
     box-shadow: inset 0.3rem 0.3rem 0.3rem #00000055, inset -0.3rem -0.3rem 0.3rem #FFFFFF66;
     border-top-color: #00000055;
@@ -377,7 +410,10 @@ h1 {
     border-right-color: #FFFFFF66;
 }
 
-
+#showCampEditBtn,
+#showCampDeleteBtn {
+    width: 30rem;
+}
 
 #parent-grid-footer {
     grid-area: d;
