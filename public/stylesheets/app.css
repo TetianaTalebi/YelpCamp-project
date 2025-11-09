@@ -487,7 +487,53 @@ h1 {
                          ". i  .";
 }
 
-/* Nested1-grid-container elements */
+/* the 1st nested grid container for "404 page" for screens > 1200px */
+
+#page404Container {
+    display: grid;
+    grid-area: b;
+    grid-template-columns: minmax(0, 1fr) 1060px minmax(0, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: ". image404Page ."
+                         ". text404Page .";
+}
+
+#page404ImageWrapper {
+    background-color: white;
+    grid-area: image404Page;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#page404Image {
+    width: 1000px;
+    margin-top: 2rem;
+}
+
+#page404TextWrapper {
+    background-color: white;
+    grid-area: text404Page;
+    font-size: 2.5rem;
+    font-weight: 450;
+    color: darkgreen;
+    text-align: center;
+}
+
+#page404TextWrapper a {
+    color: darkgreen;
+}
+
+#page404TextWrapper a:hover {
+    color:#eb5e28;
+}
+
+
+
+
+/* Nested1-grid-container elements for "All Campgrounds" page */
 
 #cluster-map-container {
     grid-area: e;

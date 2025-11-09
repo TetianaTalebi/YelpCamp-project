@@ -1,6 +1,8 @@
 if(process.env.NODE_ENV!=='production'){
     require('dotenv').config();
 }
+// process.env.NODE_ENV='production';
+// require('dotenv').config();
 
 const express = require('express');
 
@@ -222,27 +224,39 @@ app.get('/', (req, res) => {
 })
 
 app.all('*', (req, res, next) => {
-    //This next is going to hit our next error handler middleware
-    next(new ExpressError('Page Not Found', 404));
+    
+    res.status(404).render('page404');
 
+    // This next is going to hit our next error handler middleware
+    // next(new ExpressError('Page Not Found', 404));
     // res.send('404!!!')
 })
 
 app.use((err, req, res, next) => {
 
-    // Destructure the values of statusCode and message from the err object 
-    // that is an instance of the class ExpressError, that is an extended class of generic Express Error
+    // Destructure the values of statusCode 
+    // Error Object is an instance of the class ExpressError, 
+    // that is an extended class of generic Express Error
 
-    // Give statusCode and message the default values
-    
+    // Give statusCode the default value
     const {statusCode = 500} = err;
+
+    
+    // Intercept Mongoose 'CastError' in production mode and render HTTP 404 page
+    // For example, CastError happens when a user tries to view a campground that was deleted
+    // ( i.e. a user could make a bookmark for a campground in his browser before that campground was deleted)
+    if ((err.name==='CastError')&&(process.env.NODE_ENV==='production')){
+    // if ((err.name==='CastError')){
+        return res.status(404).render('page404');
+    }
+
     if (!err.message){
         err.message='Oh no, something went wrong!!!';
     }
     res.status(statusCode).render('error', {err});
 
-    // console.log(err);
-    // res.send('Something went wrong! :(');
+    //  console.log(err.name);
+    // res.send('Something went wrong! :( ');
 })
 
 app.listen(3000, () => {
