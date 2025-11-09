@@ -319,7 +319,15 @@ h1 {
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
-    background-color: #38B00022;
+    background-color: #dde5b699;
+}
+
+
+
+#loginWrapper input:focus,
+#registerWrapper input:focus {
+    border: 0.3rem solid darkgreen;
+    box-shadow: none;
 }
 
 
@@ -327,9 +335,6 @@ h1 {
 #registerWrapper input::placeholder {
     color: #00000088;
 }
-
-/* #showCampEditBtn */
-/* #showCampDeleteBtn */
 
 
 #title-and-button-container a.btn,
