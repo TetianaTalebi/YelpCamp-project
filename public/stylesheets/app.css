@@ -504,7 +504,7 @@ h1 {
 }
 
 #page404ImageWrapper {
-    background-color: white;
+    background-color: #dde5b6;
     grid-area: image404Page;
 
     display: flex;
@@ -516,10 +516,11 @@ h1 {
 #page404Image {
     width: 1000px;
     margin-top: 2rem;
+    border-radius: 2rem;
 }
 
 #page404TextWrapper {
-    background-color: white;
+    background-color: #dde5b6;
     grid-area: text404Page;
     font-size: 2.5rem;
     font-weight: 450;
