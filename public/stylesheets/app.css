@@ -301,6 +301,12 @@ h1 {
     color: white;
 }
 
+#loginWrapper, #registerWrapper,
+#newCampFormWrapper,
+#editCampFormWrapper {
+    box-shadow: 0 2rem 2rem #00000099;
+}
+
 #loginWrapper h5.card-title,
 #registerWrapper h5.card-title {
     text-align: center;
@@ -310,29 +316,69 @@ h1 {
 }
 
 #loginWrapper,
-#registerWrapper {
+#registerWrapper,
+#newCampFormWrapper,
+#editCampFormWrapper {
     font-size:1.5rem
 }
 
 #loginWrapper input,
-#registerWrapper input {
+#registerWrapper input,
+#newCampFormWrapper input,
+#editCampFormWrapper input,
+textarea#description {
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
     background-color: #dde5b699;
 }
 
+#newCampFormWrapper input[type="checkbox"],
+#editCampFormWrapper input[type="checkbox"] {
+    padding: 0;
+    border-radius:0;
+    background-color: darkgreen;
+}
+
+#newCampFormWrapper input[type="checkbox"]:focus,
+#editCampFormWrapper input[type="checkbox"]:focus {
+    border: none;
+    box-shadow: none;
+}
+
+#newCampFormWrapper input[type="checkbox"]:checked,
+#editCampFormWrapper input[type="checkbox"]:checked {
+    border: none;
+    outline: 0.35rem solid #eb5e28;
+}
+
+/* textarea#description, input#price and span#price-label are in New & Edit Campgrounds forms */
+
+input#price {
+    border-radius: 0 1.5rem 1.5rem 0;
+}
+
+span#price-label {
+    border-radius: 1.5rem 0 0 1.5rem;
+    font-size: 1.5rem;
+}
+
 
 
 #loginWrapper input:focus,
-#registerWrapper input:focus {
+#registerWrapper input:focus,
+#newCampFormWrapper input:focus,
+#editCampFormWrapper input:focus,
+textarea#description:focus {
     border: 0.3rem solid darkgreen;
     box-shadow: none;
 }
 
 
 #loginWrapper input::placeholder,
-#registerWrapper input::placeholder {
+#registerWrapper input::placeholder,
+#newCampFormWrapper input::placeholder,
+#editCampFormWrapper input::placeholder {
     color: #00000088;
 }
 
@@ -340,6 +386,8 @@ h1 {
 #title-and-button-container a.btn,
 #loginBtnWrapper button.btn, 
 #registerBtnWrapper button.btn,
+#newCampFormWrapper button.btn,
+#editCampFormWrapper button.btn,
 #showCampEditBtn,
 #showCampDeleteBtn {
     font-size: 1.5rem;
@@ -351,6 +399,8 @@ h1 {
 #title-and-button-container a.btn,
 #loginBtnWrapper button.btn, 
 #registerBtnWrapper button.btn,
+#newCampFormWrapper button.btn,
+#editCampFormWrapper button.btn,
 #showCampEditBtn {
     color: darkgreen;
 }
@@ -365,8 +415,19 @@ h1 {
     margin-top: 3rem;
 }
 
+#newCampFormWrapper button.btn {
+    margin-top: 3rem;
+}
+
+#editCampFormWrapper button.btn {
+    margin: 3rem 0;
+}
+
 #title-and-button-container a.btn-info,
-#loginBtnWrapper button.btn-info, #registerBtnWrapper button.btn-info,
+#loginBtnWrapper button.btn-info, 
+#registerBtnWrapper button.btn-info,
+#newCampFormWrapper button.btn-info,
+#editCampFormWrapper button.btn-info,
 #showCampEditBtn,
 #showCampDeleteBtn {
     box-shadow: inset -0.3rem -0.3rem 0.3rem #00000055, inset 0.3rem 0.3rem 0.3rem #FFFFFF66, 0.3rem 0.3rem 0.3rem #00000055;
@@ -377,7 +438,10 @@ h1 {
 }
 
 #title-and-button-container a.btn-info,
-#loginBtnWrapper button.btn-info, #registerBtnWrapper button.btn-info,
+#loginBtnWrapper button.btn-info, 
+#registerBtnWrapper button.btn-info,
+#newCampFormWrapper button.btn-info,
+#editCampFormWrapper button.btn-info,
 #showCampEditBtn {
     background-color: #CCFF33;
 }
@@ -389,6 +453,8 @@ h1 {
 #title-and-button-container a.btn-info:hover,
 #loginBtnWrapper button.btn-info:hover, 
 #registerBtnWrapper button.btn-info:hover,
+#newCampFormWrapper button.btn-info:hover,
+#editCampFormWrapper button.btn-info:hover,
 #showCampEditBtn:hover,
 #showCampDeleteBtn:hover {
     background-color: #9EF01A;
@@ -397,6 +463,8 @@ h1 {
 #title-and-button-container a.btn-info:active,
 #loginBtnWrapper button.btn-info:active, 
 #registerBtnWrapper button.btn-info:active,
+#newCampFormWrapper button.btn-info:active,
+#editCampFormWrapper button.btn-info:active,
 #showCampEditBtn:active,
 #showCampDeleteBtn:active {
     background-color: #38B000;
@@ -405,6 +473,8 @@ h1 {
 #title-and-button-container a.btn:active,
 #loginBtnWrapper button.btn:active, 
 #registerBtnWrapper button.btn:active,
+#newCampFormWrapper button.btn:active,
+#editCampFormWrapper button.btn:active,
 #showCampEditBtn:active,
 #showCampDeleteBtn:active {
     color: white;
@@ -683,11 +753,16 @@ h5.card-title,
     align-items: start;
 }
 
-
-
-#loginWrapper, #registerWrapper {
-    box-shadow: 0 2rem 2rem #00000099;
+.new-edit-h1 {
+    margin: 3rem auto 2rem auto;
 }
+
+/* #newCampFormWrapper,
+#editCampFormWrapper */
+
+
+
+
 
 
 

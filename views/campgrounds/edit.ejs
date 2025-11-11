@@ -1,16 +1,16 @@
 <% layout ('layouts/boilerplate') %>
 
-<div class="container d-flex justify-content-center align-items-center">
+<div class="container">
     <div class="row">
-        <h1 class="text-center">Edit Campground</h1>
-        <div class="col-md-6 offset-md-3">
+        <h1 class="text-center new-edit-h1">Edit Campground</h1>
+        <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
 
-            <div class="shadow p-3 mb-5 bg-body rounded">
+            <div id="editCampFormWrapper" class="p-3 mb-5 bg-body rounded">
                 <div class="card-body">
                     <form class="validated-form" enctype="multipart/form-data" action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate>
                         <div class="mb-3">
                             <label class="form-label" for="title">Title</label>
-                            <input class="form-control" type="text" id="title" name="campground[title]" placeholder="Campground title" required value="<%= campground.title %>">
+                            <input class="form-control" type="text" id="title" name="campground[title]" placeholder="Campground title" required autocomplete="off" value="<%= campground.title %>">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -23,8 +23,8 @@
                             <label class="form-label" for="price">Price, USD/night</label>
                             <div class="input-group has-validation">
                                 <span class="input-group-text" id="price-label">$</span>
-                                <!-- <input class="form-control" step="0.01" type="number" id="price" min="0" name="campground[price]" aria-label="price" aria-describedby="price-label" required value="<%= campground.price %>"> -->
-                                <input class="form-control" type="text" id="price" name="campground[price]" aria-label="price" aria-describedby="price-label" required value="<%= campground.price %>">
+                                <input class="form-control" step="1" type="number" id="price" min="0" name="campground[price]" aria-label="price" aria-describedby="price-label" required placeholder="0" autocomplete="off" value="<%= campground.price %>">
+                                <!-- <input class="form-control" type="text" id="price" name="campground[price]" aria-label="price" aria-describedby="price-label" required value="<%= campground.price %>"> -->
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -37,7 +37,7 @@
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
                             <textarea name="campground[description]" id="description" class="form-control"
-                            rows="3" required><%=campground.description%></textarea>
+                            rows="3" required placeholder="Enter your description here..."><%=campground.description%></textarea>
                             <div class="valid-feedback">
                               Looks good!
                             </div>
@@ -53,7 +53,7 @@
                         
                         <div class="mb-3">
                             <label class="form-label" for="location">Location</label>
-                            <input class="form-control" type="text" id="location" name="campground[location]" placeholder="Campground location" required value="<%= campground.location %>">
+                            <input class="form-control" type="text" id="location" name="campground[location]" placeholder="Campground location" required autocomplete="off" value="<%= campground.location %>">
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -79,7 +79,7 @@
                 
                                             <label class="form-check-label" 
                                             for="image-<%= i %>">
-                                                Delete
+                                                 Delete
                                             </label>
                 
                                         </div>
@@ -90,7 +90,7 @@
                         </div>
         
                         <div class="d-grid mb-3">
-                            <button class="btn btn-success">Update campground</button>
+                            <button class="btn btn-info">Update campground</button>
                         </div>
                         
                     </form>
