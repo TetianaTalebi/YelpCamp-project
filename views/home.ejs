@@ -16,51 +16,47 @@
     <link rel="stylesheet" href="/stylesheets/home.css">
 </head>
 
-<body class="d-flex text-center text-white bg-dark">
+<body>
 
-    <div class="cover-container d-flex h-100 w-100 p-3 mx-auto flex-column">
-        <header class="mb-auto">
-            <div id="navbarHome">
-                <div id="navbarHomeBrand" class="float-md-start">
+    <div id="homePageWrapper">
+            <div id="homePageBrand">
                     <span id="navbarHomeLogo"></span>
                     <span>YelpCamp</span>
-                </div>
-                
-                <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a href="#" class="nav-link active" aria-current="page">Home</a>
-                    <a href="/campgrounds" class="nav-link">Campgrounds</a>
+            </div>
+            <div id="homePageNavbar">
+                <nav>
+                    <a href="#" class="active" aria-current="page">Home</a>
+                    <a href="/campgrounds">Campgrounds</a>
                     <% if (!currentUser){ %>
-                       <a href="/login" class="nav-link">Login</a>
-                       <a href="/register" class="nav-link">Register</a>
+                       <a href="/login" >Login</a>
+                       <a href="/register" >Register</a>
                     <% } else { %>
-                        <a href="/logout" class="nav-link">Logout</a>
+                        <a href="/logout" >Logout</a>
                     <% } %>
                 </nav>
             </div>
-        </header>
+        
     
-        <main id="homePageWelcome" class="px-3">
+        <div id="homePageWelcomeWrapper" >
             <h1>Welcome to YelpCamp!</h1>
-            <p id="welcome">
+            <p id="homePageWelcomeText">
                 Discover the best campgrounds shared by real adventurers like you. <br>
-                Browse reviews, check ratings, and find the perfect spot to pitch your tent or plan your next getaway. <br> Whether you’re chasing sunsets, campfire vibes, or off-grid peace, we’ve got you covered. <br>
+                Browse reviews, check ratings, and find the perfect spot to pitch your tent <br> or plan your next getaway. <br> Whether you’re chasing sunsets, campfire vibes, or off-grid peace, we’ve got you covered. <br>
 
                 Join our growing outdoor community, explore, rate, and share your favorite spots. <br>
                 Adventure starts here, where every trail leads to a new story!
             </p>
             
-            <a href="/campgrounds" id="welcomeBtn">
+            <a href="/campgrounds" id="homePageWelcomeBtn">
             View Campgrounds</a>
             
-            
-
-        </main>
+        </div>
     
-        <footer id="homePageFooter" class="mt-auto text-white-50">
+        <footer id="homePageFooter">
             
             <hr>
 
-            <p>This <i>YelpCamp</i> project is based on a tutorial from the Udemy course <a href="https://www.udemy.com/share/101W9C3@8DTcK_av2hYV0yXuZOXIV73A-SbVYORYJ5C3MAiOxghfLpL505eBLg685qZ09XVBHg==/"><i>“The Web Developer Bootcamp 2025”</i></a>, taught by <a href="https://www.udemy.com/user/coltsteele/">Colt Steele</a></p>
+            <p>This <i>YelpCamp</i> project is based on a tutorial from the Udemy course <br> <a href="https://www.udemy.com/share/101W9C3@8DTcK_av2hYV0yXuZOXIV73A-SbVYORYJ5C3MAiOxghfLpL505eBLg685qZ09XVBHg==/"><i>“The Web Developer Bootcamp 2025”</i></a>, taught by <a href="https://www.udemy.com/user/coltsteele/">Colt Steele</a></p>
 
             <p>
             &copy 2024-2025 Tetiana Talebi

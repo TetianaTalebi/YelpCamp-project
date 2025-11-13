@@ -1,3 +1,11 @@
+html, body {
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
 body {
     /* Winky Rough Google font */
     font-family: 'Winky Rough', sans-serif;
@@ -5,25 +13,41 @@ body {
     font-weight: 300;
     font-style: normal;
 
-    height: 100vh;
+    background-color: black;
+
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
     url("https://res.cloudinary.com/dljmlxtmx/image/upload/v1761878790/tanya00255_A_serene_peaceful_camping_scene_where_the_tent_sits__e79bc97e-194d-4b88-a7bf-f798136dbdb7_qpqylc.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
-    background-position: center;
-    text-shadow: 0 0.05rem 0.1rem rgba(0,0,0,0.5);
-    box-shadow: inset 0 0 5rem rgba(0,0,0,0.5);
+    background-attachment: fixed;
 }
 
-/* Nabvar styles */
-
-#navbarHome {
-    font-size: 1.7rem;
-    font-weight: 500;
+#homePageWrapper {
+    display: grid;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    grid-template-columns: minmax(0, auto) 300px 900px minmax(0, auto);
+    grid-template-rows: 8rem auto 12rem;
+    grid-template-areas: ". hPLogo hPNav ."
+                         ". hPWelc hPWelc ."
+                         ". hPFooter hPFooter .";
 }
 
-#navbarHomeBrand {
+#homePageBrand,
+#homePageNavbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#homePageBrand {
+    grid-area: hPLogo;
+    
     font-size: 2rem;
     font-weight: 400;
+    color: white;
 
     display: flex;
     flex-direction: row;
@@ -43,64 +67,77 @@ body {
     background-position: center center;
 }
 
+/* Nabvar styles */
 
+#homePageNavbar {
+    grid-area: hPNav;
 
-#navbarHome .nav-link {
-    padding-top: 0;
-    margin: 1rem;
-    color: rgba(255,255,255,1);
+    font-size: 1.7rem;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
 }
 
-#navbarHome .nav-link:hover {
+#homePageNavbar a {
+    text-decoration: none;
+    margin-left: 1.5rem;
+    color: white;
+}
+
+#homePageNavbar a:hover {
     color: #CCFF33;
 }
 
-#navbarHome .nav-link:active {
+#homePageNavbar a:active {
     text-shadow: 0.5rem 0 1.5rem #CCFF33,
     0 0.5rem 1.5rem #CCFF33,
     -0.5rem 0 1.5rem #CCFF33,
     0 -0.5rem 1.5rem #CCFF33;
     color: white;
-}
+} 
 
 /* Active top navbar links to be highlighted */
 
-#navbarHome a.nav-link.active {
+#homePageNavbar a.active {
     font-size: 1.8rem;
     color:#eb5e28;
     font-weight: 600;
     text-shadow: none;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 400; 
-} 
+#homePageWelcomeWrapper {
+    grid-area: hPWelc;
+    text-align: center;
 
-#homePageWelcome {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#homePageWelcome h1,
-#welcome {
-    text-shadow: 
-    0 0.2rem 0.05rem #e4a442;
-    color: #F0E7F2;
-}
+#homePageWelcomeWrapper h1 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+} 
 
-#welcome {
+#homePageWelcomeWrapper p {
     font-size: 1.8rem;
+} 
+
+#homePageWelcomeWrapper h1,
+#homePageWelcomeWrapper p {
+    color: white;
     font-weight: 400;
 }
 
 /* Styles of home page button "View campgrounds" */
 
-#welcomeBtn {
-    display: block;
+#homePageWelcomeBtn {
     margin-top: 2rem;
+    display: block;
     width: 25rem;
     text-decoration: none;
 
@@ -110,40 +147,37 @@ h1 {
 
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
-    background-color: #F0E7F2;
+    background-color: white;
 
-    box-shadow: inset 0 -0.7rem 0.5rem #e4a44299,
-    /* inset -0.7rem 0.7rem 0.5rem #fdf1d755, */
-    inset -0.7rem 0.7rem 0.5rem whitesmoke,
-    inset 0 1.5rem 1rem #0000FF30;
-
-    border-top-color: #fdf1d755;
-    border-right-color: #fdf1d755;
-    border-bottom-color: #e4a44299;
+    transition: opacity 0.5s;
 }
 
-#welcomeBtn:hover {
-    background-color: #C4C3D0;
+#homePageWelcomeBtn:hover {
+    opacity: 0.7;
 }
 
-#welcomeBtn:active {
-    background-color: #647c92;
-
-    box-shadow: inset 0 -0.7rem 0.5rem #e4a44244,
-    inset 0 0.9rem 0.9rem #0000FF99,
-    inset -0.7rem 0.7rem 0.5rem #fdf1d744;
-
-    border-top-color: #fdf1d744;
-    border-right-color: #fdf1d744;
-    border-bottom-color: #e4a44244;
-}
-
-.cover-container {
-    max-width: 60vw; 
+#homePageWelcomeBtn:active {
+    color: white;
+    background-color: black;
 }
 
 /* Styles of Home page footer */
- 
+
+#homePageFooter {
+    grid-area: hPFooter;
+    text-align: center;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#homePageFooter a {
+    text-decoration: none;
+}
+
 #homePageFooter a,
 #homePageFooter p {
  color: white;
@@ -151,25 +185,9 @@ h1 {
  font-weight: 500;
 }
 
-#homePageFooter p {
-    margin-top: 1.5rem;
-    margin-bottom: 0.2rem;
-}
-
-#homePageFooter {
-    margin-bottom: 1.5rem;
-}
-
 #homePageFooter a:hover {
     color:#CCFF33;
 }
-
-
-#homePageFooter hr {
-    background-color: white;
-    height: 0.4rem;
-}
-
 
 #homePageFooter .gitHub,
 #homePageFooter .linkedIn {
@@ -183,14 +201,8 @@ h1 {
     height: 1.9rem;
 }
 
-
-
 #homePageFooter .gitHub {
     margin-left: 0.35rem;
 }
-
-
-
-
 
 
