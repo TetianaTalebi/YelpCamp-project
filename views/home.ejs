@@ -23,6 +23,11 @@
                     <span id="navbarHomeLogo"></span>
                     <span>YelpCamp</span>
             </div>
+            <div id="homePageNavbarToggler" class="hidden">
+                <svg id="homePageNavbarTogglerSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                </svg>
+            </div>
             <div id="homePageNavbar">
                 <nav>
                     <a href="#" class="active" aria-current="page">Home</a>
@@ -39,13 +44,12 @@
     
         <div id="homePageWelcomeWrapper" >
             <h1>Welcome to YelpCamp!</h1>
-            <p id="homePageWelcomeText">
-                Discover the best campgrounds shared by real adventurers like you. <br>
-                Browse reviews, check ratings, and find the perfect spot to pitch your tent <br> or plan your next getaway. <br> Whether you’re chasing sunsets, campfire vibes, or off-grid peace, we’ve got you covered. <br>
-
-                Join our growing outdoor community, explore, rate, and share your favorite spots. <br>
-                Adventure starts here, where every trail leads to a new story!
-            </p>
+            <div id="homePageWelcomeText">
+                <p>Discover the best campgrounds shared by real adventurers like you.</p>
+                <p>Browse reviews, check ratings, and find the perfect spot to pitch your tent or plan your next getaway. Whether you’re chasing sunsets, campfire vibes, or off-grid peace, we’ve got you covered.</p>
+                <p>Join our growing outdoor community, explore, rate, and share your favorite spots.
+                Adventure starts here, where every trail leads to a new story!</p>
+            </div>
             
             <a href="/campgrounds" id="homePageWelcomeBtn">
             View Campgrounds</a>
@@ -79,6 +83,7 @@
 
     <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"></script>
     <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"></script>
+    <script src="../javascripts/home.js"></script>
 
 </body>
 </html>
