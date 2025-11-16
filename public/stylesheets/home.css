@@ -23,7 +23,9 @@ body {
     background-attachment: fixed;
 }
 
-.hidden {
+/* #homePageNavbarToggler is hidden for screens that have widths larger than 768px */
+
+#homePageNavbarToggler {
     display: none;
 }
 
@@ -235,6 +237,10 @@ body {
             font-size: 1.6rem;
         }
 
+        #homePageWelcomeWrapper {
+            padding: 1.5rem 2.5rem;
+        }
+
         #homePageWelcomeWrapper h1 {
             font-size: 2.5rem;
         } 
@@ -276,7 +282,7 @@ body {
 @media(max-width: 992px){
         #homePageWrapper {
                 grid-template-columns: 1fr 3fr;
-                grid-template-rows: 6rem auto 6.5rem;
+                grid-template-rows: 6rem auto 10rem;
                 grid-template-areas: "hPLogo hPNav"
                                     "hPWelc hPWelc"
                                     "hPFooter hPFooter";
@@ -304,6 +310,10 @@ body {
 
         #homePageNavbar a.active {
             font-size: 1.25rem;
+        }
+
+        #homePageWelcomeWrapper {
+            padding: 4rem 3rem 1rem 3rem;
         }
 
          #homePageWelcomeWrapper h1 {
@@ -348,7 +358,8 @@ body {
 
 @media(max-width: 768px){
         #homePageWrapper {
-                grid-template-rows: 6rem auto 6.5rem;
+                grid-template-columns: 12rem auto;
+                grid-template-rows: 5rem auto 7rem;
                 grid-template-areas: "hPLogo hPNavToggler"
                                     "hPWelc hPWelc"
                                     "hPFooter hPFooter";
@@ -370,15 +381,17 @@ body {
         }
 
         #homePageNavbarTogglerSvg {
-            width: 2rem;
-            height: 2rem;
+            width: 1.8rem;
+            height: 1.8rem;
         }
 
-        /* class .showNavbar */
+        
         #homePageNavbar {
+            font-size: 1.1rem;
+
             position: fixed;
             top: -16rem;
-            transition: top 1s ease-out;
+            transition: top 1s ease-in-out;
             left: 0;
             z-index: 9;
 
@@ -392,11 +405,11 @@ body {
         }
 
         #homePageNavbar.showNavbar {
-            top: 6rem;
+            top: 5rem;
         }
 
         #homePageNavbar a {
-            margin-left: 1rem;
+            display: block;
         }
 
         #homePageBrand,
@@ -406,39 +419,37 @@ body {
         }
 
         #homePageBrand {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
         #navbarHomeLogo {
-            width: 4rem;
-            height: 4rem; 
-        }
-
-        #homePageNavbar {
-            font-size: 1.2rem;
+            width: 3rem;
+            height: 3rem; 
         }
 
         /* Active top navbar links to be highlighted */
 
         #homePageNavbar a.active {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
         }
 
+        #homePageWelcomeWrapper {
+            padding: 3rem;
+         }
+
          #homePageWelcomeWrapper h1 {
-            margin-bottom: 2.5rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         } 
 
         #homePageWelcomeWrapper p {
-            font-size: 1.1rem;
+            font-size: 1rem;
         } 
 
         /* Styles of home page button "View campgrounds" */
 
         #homePageWelcomeBtn {
-            margin-top: 2.5rem;
-            width: 12rem;
-            font-size: 1.1rem;
+            width: 11rem;
+            font-size: 1rem;
             border-radius: 0.9rem;
             padding: 0.4rem 1rem;
             
@@ -446,20 +457,39 @@ body {
 
         /* Styles of Home page footer */
 
+        #homePageFooter {
+            padding: 1rem 3rem 2rem 3rem;
+        }
+
         #homePageFooter a,
         #homePageFooter p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         }
 
         #linkedInHomeSvg, 
         #gitHubHomeSvg {
-            width: 1.25rem;
-            height: 1.1rem;
+            width: 1.1rem;
+            height: 1rem;
         }
 
         #homePageFooter .gitHub {
             margin-left: 0.2rem;
         }
+}
+
+/* Styles for screen width less than 576px */
+/* Also we assume that 320px is the most widely accepted minimum width for the current mobile devices  */
+
+@media(max-width: 576px){
+
+        #homePageWrapper {
+                grid-template-rows: 5rem auto 10rem;
+        }
+
+        #homePageWelcomeWrapper {
+            padding: 3.1rem 1.5rem 2rem 1.5rem;
+        }
+   
 }
 
 
