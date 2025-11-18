@@ -15,17 +15,12 @@ body {
     background-attachment: fixed;
 }
 
-
-
 /* Pagination */
 .hidden {
     display: none;
 }
 
-/* color for highlighting active elements   #eb5e28 */
-
 ul.pagination {
-    /* margin-top: 20px; */
     margin-top: 3rem;
 }
 
@@ -39,7 +34,16 @@ ul.pagination {
     padding: 0.5rem;
 }
 
-.page-item.page.active > .page-link {
+#pagLink1.active > .page-link,
+#pagLink2.active > .page-link,
+#pagLink3.active > .page-link,
+#pagLink4.active > .page-link,
+#pagLink5.active > .page-link,
+#pagLink6.active > .page-link,
+#pagLink7.active > .page-link,
+#pagLink8.active > .page-link,
+#pagLink9.active > .page-link,
+#pagLink10.active > .page-link {
     background-color: #eb5e28;
     color: white;
     cursor: pointer;
@@ -97,16 +101,13 @@ ul.pagination {
 #next10Pages > .page-link,
 #paginationStart > .page-link,
 #paginationEnd > .page-link,
-.page-item.page > .page-link {
-     box-shadow: inset -0.3rem -0.3rem 0.3rem #00000055, inset 0.3rem 0.3rem 0.3rem #FFFFFF66, 0rem 0.3rem 0.3rem #00000055;
+.page-item.page > .page-link,
+#paginationEnd > .page-link {
+     box-shadow: inset -0.3rem -0.3rem 0.3rem #00000055, inset 0.3rem 0.3rem 0.3rem #FFFFFF66;
     border-top-color: #FFFFFF66;
     border-left-color: #FFFFFF66;
     border-bottom-color: #00000055;
     border-right-color: #00000055;
-}
-
-#paginationEnd > .page-link {
-    box-shadow: inset -0.3rem -0.3rem 0.3rem #00000055, inset 0.3rem 0.3rem 0.3rem #FFFFFF66, 0.3rem 0.3rem 0.3rem #00000055;
 }
 
 #previousPage > .page-link:active,
@@ -131,8 +132,6 @@ ul.pagination {
 }
 
 /* styles of Flash messages */
-/* box-shadow for alerts */
-/* box-shadow: 0 2rem 2rem #00000099; */
 
 #alertContainer {
     position: fixed;
@@ -290,10 +289,7 @@ html, body {
 a.active-top-link {
     color: #eb5e28 !important;
     text-shadow: none !important;
-    font-weight: 600;
 }
-
-
 
 h1 {
     font-size: 3rem;
@@ -362,8 +358,6 @@ span#price-label {
     border-radius: 1.5rem 0 0 1.5rem;
     font-size: 1.5rem;
 }
-
-
 
 #loginWrapper input:focus,
 #registerWrapper input:focus,
@@ -549,7 +543,6 @@ textarea#description:focus {
    margin-left: 0.3rem;
 }
 
-
 /* the 1st nested grid container for "All Campgrounds" page for screens > 1200px  */
 #nested1-grid-container {
     display: grid;
@@ -592,10 +585,19 @@ textarea#description:focus {
 #page404TextWrapper {
     background-color: #dde5b6;
     grid-area: text404Page;
-    font-size: 2.5rem;
     font-weight: 450;
     color: darkgreen;
     text-align: center;
+    padding: 2rem;
+}
+
+#page404TextWrapper p {
+    font-size: 2.5rem;
+}
+
+#page404TextWrapper h1 {
+    color: darkgreen;
+    font-weight: 500;
 }
 
 #page404TextWrapper a {
@@ -605,9 +607,6 @@ textarea#description:focus {
 #page404TextWrapper a:hover {
     color:#eb5e28;
 }
-
-
-
 
 /* Nested1-grid-container elements for "All Campgrounds" page */
 
@@ -646,7 +645,6 @@ textarea#description:focus {
     text-align: center;
     position: relative;
     padding: 1.5rem;
-
 }
 
 .campground-card:hover {
@@ -757,8 +755,396 @@ h5.card-title,
     margin: 3rem auto 2rem auto;
 }
 
-/* #newCampFormWrapper,
-#editCampFormWrapper */
+/* Styles for screen width between 992px and 1200px */
+
+@media (max-width: 1200px) {
+
+        #navbar-top {
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;  
+        }
+
+        #loginWrapper,
+        #registerWrapper {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        #footer-app a,
+        #footer-app p {
+        font-size: 1.2rem;
+        }
+
+        #gitHubFooterPartialSvg,
+        #linkedInFooterPartialSvg {
+            width: 1.7rem;
+            height: 1.5rem;
+        }
+
+        #gitHubFooterPartial {
+        margin-left: 0.2rem;
+        }
+
+        #nested1-grid-container {
+            grid-template-columns: minmax(0, 1fr) 800px minmax(0, 1fr);
+            grid-template-rows: auto 128px repeat(2, auto);
+        }
+
+        #page404Container {
+            grid-template-columns: minmax(0, 1fr) 800px minmax(0, 1fr);
+        }
+
+        #page404Image {
+            width: 700px;
+            margin-top: 4rem;
+            border-radius: 1.2rem;
+        }
+
+        #page404TextWrapper {
+            padding: 1.5rem 2.5rem;
+            
+        }
+
+        #page404TextWrapper p {
+            font-size: 1.8rem;
+        }
+
+        #cluster-map {
+            height: 496px;
+        }
+
+        /* the 2nd nested grid container for screen widths between 992px and 1200px */
+
+        #paginated {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            row-gap: 25px;
+            column-gap: 25px;
+        }
+
+        /* pagination navbar for screen widths between 992px and 1200px */
+
+        #nav-pagination-wrapper {
+            height: 12rem;
+            align-items: center;
+        }
+
+        #paginationLinksGrid {
+            margin: 2rem auto;
+            width: 30rem;
+            height: 6rem;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas: 
+            "pag1 pag2 pag3 pag4 pag5 pag6 pag7 pag8 pag9 pag10"
+            "pagStart pagStart pag10Pr pag10Pr pagPr pagNext pag10Next pag10Next pagEnd pagEnd";
+        }
+
+        #pagLink1 {
+            grid-area: pag1;
+        }
+
+        #pagLink2 {
+            grid-area: pag2;
+        }
+
+        #pagLink3 {
+            grid-area: pag3;
+        }
+
+        #pagLink4 {
+            grid-area: pag4;
+        }
+
+        #pagLink5 {
+            grid-area: pag5;
+        }
+
+        #pagLink6 {
+            grid-area: pag6;
+        }
+
+        #pagLink7 {
+            grid-area: pag7;
+        }
+
+        #pagLink8 {
+            grid-area: pag8;
+        }
+
+        #pagLink9 {
+            grid-area: pag9;
+        }
+
+        #pagLink10 {
+            grid-area: pag10;
+        }
+
+        #paginationStart {
+            grid-area: pagStart;
+        }
+
+        #paginationEnd {
+            grid-area: pagEnd;
+        }
+
+        #previous10Pages {
+            grid-area: pag10Pr;
+        }
+
+        #next10Pages {
+            grid-area: pag10Next;
+        }
+
+        #previousPage {
+            grid-area: pagPr;
+        }
+
+        #nextPage {
+            grid-area: pagNext;
+        }
+
+        #pagLink1 > .page-link {
+            border-radius: 1.5rem 0 0 0;
+        }
+
+        #pagLink10 > .page-link {
+            border-radius: 0 1.5rem 0 0;
+        }
+
+        #paginationStart > .page-link {
+            border-radius: 0 0 0 1.5rem;
+            padding: 0.5rem;
+        }
+
+        #paginationEnd > .page-link {
+            border-radius: 0 0 1.5rem 0;
+            padding: 0.5rem;
+        }
+
+}
+
+/* Styles for screen width between 768px and 992px */
+
+@media(max-width: 992px) {
+
+        #navbarNavAltMarkup > .navbar-nav.ms-auto {
+            background-color: #000000CC;
+        }
+
+        #nested1-grid-container {
+            grid-template-columns: minmax(0, 1fr) 525px minmax(0, 1fr);
+            grid-template-rows: auto 250px repeat(2, auto);
+        }
+
+        #title-and-button-container {
+            flex-direction: column;
+            padding: 2rem 0;
+        }
+
+        #cluster-map {
+            height: 850px;
+        }
+
+        /* the 2nd nested grid container for screen widths between 768px and 992px */
+
+        #paginated {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+        }
+
+        #page404Container {
+            grid-template-columns: minmax(0, 1fr) 525px minmax(0, 1fr);
+            grid-template-rows: 1fr 1.2fr;
+        }
+
+        #page404Image {
+            width: 500px;
+            margin-top: 1rem;
+            border-radius: 0.9rem;
+        }
+
+        #page404TextWrapper {
+            padding: 1rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+        }
+
+         #page404TextWrapper p {
+            font-size: 1.6rem;
+        }
+
+}
+
+/* Styles for screen width between 576px and 768px */
+
+@media(max-width: 768px){
+
+        #cluster-map {
+            height: 328px;
+        }
+
+        #navbar-top {
+            font-size: 1.1rem;
+        }
+
+        #navbar-brand {
+            font-size: 1.4rem;
+        }
+
+        #navbar-brand .yc_logo {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        h1 {
+            font-size: 2rem;  
+        }
+
+        #footer-app a,
+        #footer-app p {
+        font-size: 0.8rem;
+        }
+
+        #gitHubFooterPartialSvg,
+        #linkedInFooterPartialSvg {
+            width: 1.1rem;
+            height: 1rem;
+        }
+
+
+         #page404Container {
+            grid-template-columns: minmax(0, 1fr) 525px minmax(0, 1fr);
+        }
+
+        #page404Image {
+            width: 500px;
+            margin-top: 1rem;
+            border-radius: 0.9rem;
+        }
+
+        #page404TextWrapper {
+            padding: 1rem 3rem;
+        }
+        
+        #page404TextWrapper p {
+            font-size: 1.5rem;
+        }
+
+}
+
+/* Styles for screen width less than 576px */
+/* Also we assume that 320px is the most widely accepted minimum width for the current mobile devices  */
+
+@media(max-width: 576px){
+
+        #nested1-grid-container {
+            grid-template-columns: minmax(0, 1fr) 300px minmax(0, 1fr);
+            grid-template-rows: auto 250px repeat(2, auto);
+        }
+
+        /* the 2nd nested grid container for screen widths smaller than 576px */
+
+        #paginated {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, 1fr);
+        }
+
+        .campground-card {
+            margin: 0 auto;
+        }
+
+        #cluster-map {
+            width: 80%;
+            margin: 0 auto;
+            height: 389px;
+        }
+
+        
+
+        h1 {
+            font-size: 2rem;  
+        }
+
+        #loginWrapper,
+        #registerWrapper {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        #footer-app {
+            height: 14rem;
+            padding: 1rem 2rem;
+        }
+
+         #page404Container {
+            grid-template-columns: minmax(0, 1fr) 300px minmax(0, 1fr);
+            grid-template-rows: 0.9fr 1fr;
+        }
+
+        #page404Image {
+            width: 280px;
+            margin-top: 0.8rem;
+            border-radius: 0.5rem;
+        }
+
+        #page404TextWrapper {
+            padding: 0.5rem 1rem;
+        } 
+
+        #page404TextWrapper p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+
+        /* pagination navbar for screen widths between 992px and 1200px */
+
+
+            #nav-pagination-wrapper {
+            height: 20rem;
+        }
+
+        #paginationLinksGrid {
+            margin: 2rem auto;
+            width: 15rem;
+            height: 12rem;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-areas: 
+            "pag1 pag2 pag3 pag4 pag5"
+            "pag6 pag7 pag8 pag9 pag10"
+            "pagPr pag10Pr pag10Pr pagStart pagStart"
+            "pagNext pag10Next pag10Next pagEnd pagEnd";
+        }
+
+        #pagLink5 > .page-link {
+            border-radius: 0 1.5rem 0 0;
+        }
+
+        #pagLink10 > .page-link {
+            border-radius: 0 0 0 0;
+        }
+
+        #paginationStart > .page-link {
+            border-radius: 0 0 0 0;
+        }
+
+        #nextPage > .page-link {
+            border-radius: 0 0 0 1.5rem;
+        }
+
+}
+
+
+
+        
 
 
 
