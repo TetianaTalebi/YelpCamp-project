@@ -141,10 +141,11 @@ ul.pagination {
     z-index: 1000;
 
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 #alertSuccessSvg, #alertErrorSvg {
+    overflow: visible;
     width: 3rem;
     height: 3rem;
     margin-bottom: 1.2rem;
@@ -157,9 +158,8 @@ ul.pagination {
     justify-content: start;
     align-items: start;
 
-    padding: 1.5rem 10rem 1.5rem 2rem;
+    padding: 1.5rem 5rem 1.5rem 2rem;
     box-shadow: 0 3rem 2rem #00000099;
-    font-weight: 400;
     border-radius: 1.5rem;
 }
 
@@ -759,6 +759,23 @@ h5.card-title,
 
 @media (max-width: 1200px) {
 
+        /* styles of Flash messages */
+
+        #alertContainer {
+            font-size: 2.5rem;
+        }
+
+        #alertSuccessSvg, #alertErrorSvg {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #alertSuccess, #alertError {
+            padding: 1.5rem 4.5rem 1.5rem 2rem;
+            border-radius: 1.25rem;
+        }
+
         #navbar-top {
             font-size: 1.5rem;
         }
@@ -932,6 +949,23 @@ h5.card-title,
 
 @media(max-width: 992px) {
 
+        /* Styles of Flash messages */
+
+        #alertContainer {
+            font-size: 2rem;
+        }
+
+        #alertSuccessSvg, #alertErrorSvg {
+            width: 2rem;
+            height: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        #alertSuccess, #alertError {
+            padding: 1.5rem 4.5rem 1.5rem 2rem;
+            border-radius: 1.15rem;
+        }
+
         #navbarNavAltMarkup > .navbar-nav.ms-auto {
             background-color: #000000CC;
         }
@@ -985,6 +1019,23 @@ h5.card-title,
 /* Styles for screen width between 576px and 768px */
 
 @media(max-width: 768px){
+
+
+        /* Styles of Flash messages */
+
+        #alertContainer {
+            font-size: 1.5rem;
+        }
+
+        #alertSuccessSvg, #alertErrorSvg {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-bottom: 0.58rem;
+        }
+
+        #alertSuccess, #alertError {
+            border-radius: 1rem;
+        }
 
         #cluster-map {
             height: 328px;
@@ -1043,6 +1094,24 @@ h5.card-title,
 /* Also we assume that 320px is the most widely accepted minimum width for the current mobile devices  */
 
 @media(max-width: 576px){
+
+        /* Styles of Flash messages */
+
+        #alertContainer {
+            font-size: 1.2rem;
+        }
+
+        #alertSuccessSvg, #alertErrorSvg {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        #alertSuccess, #alertError {
+            border-radius: 0.5rem;
+            text-align: center;
+        }
 
         #nested1-grid-container {
             grid-template-columns: minmax(0, 1fr) 300px minmax(0, 1fr);
