@@ -383,7 +383,9 @@ textarea#description:focus {
 #newCampFormWrapper button.btn,
 #editCampFormWrapper button.btn,
 #showCampEditBtn,
-#showCampDeleteBtn {
+#showCampDeleteBtn,
+#addReviewBtn,
+.deleteReviewBtn {
     font-size: 1.5rem;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -395,11 +397,13 @@ textarea#description:focus {
 #registerBtnWrapper button.btn,
 #newCampFormWrapper button.btn,
 #editCampFormWrapper button.btn,
-#showCampEditBtn {
+#showCampEditBtn,
+#addReviewBtn {
     color: darkgreen;
 }
 
-#showCampDeleteBtn {
+#showCampDeleteBtn,
+.deleteReviewBtn {
     color: white;
 }
 
@@ -423,7 +427,9 @@ textarea#description:focus {
 #newCampFormWrapper button.btn-info,
 #editCampFormWrapper button.btn-info,
 #showCampEditBtn,
-#showCampDeleteBtn {
+#showCampDeleteBtn,
+#addReviewBtn,
+.deleteReviewBtn {
     box-shadow: inset -0.3rem -0.3rem 0.3rem #00000055, inset 0.3rem 0.3rem 0.3rem #FFFFFF66, 0.3rem 0.3rem 0.3rem #00000055;
     border-top-color: #FFFFFF66;
     border-left-color: #FFFFFF66;
@@ -436,11 +442,13 @@ textarea#description:focus {
 #registerBtnWrapper button.btn-info,
 #newCampFormWrapper button.btn-info,
 #editCampFormWrapper button.btn-info,
-#showCampEditBtn {
+#showCampEditBtn,
+#addReviewBtn {
     background-color: #CCFF33;
 }
 
-#showCampDeleteBtn {
+#showCampDeleteBtn,
+.deleteReviewBtn {
     background-color:#eb5e28;
 }
 
@@ -450,7 +458,9 @@ textarea#description:focus {
 #newCampFormWrapper button.btn-info:hover,
 #editCampFormWrapper button.btn-info:hover,
 #showCampEditBtn:hover,
-#showCampDeleteBtn:hover {
+#showCampDeleteBtn:hover,
+#addReviewBtn:hover,
+.deleteReviewBtn:hover {
     background-color: #9EF01A;
 }
 
@@ -460,7 +470,9 @@ textarea#description:focus {
 #newCampFormWrapper button.btn-info:active,
 #editCampFormWrapper button.btn-info:active,
 #showCampEditBtn:active,
-#showCampDeleteBtn:active {
+#showCampDeleteBtn:active,
+#addReviewBtn:active,
+.deleteReviewBtn:active {
     background-color: #38B000;
 }
 
@@ -470,7 +482,9 @@ textarea#description:focus {
 #newCampFormWrapper button.btn:active,
 #editCampFormWrapper button.btn:active,
 #showCampEditBtn:active,
-#showCampDeleteBtn:active {
+#showCampDeleteBtn:active,
+#addReviewBtn:active,
+.deleteReviewBtn:active {
     color: white;
     box-shadow: inset 0.3rem 0.3rem 0.3rem #00000055, inset -0.3rem -0.3rem 0.3rem #FFFFFF66;
     border-top-color: #00000055;
@@ -479,18 +493,7 @@ textarea#description:focus {
     border-right-color: #FFFFFF66;
 }
 
-#showCampEditBtn,
-#showCampDeleteBtn {
-    width: 30rem;
-}
 
-/* Styles for SVG icons on Edit and Delete campground buttons */
-#editCampSvg,
-#deleteCampSvg {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-bottom: 0.45rem;
-}
 
 #parent-grid-footer {
     grid-area: d;
@@ -614,7 +617,7 @@ textarea#description:focus {
     grid-area: e;
 }
 
-#cluster-map {
+#cluster-map, #map {
     width: 100%;
     height: 655px;
 }
@@ -630,6 +633,7 @@ textarea#description:focus {
 /* the 2nd nested grid container */
 
 #paginated {
+    scroll-margin-top: 8.5rem;
     display: grid;
     grid-area: h;
     grid-template-columns: repeat(4, 1fr);
@@ -829,7 +833,7 @@ h5.card-title,
             font-size: 1.8rem;
         }
 
-        #cluster-map {
+        #cluster-map, #map {
             height: 496px;
         }
 
@@ -837,7 +841,8 @@ h5.card-title,
 
         #paginated {
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            /* grid-template-rows: repeat(5, 1fr); */
+            grid-template-rows: repeat(5, minmax(0,1fr));
             row-gap: 25px;
             column-gap: 25px;
         }
@@ -980,7 +985,7 @@ h5.card-title,
             padding: 2rem 0;
         }
 
-        #cluster-map {
+        #cluster-map, #map {
             height: 850px;
         }
 
@@ -1020,7 +1025,6 @@ h5.card-title,
 
 @media(max-width: 768px){
 
-
         /* Styles of Flash messages */
 
         #alertContainer {
@@ -1037,7 +1041,7 @@ h5.card-title,
             border-radius: 1rem;
         }
 
-        #cluster-map {
+        #cluster-map, #map {
             height: 328px;
         }
 
@@ -1129,7 +1133,7 @@ h5.card-title,
             margin: 0 auto;
         }
 
-        #cluster-map {
+        #cluster-map, #map {
             width: 80%;
             margin: 0 auto;
             height: 389px;
