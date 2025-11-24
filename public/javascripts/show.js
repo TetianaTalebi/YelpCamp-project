@@ -16,7 +16,7 @@ function clickOnShowMap() {
 }
 
 function clickOnShowPrice(){
-    const showHideCampPriceTaxes = document.querySelector('#showHideCampPriceTaxes');
+    const showHideCampPriceTaxes = document.querySelector('#hidePriceWrapper');
     showHideCampPriceTaxes.classList.remove('hidden');
     showPriceBtn.classList.add('hidden');
 }

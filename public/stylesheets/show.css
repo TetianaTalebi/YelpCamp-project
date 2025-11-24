@@ -1,31 +1,28 @@
 
-/* .alert {
-    position: absolute;
-    font-size: 1.5em;
-    font-weight: bold;
-    z-index: 1;
-} */
-
-
-
 /* Styling "Show Campground" images */
 
 #showCamp_pictures {
     width: 100%;
-    padding: 2rem 0;
+    padding: 0.5rem 0 1rem;
     background-color: white;
     
 }
 
 #showCampImgWrapper {
     overflow: hidden;
-    width: 800px;
+    width: 100%;
     margin: 0 auto;
     
 }
 
+#no_img_available_wrapper,
+#no_img_available,
+#campShowImg {
+     height: 450px;
+}
+
+
 #no_img_available_wrapper {
-    height: 450px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -34,7 +31,6 @@
 }
 
 #campShowImg, #no_img_available {
-    height: 450px;
     width: auto;
     margin: 0 auto;  
 }
@@ -63,7 +59,7 @@
 #showCampAuthorTimeTitleLocation {
     grid-area: title;
     background-color: white;
-    padding: 2rem 0 0.5rem 0;
+    padding: 1rem 0 0.5rem 0;
 }
 
 /* Styling "Show Campground" title, author, location */
@@ -128,13 +124,6 @@ h1#showCampTitle {
     color: white;
 }
 
-
-#map {
-    width: 100%;
-    aspect-ratio: 1.618;
-    margin: 1rem auto;
-}
-
 #showCampDescriptionWrapper {
     grid-area: description;
     background-color: white;
@@ -154,13 +143,22 @@ h1#showCampTitle {
     text-align: center;
 }
 
+#showHideCampPriceTaxes span {
+    display: inline-block;
+}
+
 #showHideCampPriceTaxes {
     border: none;
     border-radius: 2rem;
-    padding: 2.2rem 0.3rem;
     margin: 1rem auto 4rem auto;
     height: 14rem;
     aspect-ratio: 1.618;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     box-shadow: 0 2rem 2rem #00000099;
     background-image: url("../images/purty-wood.png"), linear-gradient(#D7BA89, #D7BA89 );
     background-size: 100%;
@@ -180,6 +178,7 @@ span#campgroundPrice {
     grid-area: updateDelBtns;
 }
 
+
 #showCampUpdateDeleteBtn {
     height: 8rem;
     background-color: white;
@@ -193,6 +192,24 @@ span#campgroundPrice {
     grid-area: reviews;
     background-color: white;
 }
+
+
+
+#showCampEditBtn,
+#showCampDeleteBtn {
+    width: 27rem;
+}
+
+/* Styles for SVG icons on Edit and Delete campground buttons */
+.writingPenSvg,
+.deleteSvg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 0.45rem;
+}
+
+
+
 
 .readMore {
     white-space: nowrap;
@@ -228,6 +245,433 @@ span#campgroundPrice {
     background-position: center;
     background-size: cover;
 }
+
+/* Styles for review form and reviews */
+
+
+#campReview,
+#reviewForm legend,
+#reviewForm textarea::placeholder,
+#reviewForm textarea {
+    font-size: 1.5rem;
+}
+
+#reviewForm textarea:focus {
+    border: 0.3rem solid darkgreen;
+    box-shadow: none;
+}
+
+#reviewForm {
+    margin-bottom: 1rem;
+}
+
+
+
+#campReview h2 {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.h2Wrapper {
+    padding: 1rem;
+    background-color: #dde5b6;
+}
+
+#reviewForm,
+.reviewText {
+    background-color: #dde5b6;
+}
+
+.reviewText {
+    padding: 1rem;
+}
+
+#reviewForm form,
+#noReviews {
+    padding: 2rem;
+}
+
+#reviewForm form {
+    padding-top: 0;
+}
+
+.reviewWrapper {
+    padding: 0.5rem 2rem;
+}
+
+
+
+#reviewForm legend,
+#reviewForm label,
+#allCampReviews p.reviewAuthor {
+    font-weight: 500;
+}
+
+ #addReviewBtn {
+    margin-top: 2rem;
+ }
+
+.deleteReviewBtn {
+    margin-bottom: 2rem;
+}
+
+
+/* End of styles for review form and reviews */
+
+/* Styles for screen widths between 992px and 1200px */
+
+@media (max-width: 1200px) {
+
+    #containerShowCamp {
+        grid-template-columns: minmax(0, 1fr) 800px minmax(0, 1fr);
+    }
+
+    #no_img_available_wrapper,
+    #no_img_available,
+    #campShowImg {
+        height: 350px;
+    }
+
+    /* Styling "Show Campground" title, author, location for screen widths between 992px and 1200px */
+
+    #showCampAuthorAndTime {
+        font-size:1.2rem;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #showMapBtn, #showPriceBtn {
+        font-size: 1.5rem;
+        border: 0.25rem solid darkgreen;
+        border-radius: 0.55rem;
+        margin: 1.2rem 12rem;
+    }
+
+    #showCampDescriptionWrapper,
+    #reviewForm legend,
+    #campReview,
+    #reviewForm textarea::placeholder,
+    #reviewForm textarea {
+        font-size: 1.4rem;
+    }
+
+    #showCampDescriptionWrapper {
+        text-indent: 2.5rem;
+        padding: 1rem 2rem;
+    }
+
+
+    #showCampPriceWrapper {
+        font-size: 1.8rem;
+    }
+
+    #showHideCampPriceTaxes {
+        border-radius: 1.8rem;
+        margin: 1.5rem auto 4rem auto;
+        height: 12rem;
+        box-shadow: 0 1.5rem 2rem #00000099;
+        text-shadow: 0px -0.07rem #00000099, 0px 0.07rem #FFFFFF99;
+    }
+
+    span#campgroundPrice {
+        font-size: 2rem;
+    }
+
+    .readMore {
+        padding: 0.25rem 0.8rem;
+        border-radius: 0.25rem;
+    }
+
+    /* Style for marker that is displayed at "Show Campground" map */
+
+    .markerShowCamp {
+        height: 45px;
+        width: 45px;
+    }
+
+    #showCampUpdateDeleteBtn {
+        height: 12rem;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #showCampEditBtn,
+    #showCampDeleteBtn,
+    #addReviewBtn,
+    .deleteReviewBtn {
+        font-size: 1.5rem;
+    }
+}
+
+/* Styles for screen width between 768px and 992px */
+
+@media(max-width: 992px) {
+     #containerShowCamp {
+        grid-template-columns: minmax(0, 1fr) 525px minmax(0, 1fr);
+    }
+
+    #no_img_available_wrapper,
+    #no_img_available,
+    #campShowImg {
+        height: 250px;
+    }
+
+    /* Styling "Show Campground" title, author, location for screen widths between between 768px and 992px */
+
+    #showCampAuthorAndTime {
+        font-size: 0.9rem;
+    }
+
+    h1#showCampTitle {
+       font-size: 2rem;
+    }
+
+    #showCampLocation {
+        font-size: 1.2rem;
+    }
+
+    #showMapBtn, #showPriceBtn {
+        margin: 1.2rem 5rem;
+    }
+
+    #showCampDescriptionWrapper,
+    #campReview,
+    #reviewForm legend,
+    #reviewForm textarea::placeholder,
+    #reviewForm textarea {
+        font-size: 1.1rem;
+    }
+
+    #showCampPriceWrapper {
+        font-size: 1.5rem;
+    }
+
+    #showHideCampPriceTaxes {
+        border-radius: 1.5rem;
+        margin: 1.5rem auto 3rem auto;
+        height: 10rem;
+        box-shadow: 0 1.2rem 2rem #00000099;
+        text-shadow: 0px -0.05rem #00000099, 0px 0.05rem #FFFFFF99;
+    }
+
+    span#campgroundPrice {
+        font-size: 1.8rem;
+    }
+
+     .readMore {
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.2rem;
+    }
+
+    /* Style for marker that is displayed at "Show Campground" map */
+
+    .markerShowCamp {
+        height: 35px;
+        width: 35px;
+    }
+
+    #showCampEditBtn,
+    #showCampDeleteBtn {
+        width: 23rem;
+    }
+
+    /* Styles for SVG icons on Edit and Delete campground buttons */
+    .writingPenSvg,
+    .deleteSvg {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-bottom: 0.45rem;
+    }
+
+    /* Styles for review form and reviews for screen widths between between 768px and 992px*/
+
+    
+
+    #reviewForm textarea:focus {
+        border: 0.2rem solid darkgreen;
+    }
+
+    #reviewForm {
+        margin-bottom: 0.5rem;
+    }
+
+
+
+    #campReview h2 {
+        font-size: 1.8rem;
+    }
+
+    .h2Wrapper {
+        padding: 0.5rem;
+    }
+
+    
+
+    .reviewText {
+        padding: 0.5rem;
+    }
+
+    #reviewForm form,
+    #noReviews {
+        padding: 1rem;
+    }
+
+    #reviewForm form {
+        padding-top: 0;
+    }
+
+    .reviewWrapper {
+        padding: 0.5rem 1rem;
+    }
+
+    #addReviewBtn {
+        margin-top: 1rem;
+    }
+
+    .deleteReviewBtn {
+        margin-bottom: 1rem;
+    }
+
+
+    /* End of styles for review form and reviews for screen widths between between 768px and 992px */
+}
+
+/* Styles for screen width between 576px and 768px */
+
+@media(max-width: 768px){
+    /* #containerShowCamp {
+        grid-template-columns: minmax(0, 1fr) 525px minmax(0, 1fr);
+    } */
+
+    #no_img_available_wrapper,
+    #no_img_available,
+    #campShowImg {
+        height: 200px;
+    }
+
+     .readMore {
+        padding: 0.18rem 0.5rem;
+        /* border-radius: 0.2rem; */
+    }
+
+    /* Style for marker that is displayed at "Show Campground" map */
+
+    .markerShowCamp {
+        height: 30px;
+        width: 30px;
+    }
+
+    
+}
+
+/* Styles for screen widths smaller than 576px */
+/* Also we assume that 320px is the most widely accepted minimum width for the current mobile devices  */
+
+@media(max-width: 576px){
+    #containerShowCamp {
+        grid-template-columns: minmax(0, 1fr) 300px minmax(0, 1fr);
+    }
+
+    #no_img_available_wrapper,
+    #no_img_available,
+    #campShowImg {
+        height: 150px;
+    }
+
+    #showMapBtn, #showPriceBtn {
+        margin: 1rem 3rem;
+        font-size: 1rem;
+        border: 0.2rem solid darkgreen;
+        border-radius: 0.3rem;
+    }
+
+    #showCampDescriptionWrapper,
+    #campReview,
+    #reviewForm legend,
+    #reviewForm textarea::placeholder,
+    #reviewForm textarea {
+        font-size: 1rem;
+    }
+
+    #showCampDescriptionWrapper {
+        text-indent: 1rem;
+    }
+
+    #showCampPriceWrapper {
+        font-size: 1rem;
+    }
+
+    #showHideCampPriceTaxes {
+        border-radius: 1.2rem;
+        margin: 1rem auto 3rem auto;
+        height: 8rem;
+    }
+
+    span#campgroundPrice {
+        font-size: 1.5rem;
+    }
+
+    .readMore {
+        padding: 0.12rem 0.4rem;
+        border-radius: 0.15rem;
+    }
+
+    /* Style for marker that is displayed at "Show Campground" map */
+
+    .markerShowCamp {
+        height: 25px;
+        width: 25px;
+    }
+
+    #showCampUpdateDeleteBtn {
+        height: 8rem;
+    }
+
+    #showCampEditBtn,
+    #showCampDeleteBtn,
+    #addReviewBtn,
+    .deleteReviewBtn {
+         font-size: 1rem;
+    }
+
+    #showCampEditBtn,
+    #showCampDeleteBtn {
+        width: 14rem;  
+    }
+
+    #showCampEditBtn,
+    #showCampDeleteBtn {
+        padding: 0.3rem;
+    }
+
+    #addReviewBtn,
+    .deleteReviewBtn {
+        padding: 0.3rem 1rem;
+        border-width: 0.01rem;
+    }
+
+    /* Styles for SVG icons on Edit and Delete campground buttons */
+    .writingPenSvg,
+    .deleteSvg {
+        width: 1rem;
+        height: 1rem;
+        margin-bottom: 0.45rem;
+    }
+
+    /* Styles for review form and reviews for screen widths smaller than 576px */
+
+    #reviewForm textarea:focus {
+        border: 0.1rem solid darkgreen;
+    }
+
+    #campReview h2 {
+        font-size: 1.2rem;
+    }
+
+    /* End of styles for review form and reviews for screen widths smaller than 576px */
+}
+
 
 
 

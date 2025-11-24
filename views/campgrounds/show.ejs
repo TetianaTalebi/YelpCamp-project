@@ -73,14 +73,16 @@
 
                 <div id="showPriceBtn">Show price</div>
 
-                <div id="showHideCampPriceTaxes" class="hidden">
-                Price for 1 night<br>
-                  <span id="campgroundPrice">
-                    CAD<%= campground.price %>
-                  </span><br>
-                  <span id="campgroundTax">
-                    + CAD<%= Math.ceil(campground.price*0.18) %> taxes and fees
-                  </span>
+                <div id="hidePriceWrapper" class="hidden">
+                    <div id="showHideCampPriceTaxes" >
+                    <span>Price for 1 night</span>
+                      <span id="campgroundPrice">
+                        CAD<%= campground.price %>
+                      </span>
+                      <span id="campgroundTax">
+                        + CAD<%= Math.ceil(campground.price*0.18) %> taxes and fees
+                      </span>
+                    </div>
                 </div>
             </div>
             
@@ -90,7 +92,7 @@
               <% if (currentUser && campground.author.equals(currentUser._id)){ %>
                   <div id="showCampUpdateDeleteBtn">
                       <a id="showCampEditBtn" href="/campgrounds/<%= campground._id %>/edit" class="card-link btn btn-info">
-                        <svg id="editCampSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                        <svg class="writingPenSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
                             <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
                         </svg>
                         Edit Campground
@@ -98,10 +100,10 @@
 
                       <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
                         <button id="showCampDeleteBtn" class="btn btn-danger">
-                          <svg id="deleteCampSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                          <svg class="deleteSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                               <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
                           </svg>
-                          Delete
+                          Delete Campground
                         </button>
                       </form>
                   </div>
@@ -111,16 +113,17 @@
             </div>
 
             
-                
+        <!-- Campground Review Form + reviews  -->
+         
         <div id="campReview">
 
           <% if (currentUser) { %>
             <div id="reviewForm">
-              <h2>Leave a Review</h2>
+              <div class="h2Wrapper"><h2>Leave a Review</h2></div> 
               <form class="validated-form" novalidate action="/campgrounds/<%= campground._id %>/reviews" method="POST">
 
-                <div class="mb-3">
-                  <fieldset class="starability-basic">
+                <div id="starabilityWrapper" class="mb-3">
+                  <fieldset class="starability-slot">
                     <legend>Rating:</legend>
                     <input checked="checked" type="radio" id="first-rate1" name="review[rating]" value="1" />
                     <label for="first-rate1" title="Terrible">1 star</label>
@@ -135,54 +138,64 @@
                   </fieldset>
                 </div>
                 
-                <div class="mb-3">
-                  <label for="body" class="form-label">Review Text</label>
-                  <textarea name="review[body]" id="body" cols="30" rows="3" class="form-control" required></textarea>
+                
+                  <label for="body" class="form-label">Review Text:</label>
+                  <textarea name="review[body]" id="body" cols="30" rows="3" class="form-control" required placeholder="Please enter your review here..." ></textarea>
                   <div class="valid-feedback">
                     Looks good!
                   </div>
                   <div class="invalid-feedback">
                     Please provide campground review.
                   </div>
-                </div>
+                
 
-                <button class="btn btn-success">Add A Review</button>
+                <button id="addReviewBtn">
+                  <svg class="writingPenSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                      <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
+                  </svg>
+                  Add Review
+                </button>
 
               </form>
             </div>
           <% } %>
 
             <div id="allCampReviews">
-              <h2><%= campground.title %><br> Reviews</h2>
+              <h2><%= campground.title %> Reviews</h2>
               <% if(campground.reviews.length===0) { %>
-                <p>Sorry, no reviews... 🤔</p>
+                <p id="noReviews">Sorry, no reviews... 🤔</p>
               <% } %> 
             <% for (let review of campground.reviews) { %>
 
-                  <div class="card mb-3">
+                  
 
-                        <div class="card-body">
+                        <div class="reviewWrapper">
 
-                            <h5 class="card-title">
+                            <p class="reviewAuthor">
                               <%= review.author.username %>
-                            </h5>
+                            </p>
                             
                             <p class="starability-result" 
                             data-rating="<%= review.rating %>">
                                   Rated: <%= review.rating %>
                             </p>
                             
-                            <p class="card-text"><%= review.body %></p>
+                            <p class="reviewText"><%= review.body %></p>
 
                             <!-- Display this form (Delete review button) only for a user who is an author of a review -->
                              <% if(currentUser && review.author.equals(currentUser._id)){ %>
                             <form action="/campgrounds/<%= campground._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                              <button class="btn btn-sm btn-danger">Delete</button>
+                              <button class="deleteReviewBtn">
+                                <svg class="deleteSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                      <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                                  </svg>
+                                Delete Review
+                              </button>
                             </form>
                             <% } %>
                       
                         </div>
-                  </div>
+                  
 
             <% } %>
           </div>
