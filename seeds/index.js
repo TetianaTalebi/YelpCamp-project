@@ -18,11 +18,8 @@ db.on('reconnected', () => console.log('reconnected'));
 db.on('disconnecting', () => console.log('disconnecting'));
 db.on('close', () => console.log('close'));
 
-// Production database
-// const dbUrl = process.env.DB_URL;
-
 //local database
-const dbUrl = 'mongodb://127.0.0.1:27017/myyelpcamp';
+const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/myyelpcamp';
 
 mongoose.connect(dbUrl)
 .then(() => console.log("Mongo connection is open!"))
@@ -88,7 +85,7 @@ const seedDB = async () => {
             // author for internal database
             // '66f0e0cfafa6e339ae846860'
 
-            author: '66f0e0cfafa6e339ae846860',
+            author: '672658a117ef894175db3f95' || '66f0e0cfafa6e339ae846860',
             location: `${cities[randomCities].city}, ${cities[randomCities].province}`
 
         });
