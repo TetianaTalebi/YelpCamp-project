@@ -29,6 +29,18 @@ body {
     display: none;
 }
 
+#homePageBrand,
+#homePageNavbar {
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* This class will be applied to #homePageBrand and #homePageNavbar when Home Page window.scrollY >=3rem for screen widths larger or equal to 768px*/
+.navbarDark {
+    background-color: #000000CC;
+    box-shadow: 0 0.3rem 0.3rem black;
+    
+}
+
 /* Styles for screen width > 1200 px */
 
 #homePageWrapper {
