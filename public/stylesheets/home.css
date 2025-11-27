@@ -388,6 +388,7 @@ body {
         
         #homePageNavbar {
             font-size: 1.1rem;
+            padding-top: 0;
 
             position: fixed;
             top: -16rem;
@@ -400,8 +401,14 @@ body {
             justify-content: start;
             align-items: start;
 
-            width: 12rem;
-            height: 10rem;
+            width: 20rem;
+            height: 10.1rem;  
+        }
+
+        #homePageBrand,
+        #homePageNavbarToggler,
+        #homePageNavbar {
+            box-shadow: 0 0.3rem 0.3rem black;
         }
 
         #homePageNavbar.showNavbar {
@@ -410,6 +417,7 @@ body {
 
         #homePageNavbar a {
             display: block;
+            margin: 0.5rem 0 0.5rem;
         }
 
         #homePageBrand,
