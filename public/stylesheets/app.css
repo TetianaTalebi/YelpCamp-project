@@ -1049,6 +1049,22 @@ h5.card-title,
             font-size: 1.1rem;
         }
 
+        /* These styles prevent #navbar-brand and button.navbar-toggler in #navbar-top to move up when #navbarNavAltMarkup (i.e. collapsible navbar) is shown (for screen widths <=768px) */
+
+        #navbar-top {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .navbar>.container-fluid {
+            margin-top: 19px;
+            
+        }
+
+        /* *************************************** */
+
         #navbar-brand {
             font-size: 1.4rem;
         }
