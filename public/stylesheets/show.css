@@ -95,18 +95,6 @@ h1#showCampTitle {
    
 }
 
-/* Styles for pop-up message on showCamp map */
-
-#showCampPopUp {
-    font-family: 'Winky Rough', sans-serif;
-    padding: 1rem;
-}
-
-#showCampPopUp h3{
-    font-size: 1.2rem;
-    color: darkgreen;
-    font-weight: 500;
-}
 
 #showMapBtn, #showPriceBtn {
     font-size: 2rem;
