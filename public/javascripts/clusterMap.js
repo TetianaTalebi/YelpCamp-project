@@ -131,7 +131,10 @@ map.on('load', async function () {
 
         new maptilersdk.Popup()
             .setLngLat(coordinates)
-            .setHTML(popUpMarkup)
+            // .setHTML(popUpMarkup)
+            .setHTML(
+                '<div id="clusterMapPopUp">' + popUpMarkup + '</div>'
+            )
             .addTo(map);
     });
 

@@ -15,6 +15,21 @@ body {
     background-attachment: fixed;
 }
 
+/* Styles for pop-up message on showCamp map */
+
+#showCampPopUp, #clusterMapPopUp {
+    font-family: 'Winky Rough', sans-serif;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+#showCampPopUp h3,
+#clusterMapPopUp a {
+    font-size: 1rem;
+    color: darkgreen;
+    font-weight: 500;
+}
+
 /* Pagination */
 .hidden {
     display: none;
