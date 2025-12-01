@@ -9,8 +9,8 @@ body {
     background-image: url("../images/Boreal_Forest_tile.webp");
 
     /* size of body background-image tile */
-    background-size: 20%;
-
+    background-size: 400px 400px;
+    
     /* background image's position is fixed within the viewport */
     background-attachment: fixed;
 }
@@ -296,6 +296,8 @@ h1 {
     font-weight: 400;
     color: white;
 }
+
+/* Styling forms: login, register, new campground, edit campground */
 
 #loginWrapper, #registerWrapper,
 #newCampFormWrapper,
@@ -702,15 +704,15 @@ h5.card-title,
     display: block;
     text-decoration: none;
 
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
 
     background-color: darkgreen;
     border-radius: 1.4rem;
     
-    height: 52px;
-    line-height: 52px;
-    width: 84px;
+    height: 42px;
+    line-height: 42px;
+    width: 185px;
     margin: 0 auto;
 
     position: absolute;
@@ -762,6 +764,8 @@ h5.card-title,
 /* Styles for screen width between 992px and 1200px */
 
 @media (max-width: 1200px) {
+
+        
 
         /* styles of Flash messages */
 
@@ -950,9 +954,50 @@ h5.card-title,
 
 }
 
-/* Styles for screen width between 768px and 992px */
+/* Styles for screen widths between 768px and 992px */
 
 @media(max-width: 992px) {
+
+       
+        
+        
+        /* Styling forms: login, register, new campground, edit campground (for screen widths between 768px and 992px) */
+
+        #loginWrapper,
+        #registerWrapper,
+        #newCampFormWrapper,
+        #editCampFormWrapper {
+            font-size: 1.1rem
+        }
+
+        #loginWrapper input,
+        #registerWrapper input,
+        #newCampFormWrapper input,
+        #editCampFormWrapper input,
+        textarea#description {
+            font-size: 1.1rem;
+            border-radius: 1.2rem;
+        }
+
+        /* textarea#description, input#price and span#price-label are in New & Edit Campgrounds forms */
+
+        input#price {
+            border-radius: 0 1.2rem 1.2rem 0;
+        }
+
+        span#price-label {
+            border-radius: 1.2rem 0 0 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        #loginWrapper input:focus,
+        #registerWrapper input:focus,
+        #newCampFormWrapper input:focus,
+        #editCampFormWrapper input:focus,
+        textarea#description:focus {
+            border: 0.2rem solid darkgreen;
+        }
+
 
         /* Styles of Flash messages */
 
@@ -1024,6 +1069,31 @@ h5.card-title,
 /* Styles for screen width between 576px and 768px */
 
 @media(max-width: 768px){
+
+        
+
+        /* Styling forms: login, register, new campground, edit campground (for screen widths between 576px and 768px) */
+
+        #loginWrapper,
+        #registerWrapper,
+        #newCampFormWrapper,
+        #editCampFormWrapper {
+            font-size: 1rem
+        }
+
+        #loginWrapper input,
+        #registerWrapper input,
+        #newCampFormWrapper input,
+        #editCampFormWrapper input,
+        textarea#description {
+            font-size: 1rem;
+        }
+
+        /* textarea#description, input#price and span#price-label are in New & Edit Campgrounds forms */
+
+        span#price-label {
+            font-size: 1rem;
+        }
 
         /* Styles of Flash messages */
 
@@ -1115,6 +1185,13 @@ h5.card-title,
 
 @media(max-width: 576px){
 
+        #loginWrapper div.card-body, 
+        #registerWrapper div.card-body,
+        #newCampFormWrapper div.card-body,
+        #editCampFormWrapper div.card-body {
+            padding: 0rem;
+        }
+
         /* Styles of Flash messages */
 
         #alertContainer {
@@ -1155,16 +1232,8 @@ h5.card-title,
             height: 389px;
         }
 
-        
-
         h1 {
             font-size: 2rem;  
-        }
-
-        #loginWrapper,
-        #registerWrapper {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
         }
 
         #footer-app {
@@ -1191,10 +1260,6 @@ h5.card-title,
             font-size: 1rem;
             font-weight: 500;
         }
-
-
-        /* pagination navbar for screen widths between 992px and 1200px */
-
 
             #nav-pagination-wrapper {
             height: 20rem;
