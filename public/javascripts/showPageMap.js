@@ -28,8 +28,10 @@ new maptilersdk.Marker({element: markerDiv})
 .setPopup(
     new maptilersdk.Popup({offset: 25})
     .setHTML(
-        `<h3>${campground.title}</h3>
-        <p>${campground.location}</p>`
+        `<div id="showCampPopUp">
+        <h3>${campground.title}</h3>
+        <p>${campground.location}</p>
+        </div>`
     )
 )
 .addTo(map);
