@@ -19,7 +19,6 @@ module.exports.descriptors = [
     'Frosty',
     'Snowy',
     'Blizzardy',
-    'Northern',
 ];
 
 module.exports.places = [
@@ -274,9 +273,9 @@ module.exports.authorsExternalDB = [
     '69266abed79ae65ad49a161f',
     '6927a89edb91a93bf8e8d14a',
     '692e588fb1ef8eb59831f688',
-    '692e594ab1ef8eb59831f691',
     '692e59bab1ef8eb59831f69a',
-    '692e5a1fb1ef8eb59831f6a3'
+    '692e5a1fb1ef8eb59831f6a3',
+    '692f32c25616b7884d2614df'
 ];
 
 // Authors for seeding local database
