@@ -1,6 +1,5 @@
-if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').config();
-}
+require('dotenv').config();
+console.log(`process.env.NODE_ENV = ${process.env.NODE_ENV}`);
 
 const mongoose = require('mongoose');
 
@@ -10,6 +9,16 @@ const Campground = require('../models/campground');
 
 const cities = require('./cities_Canada');
 const {descriptors, places, photos, authorsExternalDB, authorsLocalDB} = require('./seedHelpers');
+
+let authors;
+
+// Use different seed helper array for campground authors that depends whether we are in production or development mode
+if(process.env.NODE_ENV === 'development'){
+    authors = authorsLocalDB;
+}
+if(process.env.NODE_ENV === 'production'){
+    authors = authorsExternalDB;
+}
 
 db.on('connected', () => console.log('connected'));
 db.on('open', () => console.log('open'));
@@ -33,15 +42,6 @@ mongoose.connect(dbUrl)
 // Define a function 'sample' that accepts an array as an argument 
 // and returns the random element from this array
 const sample = array => array[Math.floor(Math.random()*array.length)];
-
-let authors;
-
-// Use different seed helper array for authors that depends whether we use production db or local db
-if(process.env.NODE_ENV !== 'production'){
-    authors = authorsLocalDB;
-} else {
-    authors = authorsExternalDB;
-}
 
 const seedDB = async () => {
 
@@ -72,8 +72,7 @@ const seedDB = async () => {
 
         });
         await camp.save();
-    }
-    
+    } 
 }
 
 seedDB()
