@@ -1124,6 +1124,8 @@ h5.card-title,
 
         #alertSuccess, #alertError {
             border-radius: 1rem;
+            padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+            border-radius: 1rem;
         }
 
         #cluster-map, #map {
@@ -1210,6 +1212,7 @@ h5.card-title,
         /* Styles of Flash messages */
 
         #alertContainer {
+            width: 80%;
             font-size: 1.2rem;
         }
 
@@ -1223,6 +1226,7 @@ h5.card-title,
         #alertSuccess, #alertError {
             border-radius: 0.5rem;
             text-align: center;
+            padding: 1rem 3rem 1rem 1rem;
         }
 
         #nested1-grid-container {
