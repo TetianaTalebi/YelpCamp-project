@@ -195,10 +195,6 @@ body {
     align-items: center;
 }
 
-#homePageFooter a {
-    text-decoration: none;
-}
-
 #homePageFooter a,
 #homePageFooter p {
  color: white;
