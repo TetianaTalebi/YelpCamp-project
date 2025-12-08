@@ -4,15 +4,14 @@
 
 [Link to this project on Render](https://tetianatalebi-yelpcamp-project.onrender.com)
 
-Demo Logins:
+**Demo Logins:**
 
-Username: globetrotter
-Password: globetrotter
+| Username      | Password     |
+| ------------- | ------------ |
+| globetrotter  | globetrotter |
+| traveller90   | traveller90  |
 
-Username: traveller90
-Password: traveller90
-
-
+***
 # Project Overview / Description
 
 YelpCamp is a full-stack CRUD application designed for managing campground data, user-generated content, and geolocation-based resources. The platform enables authenticated users to perform end-to-end operations on campgrounds, including data creation, modification, and deletion. Each campground supports associated metadata such as images, pricing, descriptions, and geographic coordinates.
@@ -26,6 +25,7 @@ The system provides the following user capabilities:
 - Submit and manage reviews with rating and comment fields
 - Delete their own reviews with ownership validation
 
+***
 # Key Features
 
 - RESTful architecture following standard CRUD route conventions
@@ -41,6 +41,7 @@ The system provides the following user capabilities:
 - Accessible star-rating component using the Starability library (fully keyboard-navigable, screen reader friendly, CSS-only animations)
 - Micro-interactions such as hover effects, animated buttons, and “Read More” expansions for enhanced UX
 
+***
 # Tools and Technologies Used
 
 ## Back End
@@ -79,14 +80,19 @@ The system provides the following user capabilities:
 Home page
 ! -->
 
-# Acknowledgements
+***
+## 🙏 Acknowledgements
 
-*YelpCamp* is a full stack project that is based on a tutorial from the Udemy course [*“The Web Developer Bootcamp 2025”*](https://www.udemy.com/share/101W9C3@8DTcK_av2hYV0yXuZOXIV73A-SbVYORYJ5C3MAiOxghfLpL505eBLg685qZ09XVBHg==/), taught by [*Colt Steele*](https://www.udemy.com/user/coltsteele/). 
+This project was inspired by and built following guidance from the Udemy course [*“The Web Developer Bootcamp 2025”*](https://www.udemy.com/share/101W9C3@8DTcK_av2hYV0yXuZOXIV73A-SbVYORYJ5C3MAiOxghfLpL505eBLg685qZ09XVBHg==/), taught by [*Colt Steele*](https://www.udemy.com/user/coltsteele/). 
+Additional thanks to the open-source libraries and tools that made development smoother. 
 
-# Contact (My Info)
+***
+## 📫 Contact
 
-Tetiana Talebi
-[GitHub](https://github.com/TetianaTalebi)
-[LinkedIn](https://www.linkedin.com/in/tetianatalebi/)
+**Author:** Tetiana Talebi 
+**Email:** [tetiana.talebi1111@gmail.com](mailto:tetiana.talebi1111@gmail.com)  
+**GitHub:** [github.com/TetianaTalebi](https://github.com/TetianaTalebi)  
+**LinkedIn:** [linkedin.com/in/tetianatalebi/](https://www.linkedin.com/in/tetianatalebi/)  
+
 
 
