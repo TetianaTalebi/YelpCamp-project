@@ -91,19 +91,31 @@ The system provides the following user capabilities:
 
 ### 🏡 Home Page
 
-| Home Page (for 320px screen) | Home Page with drop-down menu (for 320px screen) | Show Page (for 1500px screen) |
+| Home Page (screen 320px) | Home Page with drop-down menu (screen 320px) | Show Page (screen 1500px) |
 |------|--------------|----------|
-| ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_home_page_screen320px_with_menu.jpg) | ![](/assets/images/YC_home_page_screen320px_with_menu.jpg) |
+| ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_home_page_screen320px_with_menu.jpg) | ![](/assets/images/YC_home_page_screen1500px.jpg) |
 
 ### ⛺ All Campgrounds Page
 
-| All Campgrounds with cluster map (for 1500px screen) | All Campgrounds with pagination navbar (for 1500px screen) | All Campgrounds with cluster map pop-up message (for 1000px) |
+| All Campgrounds with cluster map (screen 1500px) | All Campgrounds with pagination navbar (screen 1500px) | All Campgrounds with cluster map pop-up message (screen 1000px) |
 |------|--------------|----------|
 | ![](/assets/images/YC_All_Camps_page_screen1500px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1500px_2.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_cluster_map_pop-up.jpg) |
 
 | All Campgrounds with drop-down menu (screen 320px) | All Campgrounds with pagination navbar (screen 320px) | All Campgrounds (screen 580px) | All Campgrounds (screen 995px) | All Campgrounds with alert (screen 1000px) |
 |------|--------------|----------|--------------|----------|
 | ![](/assets/images/YC_All_Camps_page_screen320px.jpg) | ![](/assets/images/YC_All_Camps_page_screen320px_2.jpg) | ![](/assets/images/YC_All_Camps_page_screen580px.jpg) | ![](/assets/images/YC_All_Camps_page_screen995px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_alert.jpg) |
+
+### ✅ Register and Login Pages
+
+| Register page (screen 1200px) | Login page (screen 320px) | Login page with alert (screen 1000px) |
+|------|--------------|----------|
+| ![](/assets/images/YC_Register_page_screen1200px.jpg) | ![](/assets/images/YC_Login_page_screen320px.jpg) | ![](/assets/images/YC_Login_page_screen1000px_alert.jpg) |
+
+### 🤷‍♂️ 404 Page
+
+| 404 Page (screen 320px) | 404 Page (screen 1000px) | 
+|------|--------------|
+| ![](/assets/images/YC_404_page_screen320px.jpg) | ![](/assets/images/YC_404_page_screen1000px.jpg) |
 
 ***
 ## 🙏 Acknowledgements
