@@ -1,4 +1,4 @@
-# YelpCamp
+# 🏕️ YelpCamp
 
 ![Yelp Camp home page for screen width 1500px](/assets/images/YC_home_page_screen1500px.jpg "Yelp Camp Home page")
 
@@ -89,9 +89,21 @@ The system provides the following user capabilities:
 
 ## 🖼️ Screenshots
 
-| Home Page | All Campgrounds | Show Page |
+### 🏡 Home Page
+
+| Home Page (for 320px screen) | Home Page with drop-down menu (for 320px screen) | Show Page (for 1500px screen) |
 |------|--------------|----------|
-| ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_All_Camps_page_screen320px.jpg) | ![](/assets/images/YC_ShowCamp_page_screen1500px_author_logged-in.jpg) |
+| ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_home_page_screen320px_with_menu.jpg) | ![](/assets/images/YC_home_page_screen320px_with_menu.jpg) |
+
+### ⛺ All Campgrounds Page
+
+| All Campgrounds with cluster map (for 1500px screen) | All Campgrounds with pagination navbar (for 1500px screen) | All Campgrounds with cluster map pop-up message (for 1000px) |
+|------|--------------|----------|
+| ![](/assets/images/YC_All_Camps_page_screen1500px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1500px_2.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_cluster_map_pop-up.jpg) |
+
+| All Campgrounds with drop-down menu (screen 320px) | All Campgrounds with pagination navbar (screen 320px) | All Campgrounds (screen 580px) | All Campgrounds (screen 995px) | All Campgrounds with alert (screen 1000px) |
+|------|--------------|----------|--------------|----------|
+| ![](/assets/images/YC_All_Camps_page_screen320px.jpg) | ![](/assets/images/YC_All_Camps_page_screen320px_2.jpg) | ![](/assets/images/YC_All_Camps_page_screen580px.jpg) | ![](/assets/images/YC_All_Camps_page_screen995px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_alert.jpg) |
 
 ***
 ## 🙏 Acknowledgements
