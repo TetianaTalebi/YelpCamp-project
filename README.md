@@ -75,15 +75,30 @@ The system provides the following user capabilities:
 - Cookies & Sessions (authentication state management)
 - Geocoding & Interactive Maps (Maptiler APIs & map rendering)
 
-<!-- # Screenshots/GIFs/Demo
+***
+# 📸 Screenshots/Demo
 
-Home page
-! -->
+[Link to this project on Render](https://tetianatalebi-yelpcamp-project.onrender.com)
+
+**Demo Logins:**
+
+| Username      | Password     |
+| ------------- | ------------ |
+| globetrotter  | globetrotter |
+| traveller90   | traveller90  |
+
+## 🖼️ Screenshots
+
+| Home Page | All Campgrounds | Show Page |
+|------|--------------|----------|
+| ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_All_Camps_page_screen320px.jpg) | ![](/assets/images/YC_ShowCamp_page_screen1500px_author_logged-in.jpg) |
 
 ***
 ## 🙏 Acknowledgements
 
-This project was inspired by and built following guidance from the Udemy course [*“The Web Developer Bootcamp 2025”*](https://www.udemy.com/share/101W9C3@8DTcK_av2hYV0yXuZOXIV73A-SbVYORYJ5C3MAiOxghfLpL505eBLg685qZ09XVBHg==/), taught by [*Colt Steele*](https://www.udemy.com/user/coltsteele/). 
+This project was inspired by and built following guidance from the Udemy course   
+[*“The Web Developer Bootcamp 2025”*](https://www.udemy.com/share/101W9C3@8DTcK_av2hYV0yXuZOXIV73A-SbVYORYJ5C3MAiOxghfLpL505eBLg685qZ09XVBHg==/), taught by [*Colt Steele*](https://www.udemy.com/user/coltsteele/). 
+
 Additional thanks to the open-source libraries and tools that made development smoother. 
 
 ***
