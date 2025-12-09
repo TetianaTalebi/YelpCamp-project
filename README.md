@@ -3,7 +3,7 @@
 ![Yelp Camp home page for screen width 1500px](/assets/images/YC_home_page_screen1500px.jpg "Yelp Camp Home page")
 
 Link to this project on Render:  
-==[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)==
+**[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)**
 
 **Demo Logins:**
 
@@ -84,11 +84,11 @@ The system provides the following user capabilities:
 # 📸 Screenshots/Demo
 
 Link to this project on Render:  
-==[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)==
+**[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)**
 
 **Demo Logins:**
 
-| ==Username==      | ==Password==     |
+| Username      | Password     |
 | ------------- | ------------ |
 | globetrotter  | globetrotter |
 | traveller90   | traveller90  |
@@ -148,7 +148,7 @@ Additional thanks to the open-source libraries and tools that made development s
 
 ## 📫 Contact
 
-**Author:** Tetiana Talebi 
+**Author:** Tetiana Talebi   
 **Email:** [tetiana.talebi1111@gmail.com](mailto:tetiana.talebi1111@gmail.com)  
 **GitHub:** [github.com/TetianaTalebi](https://github.com/TetianaTalebi)  
 **LinkedIn:** [linkedin.com/in/tetianatalebi/](https://www.linkedin.com/in/tetianatalebi/)  
