@@ -95,6 +95,10 @@ Link to this project on Render:
 
 ## 🖼️ Screenshots
 
+All screenshots can be accessed via the link below:
+     
+**[/assets/images/](/assets/images/)**
+
 ### 🏡 Home Page
 
 | Home Page (screen 320px) | Home Page with drop-down menu (screen 320px) | Show Page (screen 1500px) |
@@ -139,7 +143,7 @@ Link to this project on Render:
 
 | Show Campground page when image is not available (screen 1200px) | Show Campground page with map when image is not available (screen 1000px) |
 |------|--------------|
-| ![](/assets/images/YC_ShowCamp_page_screen1200px_no_img.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_cluster_map_pop-up.jpg) |
+| ![](/assets/images/YC_ShowCamp_page_screen1200px_no_img.jpg) | ![](/assets/images/YC_ShowCamp_page_screen1000px_map_pop-up_msg.jpg) |
 
 ### 📝 Edit Campground Page
 
