@@ -2,7 +2,8 @@
 
 ![Yelp Camp home page for screen width 1500px](/assets/images/YC_home_page_screen1500px.jpg "Yelp Camp Home page")
 
-[Link to this project on Render](https://tetianatalebi-yelpcamp-project.onrender.com)
+Link to this project on Render:  
+==[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)==
 
 **Demo Logins:**
 
@@ -82,11 +83,12 @@ The system provides the following user capabilities:
 
 # 📸 Screenshots/Demo
 
-[Link to this project on Render](https://tetianatalebi-yelpcamp-project.onrender.com)
+Link to this project on Render:  
+==[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)==
 
 **Demo Logins:**
 
-| Username      | Password     |
+| ==Username==      | ==Password==     |
 | ------------- | ------------ |
 | globetrotter  | globetrotter |
 | traveller90   | traveller90  |
