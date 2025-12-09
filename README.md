@@ -96,7 +96,7 @@ Link to this project on Render:
 ## 🖼️ Screenshots
 
 A selection of key screenshots is shown below.  
-To view the complete gallery, visit the screenshots folder **[./assets/images/](./assets/images/)**.
+To view the complete gallery, visit the screenshots folder **[/assets/images/](/assets/images/)**.
 
 ### 🏡 Home Page
 
@@ -130,7 +130,7 @@ The following screenshots show how **the “All Campgrounds” page layout** and
 
 ### 🌟 Show Campground Page 
 
-| Show Campground Page with alert (screen 780px) | Show Campground Page with map (screen 580px) | Show Campground Page with campground author logged-in (screen 1500px) |
+| Show Campground Page with campground author logged-in and alert message (screen 780px) | Show Campground Page with map (screen 580px) | Show Campground Page with campground author logged-in (screen 1500px) |
 |------|--------------|----------|
 | ![](/assets/images/YC_ShowCamp_page_screen780px_alert.jpg) | ![](/assets/images/YC_ShowCamp_page_screen580px_map.jpg) | ![](/assets/images/YC_ShowCamp_page_screen1500px_author_logged-in.jpg) |
 
@@ -154,9 +154,9 @@ The following screenshots show how **the “All Campgrounds” page layout** and
 
 ### 🤷‍♂️ 404 Page
 
-| 404 Page (screen 320px) | 404 Page (screen 1000px) | 
-|------|--------------|
-| ![](/assets/images/YC_404_page_screen320px.jpg) | ![](/assets/images/YC_404_page_screen1000px.jpg) |
+| 404 Page (screen 1000px) | 
+|--------------|
+| ![](/assets/images/YC_404_page_screen1000px.jpg) |
 
 ***
 
