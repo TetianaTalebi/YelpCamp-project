@@ -123,6 +123,24 @@ Link to this project on Render:
 |------|--------------|----------|
 | ![](/assets/images/YC_NewCamp_page_screen320px_alert.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_1.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_2.jpg) |
 
+### 🌟 Show Campground Page 
+
+| Show Campground Page with alert (screen 780px) | Show Campground Page with map (screen 580px) | Show Campground Page with campground author logged-in (screen 1500px) |
+|------|--------------|----------|
+| ![](/assets/images/YC_ShowCamp_page_screen780px_alert.jpg) | ![](/assets/images/YC_ShowCamp_page_screen580px_map.jpg) | ![](/assets/images/YC_ShowCamp_page_screen1500px_author_logged-in.jpg) |
+
+### 👍 Review form and reviews
+
+| Review form with validation at Show Campground page (screen 320px) | Review form and reviews at Show Campground page (screen 580px) | Reviews at Show Campground page, review form is hidden because a user is not logged-in (screen 320px) |
+|------|--------------|----------|
+| ![](/assets/images/YC_ShowCamp_page_screen320px_review_form_green.jpg) | ![](/assets/images/YC_ShowCamp_page_screen580px_review_form_reviews.jpg) | ![](/assets/images/YC_ShowCamp_page_screen320px_reviews.jpg) |
+
+### ❌ Show Campground Page with no image available
+
+| Show Campground page when image is not available (screen 1200px) | Show Campground page with map when image is not available (screen 1000px) |
+|------|--------------|
+| ![](/assets/images/YC_ShowCamp_page_screen1200px_no_img.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_cluster_map_pop-up.jpg) |
+
 ### 📝 Edit Campground Page
 
 | Edit Campground (screen 1500px) | Edit Campground (screen 1500px) |
