@@ -106,13 +106,15 @@ To view the complete gallery, visit the screenshots folder **[./assets/images/](
 
 ### ⛺ All Campgrounds Page
 
+The following screenshots show how **the “All Campgrounds” page layout** and **the pagination navbar** change depending on the screen width.
+
 | All Campgrounds with cluster map (screen 1500px) | All Campgrounds with pagination navbar (screen 1500px) |
 |------|--------------|
 | ![](/assets/images/YC_All_Camps_page_screen1500px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1500px_2.jpg) |
 
-| All Campgrounds with drop-down menu (screen 320px) | All Campgrounds with pagination navbar (screen 320px) | All Campgrounds (screen 580px) | All Campgrounds (screen 995px) | All Campgrounds with alert (screen 1000px) |
-|------|--------------|----------|--------------|----------|
-| ![](/assets/images/YC_All_Camps_page_screen320px.jpg) | ![](/assets/images/YC_All_Camps_page_screen320px_2.jpg) | ![](/assets/images/YC_All_Camps_page_screen580px.jpg) | ![](/assets/images/YC_All_Camps_page_screen995px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_alert.jpg) |
+| All Campgrounds with pagination navbar (screen 320px) | All Campgrounds (screen 580px) |  All Campgrounds with alert (screen 1000px) | All Campgrounds (screen 995px) |
+|--------------|----------|--------------|----------|
+| ![](/assets/images/YC_All_Camps_page_screen320px_2.jpg) | ![](/assets/images/YC_All_Camps_page_screen580px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_alert.jpg) | ![](/assets/images/YC_All_Camps_page_screen995px.jpg) | 
 
 ### ✅ Register and Login Pages
 
