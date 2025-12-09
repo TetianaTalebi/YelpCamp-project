@@ -96,7 +96,7 @@ Link to this project on Render:
 ## 🖼️ Screenshots
 
 A selection of key screenshots is shown below.  
-To view the complete gallery, visit the **[screenshots folder](./assets/images/)**.
+To view the complete gallery, visit the screenshots folder **[./assets/images/](./assets/images/)**.
 
 ### 🏡 Home Page
 
@@ -106,9 +106,9 @@ To view the complete gallery, visit the **[screenshots folder](./assets/images/)
 
 ### ⛺ All Campgrounds Page
 
-| All Campgrounds with cluster map (screen 1500px) | All Campgrounds with pagination navbar (screen 1500px) | All Campgrounds with cluster map pop-up message (screen 1000px) |
-|------|--------------|----------|
-| ![](/assets/images/YC_All_Camps_page_screen1500px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1500px_2.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_cluster_map_pop-up.jpg) |
+| All Campgrounds with cluster map (screen 1500px) | All Campgrounds with pagination navbar (screen 1500px) |
+|------|--------------|
+| ![](/assets/images/YC_All_Camps_page_screen1500px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1500px_2.jpg) |
 
 | All Campgrounds with drop-down menu (screen 320px) | All Campgrounds with pagination navbar (screen 320px) | All Campgrounds (screen 580px) | All Campgrounds (screen 995px) | All Campgrounds with alert (screen 1000px) |
 |------|--------------|----------|--------------|----------|
