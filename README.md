@@ -12,6 +12,7 @@
 | traveller90   | traveller90  |
 
 ***
+
 # Project Overview / Description
 
 YelpCamp is a full-stack CRUD application designed for managing campground data, user-generated content, and geolocation-based resources. The platform enables authenticated users to perform end-to-end operations on campgrounds, including data creation, modification, and deletion. Each campground supports associated metadata such as images, pricing, descriptions, and geographic coordinates.
@@ -26,6 +27,7 @@ The system provides the following user capabilities:
 - Delete their own reviews with ownership validation
 
 ***
+
 # Key Features
 
 - RESTful architecture following standard CRUD route conventions
@@ -42,6 +44,7 @@ The system provides the following user capabilities:
 - Micro-interactions such as hover effects, animated buttons, and “Read More” expansions for enhanced UX
 
 ***
+
 # Tools and Technologies Used
 
 ## Back End
@@ -76,6 +79,7 @@ The system provides the following user capabilities:
 - Geocoding & Interactive Maps (Maptiler APIs & map rendering)
 
 ***
+
 # 📸 Screenshots/Demo
 
 [Link to this project on Render](https://tetianatalebi-yelpcamp-project.onrender.com)
@@ -111,6 +115,18 @@ The system provides the following user capabilities:
 |------|--------------|----------|
 | ![](/assets/images/YC_Register_page_screen1200px.jpg) | ![](/assets/images/YC_Login_page_screen320px.jpg) | ![](/assets/images/YC_Login_page_screen1000px_alert.jpg) |
 
+### ✨ Add New Campground Page
+
+| New Campground page with alert (screen 320px) | New Campground page form validation (screen 780px) | New Campground page form validation (screen 780px) |
+|------|--------------|----------|
+| ![](/assets/images/YC_NewCamp_page_screen320px_alert.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_1.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_2.jpg) |
+
+### 📝 Edit Campground Page
+
+| Edit Campground (screen 1500px) | Edit Campground (screen 1500px) |
+|------|--------------|
+| ![](/assets/images/YC_Edit_Camp_page_screen1500px_2.jpg) | ![](/assets/images/YC_Edit_Camp_page_screen1500px.jpg) |
+
 ### 🤷‍♂️ 404 Page
 
 | 404 Page (screen 320px) | 404 Page (screen 1000px) | 
@@ -118,6 +134,7 @@ The system provides the following user capabilities:
 | ![](/assets/images/YC_404_page_screen320px.jpg) | ![](/assets/images/YC_404_page_screen1000px.jpg) |
 
 ***
+
 ## 🙏 Acknowledgements
 
 This project was inspired by and built following guidance from the Udemy course   
@@ -126,6 +143,7 @@ This project was inspired by and built following guidance from the Udemy course
 Additional thanks to the open-source libraries and tools that made development smoother. 
 
 ***
+
 ## 📫 Contact
 
 **Author:** Tetiana Talebi 
