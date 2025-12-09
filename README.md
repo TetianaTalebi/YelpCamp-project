@@ -122,12 +122,6 @@ The following screenshots show how **the “All Campgrounds” page layout** and
 |------|--------------|----------|
 | ![](/assets/images/YC_Register_page_screen1200px.jpg) | ![](/assets/images/YC_Login_page_screen320px.jpg) | ![](/assets/images/YC_Login_page_screen1000px_alert.jpg) |
 
-### ✨ Add New Campground Page
-
-| New Campground page with alert (screen 320px) | New Campground page form validation (screen 780px) | New Campground page form validation (screen 780px) |
-|------|--------------|----------|
-| ![](/assets/images/YC_NewCamp_page_screen320px_alert.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_1.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_2.jpg) |
-
 ### 🌟 Show Campground Page 
 
 | Show Campground Page with campground author logged-in and alert message (screen 780px) | Show Campground Page with map (screen 580px) | Show Campground Page with campground author logged-in (screen 1500px) |
@@ -145,6 +139,12 @@ The following screenshots show how **the “All Campgrounds” page layout** and
 | Show Campground page when image is not available (screen 1200px) | Show Campground page with map when image is not available (screen 1000px) |
 |------|--------------|
 | ![](/assets/images/YC_ShowCamp_page_screen1200px_no_img.jpg) | ![](/assets/images/YC_ShowCamp_page_screen1000px_map_pop-up_msg.jpg) |
+
+### ✨ Add New Campground Page
+
+| New Campground page with alert (screen 320px) | New Campground page form validation (screen 780px) | New Campground page form validation (screen 780px) |
+|------|--------------|----------|
+| ![](/assets/images/YC_NewCamp_page_screen320px_alert.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_1.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_2.jpg) |
 
 ### 📝 Edit Campground Page
 
