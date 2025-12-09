@@ -100,11 +100,12 @@ All project screenshots can be accessed via the link below:
 **[/assets/images/](/assets/images/)**
 
 <details>
-  <summary>### 🏡 Home Page</summary>
 
-    | Home Page (screen 320px) | Show Page (screen 1500px) |
-    |------|----------|
-    | ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_home_page_screen1500px.jpg) |
+  <summary> ### 🏡 Home Page </summary>
+
+    ![](/assets/images/YC_home_page_screen320px.jpg) 
+    ![](/assets/images/YC_home_page_screen1500px.jpg)
+
 </details>
 
 
