@@ -2,15 +2,17 @@
 
 ![Yelp Camp home page for screen width 1500px](/assets/images/YC_home_page_screen1500px.jpg "Yelp Camp Home page")
 
-Link to this project on Render:  
-**[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)**
-
-**Demo Logins:**
-
-| Username      | Password     |
-| ------------- | ------------ |
-| globetrotter  | globetrotter |
-| traveller90   | traveller90  |
+> [!NOTE]
+>
+> Link to this project on Render:  
+> **[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)**
+>
+> **Demo Logins:**
+>
+> | Username      | Password     |
+> | ------------- | ------------ |
+> | globetrotter  | globetrotter |
+> | traveller90   | traveller90  |
 
 ***
 
@@ -95,8 +97,9 @@ Link to this project on Render:
 
 ## 🖼️ Screenshots
 
-A selection of key screenshots is shown below.  
-To view the complete gallery, visit the screenshots folder **[/assets/images/](/assets/images/)**.
+> [!NOTE]
+> A selection of key screenshots is shown below.  
+> To view the complete gallery, visit the screenshots folder **[/assets/images/](/assets/images/)**.
 
 ### 🏡 Home Page
 
