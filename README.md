@@ -95,15 +95,24 @@ Link to this project on Render:
 
 ## 🖼️ Screenshots
 
-All screenshots can be accessed via the link below:
-     
+All project screenshots can be accessed via the link below:
+
 **[/assets/images/](/assets/images/)**
 
-### 🏡 Home Page
+<details>
+  <summary>### 🏡 Home Page</summary>
 
-| Home Page (screen 320px) | Home Page with drop-down menu (screen 320px) | Show Page (screen 1500px) |
-|------|--------------|----------|
-| ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_home_page_screen320px_with_menu.jpg) | ![](/assets/images/YC_home_page_screen1500px.jpg) |
+    | Home Page (screen 320px) | Show Page (screen 1500px) |
+    |------|----------|
+    | ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_home_page_screen1500px.jpg) |
+</details>
+
+
+<!-- ### 🏡 Home Page
+
+| Home Page (screen 320px) | Show Page (screen 1500px) |
+|------|----------|
+| ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_home_page_screen1500px.jpg) | -->
 
 ### ⛺ All Campgrounds Page
 
