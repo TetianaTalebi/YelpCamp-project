@@ -26,7 +26,7 @@ The system provides the following user capabilities:
 - Create new campgrounds enriched with photos, descriptions, prices and location data
 - Edit and delete campgrounds they own, with full authorization checks
 - Browse campgrounds created by other users
-- Submit and manage reviews with rating and comment fields
+- Submit and manage reviews with rating and review fields
 - Delete their own reviews with ownership validation
 
 ***
@@ -85,15 +85,17 @@ The system provides the following user capabilities:
 
 # 📸 Screenshots/Demo
 
-Link to this project on Render:  
-**[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)**
-
-**Demo Logins:**
-
-| Username      | Password     |
-| ------------- | ------------ |
-| globetrotter  | globetrotter |
-| traveller90   | traveller90  |
+> [!NOTE]
+>
+> Link to this project on Render:  
+> **[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)**
+>
+> **Demo Logins:**
+>
+> | Username      | Password     |
+> | ------------- | ------------ |
+> | globetrotter  | globetrotter |
+> | traveller90   | traveller90  |
 
 ## 🖼️ Screenshots
 
@@ -127,7 +129,7 @@ The following screenshots show how **the “All Campgrounds” page layout** and
 
 ### 🌟 Show Campground Page 
 
-| Show Campground Page with campground author logged-in and alert message (screen 780px) | Show Campground Page with map (screen 580px) | Show Campground Page with campground author logged-in (screen 1500px) |
+| Show Campground Page with campground author logged-in and alert message (screen 780px) | Show Campground Page with map (screen 580px) | Show Campground Page with map with campground author logged-in (screen 1500px) |
 |------|--------------|----------|
 | ![](/assets/images/YC_ShowCamp_page_screen780px_alert.jpg) | ![](/assets/images/YC_ShowCamp_page_screen580px_map.jpg) | ![](/assets/images/YC_ShowCamp_page_screen1500px_author_logged-in.jpg) |
 
