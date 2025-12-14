@@ -18,9 +18,9 @@
 
 # 📑 Table of Contents
 
-- 🔦 [Project Overview / Description](#project-overview--description)
-- 📌 [Key Features](#key-features)
-- 🛠️ [Tools and Technologies Used](#tools-and-technologies-used)
+- 🔦 [Project Overview / Description](#-project-overview--description)
+- 📌 [Key Features](#-key-features)
+- 🛠️ [Tools and Technologies Used](#-tools-and-technologies-used)
 - 📸 [Screenshots/Demo](#-screenshotsdemo)
 - 🙏 [Acknowledgements](#-acknowledgements)
 - 📫 [Contact](#-contact)
