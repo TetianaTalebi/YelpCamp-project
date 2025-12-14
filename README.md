@@ -40,7 +40,7 @@ The system provides the following user capabilities:
 - Submit and manage reviews with rating and review fields
 - Delete their own reviews with ownership validation
 
-**[⬆️📑 <ins>Back to Table of Contents</ins>](#-table-of-contents)**
+**[⬆️📑 Back to Table of Contents](#-table-of-contents)**
 
 ***
 
@@ -59,7 +59,7 @@ The system provides the following user capabilities:
 - Accessible star-rating component using the Starability library (fully keyboard-navigable, screen reader friendly, CSS-only animations)
 - Micro-interactions such as hover effects, animated buttons, and “Read More” expansions for enhanced UX
 
-**[⬆️📑 <ins>Back to Table of Contents</ins>](#-table-of-contents)**
+**[⬆️📑 Back to Table of Contents](#-table-of-contents)**
 
 ***
 
@@ -96,7 +96,7 @@ The system provides the following user capabilities:
 - Cookies & Sessions (authentication state management)
 - Geocoding & Interactive Maps (Maptiler APIs & map rendering)
 
-**[⬆️📑 <ins>Back to Table of Contents</ins>](#-table-of-contents)**
+**[⬆️📑 Back to Table of Contents](#-table-of-contents)**
 
 ***
 
@@ -180,7 +180,7 @@ The following screenshots show how **the “All Campgrounds” page layout** and
 |--------------|
 | ![](/assets/images/YC_404_page_screen1000px.jpg) |
 
-**[⬆️📑 <ins>Back to Table of Contents</ins>](#-table-of-contents)**
+**[⬆️📑 Back to Table of Contents](#-table-of-contents)**
 
 ***
 
@@ -191,7 +191,7 @@ This project was inspired by and built following guidance from the Udemy course
 
 Additional thanks to the open-source libraries and tools that made development smoother. 
 
-**[⬆️📑 <ins>Back to Table of Contents</ins>](#-table-of-contents)**
+**[⬆️📑 Back to Table of Contents](#-table-of-contents)**
 
 ***
 
@@ -202,7 +202,7 @@ Additional thanks to the open-source libraries and tools that made development s
 **GitHub:** [github.com/TetianaTalebi](https://github.com/TetianaTalebi)  
 **LinkedIn:** [linkedin.com/in/tetianatalebi/](https://www.linkedin.com/in/tetianatalebi/)  
 
-**[⬆️📑 <ins>Back to Table of Contents</ins>](#-table-of-contents)**
+**[⬆️📑 Back to Table of Contents](#-table-of-contents)**
 
 ***
 
