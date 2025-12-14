@@ -20,7 +20,7 @@
 
 - 🔦 [Project Overview / Description](#-project-overview--description)
 - 📌 [Key Features](#-key-features)
-- 🛠️ [Tools and Technologies Used](#-tools-and-technologies-used)
+- 🛠️ [Tools and Technologies Used](#%EF%B8%8F-tools-and-technologies-used)
 - 📸 [Screenshots/Demo](#-screenshotsdemo)
 - 🙏 [Acknowledgements](#-acknowledgements)
 - 📫 [Contact](#-contact)
