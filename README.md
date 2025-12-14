@@ -192,5 +192,9 @@ Additional thanks to the open-source libraries and tools that made development s
 **GitHub:** [github.com/TetianaTalebi](https://github.com/TetianaTalebi)  
 **LinkedIn:** [linkedin.com/in/tetianatalebi/](https://www.linkedin.com/in/tetianatalebi/)  
 
+***
+
+### ⬆️ [Back to top](#%EF%B8%8F-yelpcamp)
+
 
 
