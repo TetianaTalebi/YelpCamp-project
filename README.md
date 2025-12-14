@@ -194,7 +194,7 @@ Additional thanks to the open-source libraries and tools that made development s
 
 ***
 
-### ⬆️ [Back to top](#%EF%B8%8F-yelpcamp)
+### [⬆️ Back to top](#%EF%B8%8F-yelpcamp)
 
 
 
