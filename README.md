@@ -16,7 +16,18 @@
 
 ***
 
-# Project Overview / Description
+# 📑 Table of Contents
+
+- 🔦 [Project Overview / Description](#project-overview--description)
+- 📌 [Key Features](#key-features)
+- 🛠️ [Tools and Technologies Used](#tools-and-technologies-used)
+- 📸 [Screenshots/Demo](#-screenshotsdemo)
+- 🙏 [Acknowledgements](#-acknowledgements)
+- 📫 [Contact](#-contact)
+
+***
+
+# 🔦 Project Overview / Description
 
 YelpCamp is a full-stack CRUD application designed for managing campground data, user-generated content, and geolocation-based resources. The platform enables authenticated users to perform end-to-end operations on campgrounds, including data creation, modification, and deletion. Each campground supports associated metadata such as images, pricing, descriptions, and geographic coordinates.
 
@@ -31,7 +42,7 @@ The system provides the following user capabilities:
 
 ***
 
-# Key Features
+# 📌 Key Features
 
 - RESTful architecture following standard CRUD route conventions
 - Responsive UI using CSS Flexbox, Grid, media queries, and a Bootstrap-powered navigation bar
@@ -48,7 +59,7 @@ The system provides the following user capabilities:
 
 ***
 
-# Tools and Technologies Used
+# 🛠️ Tools and Technologies Used
 
 ## Back End
 
@@ -165,7 +176,7 @@ The following screenshots show how **the “All Campgrounds” page layout** and
 
 ***
 
-## 🙏 Acknowledgements
+# 🙏 Acknowledgements
 
 This project was inspired by and built following guidance from the Udemy course   
 [*“The Web Developer Bootcamp 2025”*](https://www.udemy.com/share/101W9C3@8DTcK_av2hYV0yXuZOXIV73A-SbVYORYJ5C3MAiOxghfLpL505eBLg685qZ09XVBHg==/), taught by [*Colt Steele*](https://www.udemy.com/user/coltsteele/). 
@@ -174,7 +185,7 @@ Additional thanks to the open-source libraries and tools that made development s
 
 ***
 
-## 📫 Contact
+# 📫 Contact
 
 **Author:** Tetiana Talebi   
 **Email:** [tetiana.talebi1111@gmail.com](mailto:tetiana.talebi1111@gmail.com)  
