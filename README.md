@@ -3,6 +3,12 @@
 ![Yelp Camp home page for screen width 1500px](/assets/images/YC_home_page_screen1500px.jpg "Yelp Camp Home page")
 
 > [!NOTE]
+> 
+> **[🎬 Link to this project demo video on YouTube: ](https://youtu.be/O2JYzUE6mxc)**
+
+***
+
+> [!NOTE]
 >
 > Link to this project on Render:  
 > **[https://tetianatalebi-yelpcamp-project.onrender.com](https://tetianatalebi-yelpcamp-project.onrender.com)**
@@ -114,19 +120,28 @@ The system provides the following user capabilities:
 > | globetrotter  | globetrotter |
 > | traveller90   | traveller90  |
 
-## 🖼️ Screenshots
+***
+
+## Video and Screenshots
+
+> [!NOTE]
+> 
+> **[🎬 Link to this project demo video on YouTube: ](https://youtu.be/O2JYzUE6mxc)**
+
 
 > [!NOTE]
 > A selection of key screenshots is shown below.  
-> To view the complete gallery, visit the screenshots folder **[/assets/images/](/assets/images/)**.
+> To view the complete gallery, visit the 🖼️ screenshots folder **[/assets/images/](/assets/images/)**
 
-### 🏡 Home Page
+***
+
+### Home Page
 
 | Home Page (screen 320px) | Show Page (screen 1500px) |
 |------|----------|
 | ![](/assets/images/YC_home_page_screen320px.jpg) | ![](/assets/images/YC_home_page_screen1500px.jpg) |
 
-### ⛺ All Campgrounds Page
+### All Campgrounds Page
 
 The following screenshots show how **the “All Campgrounds” page layout** and **the pagination navbar** change depending on the screen width.
 
@@ -138,43 +153,43 @@ The following screenshots show how **the “All Campgrounds” page layout** and
 |--------------|----------|--------------|----------|
 | ![](/assets/images/YC_All_Camps_page_screen320px_2.jpg) | ![](/assets/images/YC_All_Camps_page_screen580px.jpg) | ![](/assets/images/YC_All_Camps_page_screen1000px_alert.jpg) | ![](/assets/images/YC_All_Camps_page_screen995px.jpg) | 
 
-### ✅ Register and Login Pages
+### Register and Login Pages
 
 | Register page (screen 1200px) | Login page (screen 320px) | Login page with alert (screen 1000px) |
 |------|--------------|----------|
 | ![](/assets/images/YC_Register_page_screen1200px.jpg) | ![](/assets/images/YC_Login_page_screen320px.jpg) | ![](/assets/images/YC_Login_page_screen1000px_alert.jpg) |
 
-### 🌟 Show Campground Page 
+### Show Campground Page 
 
 | Show Campground Page with campground author logged-in and alert message (screen 780px) | Show Campground Page with map (screen 580px) | Show Campground Page with map with campground author logged-in (screen 1500px) |
 |------|--------------|----------|
 | ![](/assets/images/YC_ShowCamp_page_screen780px_alert.jpg) | ![](/assets/images/YC_ShowCamp_page_screen580px_map.jpg) | ![](/assets/images/YC_ShowCamp_page_screen1500px_author_logged-in.jpg) |
 
-### 👍 Review form and reviews
+### Review form and reviews
 
 | Review form with validation at Show Campground page (screen 320px) | Review form and reviews at Show Campground page (screen 580px) | Reviews at Show Campground page, review form is hidden because a user is not logged-in (screen 320px) |
 |------|--------------|----------|
 | ![](/assets/images/YC_ShowCamp_page_screen320px_review_form_green.jpg) | ![](/assets/images/YC_ShowCamp_page_screen580px_review_form_reviews.jpg) | ![](/assets/images/YC_ShowCamp_page_screen320px_reviews.jpg) |
 
-### ❌ Show Campground Page with no image available
+### Show Campground Page with no image available
 
 | Show Campground page when image is not available (screen 1200px) | Show Campground page with map when image is not available (screen 1000px) |
 |------|--------------|
 | ![](/assets/images/YC_ShowCamp_page_screen1200px_no_img.jpg) | ![](/assets/images/YC_ShowCamp_page_screen1000px_map_pop-up_msg.jpg) |
 
-### ✨ Add New Campground Page
+### Add New Campground Page
 
 | New Campground page with alert (screen 320px) | New Campground page form validation (screen 780px) | New Campground page form validation (screen 780px) |
 |------|--------------|----------|
 | ![](/assets/images/YC_NewCamp_page_screen320px_alert.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_1.jpg) | ![](/assets/images/YC_NewCamp_page_screen780px_form_validation_2.jpg) |
 
-### 📝 Edit Campground Page
+### Edit Campground Page
 
 | Edit Campground (screen 1500px) | Edit Campground (screen 1500px) |
 |------|--------------|
 | ![](/assets/images/YC_Edit_Camp_page_screen1500px_2.jpg) | ![](/assets/images/YC_Edit_Camp_page_screen1500px.jpg) |
 
-### 🤷‍♂️ 404 Page
+### 404 Page
 
 | 404 Page (screen 1000px) | 
 |--------------|
