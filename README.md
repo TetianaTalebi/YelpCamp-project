@@ -122,18 +122,19 @@ The system provides the following user capabilities:
 
 ***
 
-## Video and Screenshots
+## Project Demo Video 
 
 > [!NOTE]
 > 
 > **[🎬 Link to this project demo video on YouTube: ](https://youtu.be/O2JYzUE6mxc)**
 
+***
+
+## Screenshots
 
 > [!NOTE]
 > A selection of key screenshots is shown below.  
 > To view the complete gallery, visit the 🖼️ screenshots folder **[/assets/images/](/assets/images/)**
-
-***
 
 ### Home Page
 
