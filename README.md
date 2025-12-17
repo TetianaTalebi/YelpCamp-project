@@ -1,4 +1,4 @@
-<!-- <a name="yelp-camp"></a> -->
+<a name="yelp-camp"></a>
 # 🏕️ YelpCamp
 
 ![Yelp Camp home page for screen width 1500px](/assets/images/YC_home_page_screen1500px.jpg "Yelp Camp Home page")
@@ -70,7 +70,7 @@ The system provides the following user capabilities:
 
 ***
 
-<!-- <a name="tools-and-technologies-used"></a> -->
+<a name="tools-and-technologies-used"></a>
 # 🛠️ Tools and Technologies Used
 
 ## Back End
