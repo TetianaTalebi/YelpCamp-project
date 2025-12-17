@@ -1,3 +1,4 @@
+<!-- <a name="yelp-camp"></a> -->
 # 🏕️ YelpCamp
 
 ![Yelp Camp home page for screen width 1500px](/assets/images/YC_home_page_screen1500px.jpg "Yelp Camp Home page")
@@ -26,7 +27,7 @@
 
 - 🔦 [Project Overview / Description](#-project-overview--description)
 - 📌 [Key Features](#-key-features)
-- 🛠️ [Tools and Technologies Used](#%EF%B8%8F-tools-and-technologies-used)
+- 🛠️ [Tools and Technologies Used](#tools-and-technologies-used)
 - 📸 [Screenshots/Demo](#-screenshotsdemo)
 - 🙏 [Acknowledgements](#-acknowledgements)
 - 📫 [Contact](#-contact)
@@ -69,6 +70,7 @@ The system provides the following user capabilities:
 
 ***
 
+<!-- <a name="tools-and-technologies-used"></a> -->
 # 🛠️ Tools and Technologies Used
 
 ## Back End
@@ -222,7 +224,7 @@ Additional thanks to the open-source libraries and tools that made development s
 
 ***
 
-### [⬆️ <ins>Back to top</ins>](#%EF%B8%8F-yelpcamp)
+### [⬆️ <ins>Back to top</ins>](#yelp-camp)
 
 
 
