@@ -36,7 +36,7 @@
 
 # 🔦 Project Overview / Description
 
-YelpCamp is a full-stack CRUD application designed for managing campground data, user-generated content, and geolocation-based resources. The platform enables authenticated users to perform end-to-end operations on campgrounds, including data creation, modification, and deletion. Each campground supports associated metadata such as images, pricing, descriptions, and geographic coordinates.
+YelpCamp is a full-stack CRUD application designed for managing campground data, user-generated content, and geolocation-based resources. This application enables authenticated users to perform end-to-end operations on campgrounds, including data creation, modification, and deletion. Each campground supports associated metadata such as images, pricing, descriptions, and geographic coordinates.
 
 The system provides the following user capabilities:
 
