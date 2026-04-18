@@ -28,8 +28,8 @@
 - 🔦 [Project Overview / Description](#-project-overview--description)
 - 📌 [Key Features](#-key-features)
 - 🛠️ [Tools and Technologies Used](#tools-and-technologies-used)
-<!-- - 📊 [ER Diagram] -->
-<!-- - 🗄️ [DB Schema] -->
+- 📊 [ER Diagram](#-er-diagram)
+- 🗄️ [DB Schema](#️-db-schema)
 - 📸 [Screenshots/Demo](#-screenshotsdemo)
 - 🙏 [Acknowledgements](#-acknowledgements)
 - 📫 [Contact](#-contact)
@@ -110,7 +110,6 @@ The system provides the following user capabilities:
 
 ***
 
-<!-- <a name=""></a> -->
 # 📊 ER Diagram
 
 
@@ -119,12 +118,11 @@ The system provides the following user capabilities:
 
 ***
 
-<!-- <a name=""></a> -->
 # 🗄️ DB Schema
 
 ![YelpCamp database schema](/assets/db/YC_db_schema.png)
 
-<!-- **[📊 View ER Diagram]() -->
+**[📊 View ER Diagram](#-er-diagram)**
 
 **[⬆️📑 Back to Table of Contents](#-table-of-contents)**
 
