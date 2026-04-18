@@ -1,7 +1,7 @@
 <a name="yelp-camp"></a>
 # 🏕️ YelpCamp
 
-![Yelp Camp home page for screen width 1500px](/assets/images/YC_home_page_screen1500px.jpg "Yelp Camp Home page")
+![Yelp Camp All campgrounds page for screen width 1500px](/assets/images/YC_All_Camps_page_screen1500px.jpg "Yelp Camp All campgrounds page")
 
 > [!NOTE]
 > 
@@ -120,9 +120,9 @@ The system provides the following user capabilities:
 
 # 🗄️ DB Schema
 
-![YelpCamp database schema](/assets/db/YC_db_schema.png)
-
 **[📊 View ER Diagram](#-er-diagram)**
+
+![YelpCamp database schema](/assets/db/YC_db_schema.png)
 
 **[⬆️📑 Back to Table of Contents](#-table-of-contents)**
 
