@@ -28,6 +28,8 @@
 - 🔦 [Project Overview / Description](#-project-overview--description)
 - 📌 [Key Features](#-key-features)
 - 🛠️ [Tools and Technologies Used](#tools-and-technologies-used)
+<!-- - 📊 [ER Diagram] -->
+<!-- - 🗄️ [DB Schema] -->
 - 📸 [Screenshots/Demo](#-screenshotsdemo)
 - 🙏 [Acknowledgements](#-acknowledgements)
 - 📫 [Contact](#-contact)
@@ -103,6 +105,26 @@ The system provides the following user capabilities:
 - JSON (data serialization and API responses)
 - Cookies & Sessions (authentication state management)
 - Geocoding & Interactive Maps (Maptiler APIs & map rendering)
+
+**[⬆️📑 Back to Table of Contents](#-table-of-contents)**
+
+***
+
+<!-- <a name=""></a> -->
+# 📊 ER Diagram
+
+
+
+**[⬆️📑 Back to Table of Contents](#-table-of-contents)**
+
+***
+
+<!-- <a name=""></a> -->
+# 🗄️ DB Schema
+
+![YelpCamp database schema](/assets/db/YC_db_schema.png)
+
+<!-- **[📊 View ER Diagram]() -->
 
 **[⬆️📑 Back to Table of Contents](#-table-of-contents)**
 
