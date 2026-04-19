@@ -122,37 +122,37 @@ The system provides the following user capabilities:
     CAMPGROUND ||--o{ IMAGE : has
 
     USER {
-        binary(12) _id "unique 12-byte binary value"
-        string email
-        string username
-        string salt
-        string hash
+        ObjectId _id PK
+        String email
+        String username
+        String salt
+        String hash
     }
 
     CAMPGROUND {
-        binary(12) _id "unique 12-byte binary value"
-        binary(12) author "campground author user _id"
-        string title
-        string location
-        double[] geometry_coordinates "geometry sub-object property"
-        string geometry_type "geometry sub-object property"
-        string description
-        int price
+        ObjectId _id PK
+        ObjectId author FK
+        String title
+        String location
+        Number[] geometry_coordinates "geometry sub-object property"
+        String geometry_type "geometry sub-object property"
+        String description
+        Number price
         Object[] images
         Object[] reviews
     }
 
     IMAGE {
-        binary(12) _id "unique 12-byte binary value"
-        string filename
-        string url
+        ObjectId _id PK
+        String filename
+        String url
     }
 
     REVIEW {
-        binary(12) _id "unique 12-byte binary value"
-        binary(12) author "review author user _id"
-        string body
-        int rating
+        ObjectId _id PK
+        ObjectId author FK
+        String body
+        Number rating
     }
 
 ```
