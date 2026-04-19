@@ -1,7 +1,7 @@
 <a name="yelp-camp"></a>
 # 🏕️ YelpCamp
 
-![Yelp Camp All campgrounds page for screen width 1500px](/assets/images/YC_All_Camps_page_screen1500px.jpg "Yelp Camp All campgrounds page")
+![Yelp Camp All Campgrounds page for screen width 1500px](/assets/images/YC_All_Camps_page_screen1500px.jpg "Yelp Camp All Campgrounds page")
 
 > [!NOTE]
 > 
@@ -112,6 +112,50 @@ The system provides the following user capabilities:
 
 # 📊 ER Diagram
 
+```mermaid
+
+    erDiagram
+
+    USER ||--o{ CAMPGROUND : creates
+    USER ||--o{ REVIEW : makes
+    CAMPGROUND ||--o{ REVIEW : has
+    CAMPGROUND ||--o{ IMAGE : has
+
+    USER {
+        binary(12) _id "unique 12-byte binary value"
+        string email
+        string username
+        string salt
+        string hash
+    }
+
+    CAMPGROUND {
+        binary(12) _id "unique 12-byte binary value"
+        binary(12) author "campground author user _id"
+        string title
+        string location
+        double[] geometry_coordinates "geometry sub-object property"
+        string geometry_type "geometry sub-object property"
+        string description
+        int price
+        Object[] images
+        Object[] reviews
+    }
+
+    IMAGE {
+        binary(12) _id "unique 12-byte binary value"
+        string filename
+        string url
+    }
+
+    REVIEW {
+        binary(12) _id "unique 12-byte binary value"
+        binary(12) author "review author user _id"
+        string body
+        int rating
+    }
+
+```
 
 
 **[⬆️📑 Back to Table of Contents](#-table-of-contents)**
