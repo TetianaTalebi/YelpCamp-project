@@ -268,8 +268,7 @@ The following screenshots show how **the “All Campgrounds” page layout** and
 
 # 🙏 Acknowledgements
 
-This project was inspired by and built following guidance from the Udemy course   
-[*“The Web Developer Bootcamp 2025”*](https://www.udemy.com/share/101W9C3@8DTcK_av2hYV0yXuZOXIV73A-SbVYORYJ5C3MAiOxghfLpL505eBLg685qZ09XVBHg==/), taught by [*Colt Steele*](https://www.udemy.com/user/coltsteele/). 
+This project was originally inspired by the YelpCamp application from [*“The Web Developer Bootcamp 2025”*](https://www.udemy.com/share/101W9C3@8DTcK_av2hYV0yXuZOXIV73A-SbVYORYJ5C3MAiOxghfLpL505eBLg685qZ09XVBHg==/) course by [*Colt Steele*](https://www.udemy.com/user/coltsteele/) (Udemy). It was built as a learning project to practice full-stack web development concepts, including authentication, RESTful routing, MongoDB integration, image uploads, and cloud deployment. I have customized and deployed the application as part of my portfolio and learning experience.
 
 Additional thanks to the open-source libraries and tools that made development smoother. 
 
